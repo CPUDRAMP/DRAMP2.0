@@ -1,0 +1,118 @@
+<html> 
+  <head> 
+  <meta  http-equiv="Content-Type"  content="text/html;  charset=gb2312"> 
+  <title>emu's  paint  without  vlm</title> 
+
+ 
+  </head> 
+  <body> 
+  <button  onclick="testDrawCurve()">画曲线</button> 
+  <button  onclick="testDrawArc()">画弧线</button> 
+  <button  onclick="testDrawCircle()">画圆</button> 
+  <button  onclick="testDrawLine()">画线</button> 
+  <button  onclick="testDrawRectangle()">画矩形</button> 
+  <button  onclick="testDrawPie()">画饼图</button> 
+  <div  id="canvas">dd</div> 
+ 												
+  点 
+  <span  style="background-color:red;width:1px;height:1px;font-size:1px;">  </span> 
+    <SCRIPT  LANGUAGE="JavaScript"> 
+ 
+   var  div1  =  document.getElementById("canvas") 
+  function  testDrawCurve() 
+   { 
+   div1.innerHTML  =  drawCurve(); 
+   } 
+  function  testDrawArc() 
+   { 
+   div1.innerHTML  =drawArc(150,150,100,0,270,"blue") 
+   } 
+  function  testDrawCircle() 
+   { 
+   div1.innerHTML  =  drawCircle(200,200,150,"blue"); 
+   } 
+  function  drawCircle(x0,y0,radius,color) 
+   { 
+   return  drawArc(x0,y0,radius,0,360,color) 
+   } 
+  function  testDrawLine() 
+   { 
+   div1.innerHTML  =  drawLine(100,200,500,200,"yellow")+drawLine(300,100,300,400,"black")+drawLine(600,400,100,100,"violet") 
+   } 
+  function  testDrawRectangle() 
+   { 
+   div1.innerHTML  =  drawRectangle(200,100,600,200,"blue")+drawRectangle(100,200,400,500,"red") 
+   } 
+  function  testDrawPie() 
+   { 
+   div1.innerHTML  =  drawPie(300,200,120,0,45,"red"); 
+   } 
+   
+  function  drawLine(x0,y0,x1,y1,color) 
+   { 
+   var  rs  =  ""; 
+   if  (y0  ==  y1)    //画横线 
+    { 
+    if  (x0>x1){var  t=x0;x0=x1;x1=t}     
+    rs  =  "<span  style='top:"+y0+";left:"+x0+";position:absolute;font-size:1px;background-color:"+color+";height:1;  width:"+Math.abs(x1-x0)+"'></span>"; 
+    } 
+   else  if  (x0  ==  x1)    //画竖线 
+    { 
+    if  (y0>y1){var  t=y0;y0=y1;y1=t}   
+    rs  =  "<span  style='top:"+y0+";left:"+x0+";position:absolute;font-size:1px;background-color:"+color+";width:1;height:"+Math.abs(y1-y0)+"'></span>"; 
+    } 
+   else 
+    { 
+    var  lx  =  x1-x0 
+    var  ly  =  y1-y0 
+    var  l  =  Math.sqrt(lx*lx+ly*ly) 
+    rs  =  new  Array(); 
+    for  (var  i=0;i<l;i+=1) 
+     { 
+     var  p  =  i/l; 
+     var  px  =  parseInt(x0  +  lx*p); 
+     var  py  =  parseInt(y0  +  ly*p); 
+     rs[rs.length]  =  "<span  style='top:"+py+";left:"+px+";height:1;width:1;position:absolute;font-size:1px;background-color:"+color+"'></span>"; 
+     } 
+    rs  =  rs.join(""); 
+    } 
+   return  rs 
+   } 
+  function  drawRectangle(x0,y0,x1,y1,color) 
+   { 
+   if  (x0  ==  x1  ||  y0  ==  y1)  return; 
+   if  (x0>x1)  {var  t=x0;x0=x1;x1=t} 
+   if  (y0>y1)  {var  t=y0;y0=y1;y1=t} 
+   return  "<table  style='top:"+y0+";left:"+x0+";position:absolute'><td  bgcolor="+color+"  width="+(x1-x0)+"  height="+(y1-y0)+"></td></table>"; 
+   } 
+  function  drawPie(x0,y0,radius,startAngle,endAngle,color) 
+   { 
+   var  rs  =  drawArc(x0,y0,radius,startAngle,endAngle,color) 
+   startAngle  =  startAngle/360*Math.PI*2; 
+   endAngle  =  endAngle/360*Math.PI*2; 
+   var  startx=Math.sin(startAngle)*radius+x0; 
+   var  endx=Math.sin(endAngle)*radius+x0; 
+   var  starty=Math.cos(startAngle)*radius+y0; 
+   var  endy=Math.cos(endAngle)*radius+y0; 
+   rs  +=  drawLine(x0,y0,startx,starty,color) 
+   rs  +=  drawLine(x0,y0,endx,endy,color) 
+   return  rs; 
+   } 
+  function  drawArc(x0,y0,radius,startAngle,endAngle,color) 
+   { 
+   rs  =  new  Array(); 
+   tmpar  =  new  Array(); 
+   startAngle  =  startAngle/360*Math.PI*2; 
+   endAngle  =  endAngle/360*Math.PI*2; 
+   for  (var  i=startAngle;i<endAngle;i+=(1/radius)) 
+    { 
+    var  dx  =  parseInt(Math.sin(i)*radius+x0); 
+    var  dy  =  parseInt(Math.cos(i)*radius+y0); 
+    rs[rs.length]  =  "<span  style='top:"+dy+";left:"+dx+";position:absolute;height:1;width:1;position:absolute;font-size:1px;background-color:"+color+"'></span>"; 
+    } 
+   return  (rs.join("")); 
+   } 
+
+  </SCRIPT> 
+  </body> 
+  </html>

@@ -1,0 +1,25 @@
+		
+body{margin:0;padding:0;}
+ul,li,dl,dd,dt,p{margin:0;padding:0;}
+ul,li{list-style:none;}
+/*柱状图样式*/
+.histogram-container{position:relative;margin-left:60px;margin-top:10px;margin-bottom:25px; width:750px;}
+.histogram-bg-line{border:#999 solid;border-width:0 1px 1px 1px;border-right-color:#eee;overflow:hidden;width:80%;}
+.histogram-bg-line ul{overflow:hidden;border:#eee solid;border-width:1px 0 0 0;}
+.histogram-bg-line li{float:left;width:20%;/*根据.histogram-bg-line下的ul里面li标签的个数来控制比例*/overflow:hidden;}
+.histogram-bg-line li div{border-right:1px #eee solid;}
+.histogram-content{position:absolute;left:0px;top:0;width:100%;height:100%; }
+.histogram-content ul{height:100%;}
+.histogram-content li{float:left;height:100%;width:3%;/*根据直方图的个数来控制这个width比例*/text-align:center;position:relative;}
+.histogram-box{position:relative;display:inline-block;height:100%;width:20px;}
+.histogram-content li a{position:absolute;bottom:0;right:0;display:block;width:20px;}
+.histogram-content li .name{position:absolute;bottom:-20px;left:0px;white-space:nowrap;display:inline-block;width:100%;font-size:12px; }
+.histogram-y{position:absolute;left:-60px;top:-10px;font:12px/1.8 verdana,arial;}
+.histogram-y li{text-align:right;width:55px;padding-right:5px;color:#333;}
+.histogram-bg-line li div,.histogram-y li{height:15px;/*控制单元格的高度及百分比的高度，使百分数与线条对齐*/}
+
+a{
+
+  cursor:pointer;
+	
+}

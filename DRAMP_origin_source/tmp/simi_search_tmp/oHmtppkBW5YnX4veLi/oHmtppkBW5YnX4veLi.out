@@ -1,0 +1,187 @@
+# ../../cgi-bin/seq-search/bin/ssearch35 -Q -s BL62 -b 10 -d 10 -E 20.0 -T 8 ../../tmp/simi_search_tmp/oHmtppkBW5YnX4veLi/oHmtppkBW5YnX4veLi.in ./database/DRAMP.fa
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+Query: ../../tmp/simi_search_tmp/oHmtppkBW5YnX4veLi/oHmtppkBW5YnX4veLi.in
+  1>>>ADFSDFSA - 29 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+       opt      E()
+< 20  3178     0:============================================================
+  22    13     0:=          one = represents 53 library sequences
+  24    12     0:=
+  26     9     0:=
+  28    25     4:*
+  30    50    25:*
+  32   114    96:=*=
+  34   235   260:====*
+  36   420   534:========  *
+  38   638   883:=============   *
+  40  1058  1232:====================   *
+  42  1140  1506:======================      *
+  44  1250  1661:========================       *
+  46  1279  1692:=========================      *
+  48  1238  1620:========================      *
+  50  1074  1478:=====================      *
+  52  1286  1300:========================*
+  54   925  1110:==================  *
+  56   745   927:===============  *
+  58   679   761:============= *
+  60   569   617:===========*
+  62   484   494:=========*
+  64   385   393:=======*
+  66   299   311:=====*
+  68   225   244:====*
+  70   188   192:===*
+  72   160   150:==*=
+  74    94   117:==*
+  76    56    91:=*
+  78    43    71:=*
+  80    32    55:=*
+  82    24    42:*
+  84    25    33:*
+  86    14    26:*
+  88    14    20:*          inset = represents 1 library sequences
+  90    12    15:*
+  92     8    12:*         :========   *
+  94     2     9:*         :==      *
+  96     1     7:*         :=     *
+  98     2     6:*         :==   *
+ 100     3     4:*         :===*
+ 102     3     3:*         :==*
+ 104     2     3:*         :==*
+ 106     0     2:*         : *
+ 108     0     2:*         : *
+ 110     0     1:*         :*
+ 112     0     1:*         :*
+ 114     0     1:*         :*
+ 116     0     1:*         :*
+ 118     0     0:          *
+>120     0     0:          *
+   517387 residues in 18013 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 4.8276+/-0.000416; mu= -5.0554+/- 0.014
+ mean_var=11.7653+/- 2.575, 0's: 3153 Z-trim: 3177  B-trim: 0 in 0/24
+ Lambda= 0.373915
+ statistics sampled from 18013 (18013) to 18013 sequences
+ Kolmogorov-Smirnov  statistic: 0.2119 (N=29) at  88
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.1 Aug 2009)
+Parameters: BL62 matrix (11:-4), open/ext: -7/-1
+ Scan time:  0.060
+
+The best scores are:                                      s-w bits E(18013)
+DRAMP05971                                         (  34)   31 21.0     8.2
+DRAMP16048                                         (  20)   28 20.0     9.7
+DRAMP05970                                         (  22)   28 19.9      11
+DRAMP01590                                         (  16)   26 19.2      14
+DRAMP01589                                         (  16)   26 19.2      14
+DRAMP12074                                         (  69)   33 21.3      14
+DRAMP15241                                         (  88)   34 21.6      15
+DRAMP03765                                         (  50)   31 20.6      16
+DRAMP16049                                         (  28)   28 19.7      18
+
+>>DRAMP05971                                              (34 aa)
+ s-w opt:  31  Z-score: 105.5  bits: 21.0 E(18013):  8.2
+Smith-Waterman score: 31; 47.1% identity (52.9% similar) in 17 aa overlap (1-17:12-28)
+
+                          10        20         
+ADFSDF            SADFSADFSADGASDVSADVASDGSFASF
+                  : : :  :   :. :::            
+DRAMP0 RDVSRRFMRRGSRDVSRRFMRRGSRDVSRRFMRR      
+               10        20        30          
+
+>>DRAMP16048                                              (20 aa)
+ s-w opt:  28  Z-score: 104.2  bits: 20.0 E(18013):  9.7
+Smith-Waterman score: 28; 60.0% identity (90.0% similar) in 10 aa overlap (16-25:3-12)
+
+               10        20             
+ADFSDF SADFSADFSADGASDVSADVASDGSFASF    
+                      ::.: .:.::        
+DRAMP1              SLVSSDESSSGSSHSSGEHS
+                            10        20
+
+>>DRAMP05970                                              (22 aa)
+ s-w opt:  28  Z-score: 102.9  bits: 19.9 E(18013):   11
+Smith-Waterman score: 28; 46.7% identity (53.3% similar) in 15 aa overlap (3-17:2-16)
+
+               10        20         
+ADFSDF SADFSADFSADGASDVSADVASDGSFASF
+         : :  :   :. :::            
+DRAMP0  RDVSRRFMRRGSRDVSRRFMRR      
+                10        20        
+
+>>DRAMP01590                                              (16 aa)
+ s-w opt:  26  Z-score: 101.5  bits: 19.2 E(18013):   14
+Smith-Waterman score: 26; 63.6% identity (63.6% similar) in 11 aa overlap (12-22:1-11)
+
+               10        20         
+ADFSDF SADFSADFSADGASDVSADVASDGSFASF
+                  :  :: : :::       
+DRAMP0            GLFDVIAKVASVIKKL  
+                          10        
+
+>>DRAMP01589                                              (16 aa)
+ s-w opt:  26  Z-score: 101.5  bits: 19.2 E(18013):   14
+Smith-Waterman score: 26; 63.6% identity (63.6% similar) in 11 aa overlap (12-22:1-11)
+
+               10        20         
+ADFSDF SADFSADFSADGASDVSADVASDGSFASF
+                  :  :: : :::       
+DRAMP0            GLFDVIAKVASVIGGL  
+                          10        
+
+>>DRAMP12074                                              (69 aa)
+ s-w opt:  33  Z-score: 101.4  bits: 21.3 E(18013):   14
+Smith-Waterman score: 33; 38.5% identity (53.8% similar) in 26 aa overlap (4-29:18-43)
+
+                             10        20                          
+ADFSDF               SADFSADFSADGASDVSADVASDGSFASF                 
+                        ::. :  ::   .: : . . :  ::                 
+DRAMP1 MAHIIMFVYALIYALIIFSSLFVRDGIPCLSDDECPEMSHYSFKCNNKICEYDLGEMSDD
+               10        20        30        40        50        60
+
+DRAMP1 DYYLEMSRE
+                
+
+>>DRAMP15241                                              (88 aa)
+ s-w opt:  34  Z-score: 100.8  bits: 21.6 E(18013):   15
+Smith-Waterman score: 34; 46.7% identity (73.3% similar) in 15 aa overlap (2-16:12-26)
+
+                         10        20                              
+ADFSDF           SADFSADFSADGASDVSADVASDGSFASF                     
+                  :::. : .  :.:.:                                  
+DRAMP1 SLSVEAKAKIVADFGRDANDTGSSEVQVALLTAQINHLQGHFSEHKKDHHSRRGLLRMVS
+               10        20        30        40        50        60
+
+>>DRAMP03765                                              (50 aa)
+ s-w opt:  31  Z-score: 100.1  bits: 20.6 E(18013):   16
+Smith-Waterman score: 31; 36.8% identity (78.9% similar) in 19 aa overlap (2-19:3-21)
+
+                10         20                            
+ADFSDF  SADFSADFSA-DGASDVSADVASDGSFASF                   
+         :....::.: :  .:.. :                             
+DRAMP0 YPASYDGDFDALDDLDDLDLDDLLDLEPADLVLLDMWANMLDSQDFEDFE
+               10        20        30        40        50
+
+>>DRAMP16049                                              (28 aa)
+ s-w opt:  28  Z-score: 99.5  bits: 19.7 E(18013):   18
+Smith-Waterman score: 28; 60.0% identity (90.0% similar) in 10 aa overlap (16-25:11-20)
+
+               10        20             
+ADFSDF SADFSADFSADGASDVSADVASDGSFASF    
+                      ::.: .:.::        
+DRAMP1      RRRRRRRRSLVSSDESSSGSSHSSGEHS
+                    10        20        
+
+
+
+29 residues in 1 query   sequences
+517387 residues in 18013 library sequences
+ Scomplib [36.05]
+ start: Fri Dec 13 22:13:12 2013 done: Fri Dec 13 22:13:12 2013
+ Total Scan time:  0.060 Total Display time:  0.000
+
+Function used was SSEARCH [version 36.05 March, 2010]

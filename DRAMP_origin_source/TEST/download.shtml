@@ -1,0 +1,30 @@
+<html>
+
+<head>
+
+<title>SSI Test Page</title>
+
+
+</head>
+
+<body>
+	<h1 id="header">Old Header</h1>
+
+<a href=""/tmp/result.zip"" id="DownLoad">DownLoad</a>
+<a href="javascript:window.opener=null;window.open('','_self');window.close();">关闭</a>
+
+<script type="text/javascript">
+	
+			windows.close();	
+</script>
+
+
+<!----#echo var="DATE_LOCAL"------!>
+<!--#exec cgi="../cgi-bin/download.cgi"-->
+
+
+
+
+</body>
+
+</html>

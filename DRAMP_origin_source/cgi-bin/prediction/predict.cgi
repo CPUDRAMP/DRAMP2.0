@@ -1,0 +1,212 @@
+#!/usr/bin/perl -w
+#print "content-type: text/html","\n\n";
+
+use strict;
+
+use CGI qw(:all);
+use LWP::UserAgent;
+
+my $seq_pre=param('pred_area');
+
+my $i=0;
+
+my $option=param('pred_radio');
+
+use CGI::Session;
+
+my $cgi= new CGI;
+
+my $session = new CGI::Session("driver:File", $cgi , {Directory=>'/tmp'});
+
+my $cookie = $cgi->cookie(CGISESSID =>$session->id );
+
+print $cgi->header(-cookie=>$cookie);
+
+my $pass_key = param('pass_key');
+
+my $query = "php ../jobs/password.php $pass_key 'DECODE'";
+
+$pass_key = readpipe($query);
+
+$session->param('user_id', $pass_key);
+
+if (!$pass_key){
+
+print "<script language='javascript'>;";
+
+print " location.href='http://dramp.cpu-bioinfor.org';";
+
+print "</script>;";
+
+}else{
+
+        $session->param('user_id', $pass_key);
+}
+#### end session ####
+
+my $maxLenth=5;
+my @pa=('A'..'Z',0..9,'a'..'z');
+my $pa;
+my $file_name;
+my $mkdir_query;
+
+my @subname;
+ $subname[0]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[1]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[2]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+my $job_name=join "-",@subname;
+
+$file_name = $job_name;   ###create the cache ###
+
+$job_name = "predict-".$job_name;
+
+$mkdir_query = "mkdir -p -m 755 /var/www/tmp/predict_tmp/$file_name";
+
+system($mkdir_query);
+###EOF mkfir###
+
+
+
+###JOBS ###
+my($sec,$min,$hour,$day,$mon,$year,$wday,$yday,$isdst)=localtime();
+
+$year += 1900;
+$mon  += 1;
+my $btime = sprintf("%d/%02d/%02d/%02d:%02d:%02d",$year,$mon,$day,$hour,$min,$sec); 
+
+my $aa_length = length($seq_pre);
+my $job_information = "<h3>Job Information :</h3><pre><ul style='margin-left:-40px;margin-top:6px;font-size:16px;list-style-type:none;'><li><b>Quary job id: </b>$job_name</li><li><b>Date of job execution: </b>$btime</li><li><b>User-provided sequence: </b>$seq_pre ($aa_length AA) </li>" ;
+###END JOBS###
+###BEGIN 
+system( `echo -n  $job_name 'http://dramp.cpu-bioinfor.org/tmp/predict_tmp/$file_name/$file_name.htm '  >> ../../tmp/jobs_tmp/$pass_key`);
+
+
+my $ll_path = "/var/www/tmp/jobs_tmp/$pass_key";
+
+my  $job_numbers = readpipe ("wc -l  $ll_path | cut -d ' ' -f1");
+ $job_numbers ++;
+
+my $time = `date  +"%Y-%m-%d %H:%M:%S" >> ../../tmp/jobs_tmp/$pass_key`;
+
+#print $job_numbers;
+
+##############
+#the template
+my $content_line;
+	open LOL,"</var/www/template/tools_result_static_predict.html";
+        	while (my $line = <LOL>){
+                	$content_line .= $line;
+        	}
+	close LOL;
+
+        my $pass_query = "php ../jobs/password.php $pass_key 'ENCODE'";
+
+        my $new_pass_key = readpipe($pass_query);
+
+        $content_line =~ s/JOBSPASSKEY/$new_pass_key/;
+
+#print $option;
+#########replace###############
+
+
+##############
+if ($option eq "physicochemical property prediction"){
+	$job_information = "<h2 align='center'>Physicochemical Properties Prediction</h2>".$job_information."<li><b>Program: </b>ProtParam</li></ul></pre><h3>Result Information:</h3>";
+	&physic_predict($seq_pre);
+}
+
+if ($option eq "second structure prediction"){
+	$job_information = "<h2 align='center'>Second Structure Prediction</h2>".$job_information."<li><b>Program: </b>Chou & Fasman algorithm</li></ul></pre><h3>Result Information:</h3>";
+	$seq_pre = ">temp%0D%0A".$seq_pre;
+	&second_predict($seq_pre);		
+}
+#&physic_predict;
+#&second_predict;
+################################################second#######################
+sub second_predict{
+	my ($seq)=@_;
+
+#			http://www.biogem.org/cgi-bin/cho-fas.pl?sequence=%3ESSSDDDFF%0D%0ATTPATTSSWTCITAGVTVSASLCPTTKCTSRC&submit=PREDICT
+		$seq =~ s/\s+/\\\%0D\\%0A/;
+		$seq =~ s/\>/\\\%3E/;
+		my $query="wget http://www.biogem.org/cgi-bin/cho-fas.pl?sequence=".$seq."\\&submit\\=PREDICT -O - ";
+
+		my $second_prediction = readpipe ("$query");
+
+		$second_prediction =~ s/\n/seconds/g;
+
+		$second_prediction =~ s/.*\<div\sid\=\"space\">//;
+
+		my $ref	= "</pre>";
+
+		my $index_number   = rindex($second_prediction,$ref);
+		
+		$second_prediction = substr($second_prediction,0,$index_number);	
+		$second_prediction =~ s/<pre>|<\/pre>//ig;
+		$second_prediction =~ s/.*<img/<img/;
+		$second_prediction = $job_information."<pre>".$second_prediction."</pre>";
+		
+		my $temp_string = "<html>$second_prediction</html>";
+		$temp_string =~ s/seconds/\n/g;
+		open (LOL,">/var/www/tmp/predict_tmp/$file_name/$file_name.htm");
+			print LOL  $temp_string ;
+			#print $temp_string;
+		close LOL;
+		
+		$content_line =~ s/JOBSNUMBER/$job_numbers/;
+		$content_line =~ s/USERID/$pass_key/;
+                $content_line =~ s/FEIYANGYANG/Predict-second structure prediction/;
+                $content_line =~ s/LazySheep/$second_prediction/;
+
+                $second_prediction = $content_line;
+
+		$second_prediction =~ s/seconds/\n/g; 
+
+		print qq($second_prediction);
+			
+					
+									 
+
+}
+
+######################################Physicochemical ##############################
+sub physic_predict{
+				my ($seq)=@_;
+				
+				my $query="wget http://web.expasy.org/cgi-bin/protparam/protparam?sequence=".$seq." -O -";
+					
+				my $physic_predict = readpipe ("$query");			
+
+				$physic_predict =~ s/\n/gele/g;
+				
+				$physic_predict =~ s/.*\<pre\>/\<pre\>/;
+	#			$physic_predict =~ s/\<\/pre\>\<\!\-\-.*/\<\/pre\>/;
+				
+				$physic_predict =~ s/sib\_footer.*//;	
+				
+				$physic_predict =~ s/\<\/pre\>.*\<pre/\<\/pre\>\<pre/;
+				$physic_predict =~ s/<br\/>.*<p>//;
+				
+				$physic_predict =~ s/<input\stype=\'submit\'\svalue=\'CSV\sformat\'>//g;
+				$physic_predict =~ s/<pre.*<PRE><HR>/<PRE>/;
+				$physic_predict = $job_information.$physic_predict;
+					
+				my $temp_string = "<html><body>$physic_predict</body></html>";			
+				$temp_string    =~ s/gele/<br>/g;
+					
+				open (DOTA,">/var/www/tmp/predict_tmp/$file_name/$file_name.htm");
+				print DOTA $temp_string;
+				close DOTA;
+				
+				$content_line =~ s/JOBSNUMBER/$job_numbers/;
+				$content_line =~ s/USERID/$pass_key/;
+                		$content_line =~ s/FEIYANGYANG/Predict-physicochemical property prediction/;
+				$content_line =~ s/LazySheep/$physic_predict/;
+
+				$physic_predict = $content_line;
+
+				$physic_predict =~ s/gele/<br>/g;
+
+				print qq($physic_predict);
+				
+}				

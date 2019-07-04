@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>window.scrollBy()函数</title>
+<script laguage="javascript">
+function MoveWindow(sign,value1)
+{
+var y;
+var x;
+if (sign == "ver"){
+x=0;
+y=value1;
+}
+else{
+y=0;
+x=value1;
+}
+window.scrollBy(x,y);
+}
+</script>
+</head>
+<body bgcolor="#6699ff" text="#000000">
+<form>
+<table border=0 align=center>
+<tr>
+<td colspan=4 align=center bgcolor=lightgreen><font color=blue size=3>控制窗体移动</font></td></tr>
+<tr>
+<td><input type=button value="down"  onclick="window.scrollBy(546,100)" style="background-color:blue;color:lightblue"></td>
+<td><input type=button value="up" onclick=MoveWindow("ver",-10) style="background-color:blue;color:lightblue"></td>
+<td><input type=button value="left" onclick=MoveWindow("hor",10) style="background-color:blue;color:lightblue"></td>
+<td><input type=button value="right" onclick=MoveWindow("hor",-10) style="background-color:blue;color:lightblue"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

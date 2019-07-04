@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<peptide>
+<search>
+<RDAMP_ID size="1">RP0000</RDAMP_ID>
+<Peptide_Name>Geobacillin I (nisin analog; lantibiotic; class I bacteriocin)</Peptide_Name>
+<Peptide_Seq>VTSKSLCTPGCITGVLMCLTQNSCVSCNSCIRC</Peptide_Seq>
+</search>
+<search>
+<RDAMP_ID size="1">RP0001</RDAMP_ID>
+<Peptide_Name>Geobacillin II (nisin analog; lantibiotic; class I bacteriocin)</Peptide_Name>
+<Peptide_Seq>STIVCVSLRICNWSLRFCPSFKVRCPM</Peptide_Seq>
+</search>
+<search>
+<RDAMP_ID size="1">RP0002</RDAMP_ID>
+<Peptide_Name>Lantibiotic salivaricin A (lantibiotic; class I bacteriocin; Predicted)</Peptide_Name>
+<Peptide_Seq>KKGSGWFATITDDCPNSVFVCC</Peptide_Seq>
+</search>
+</peptide>

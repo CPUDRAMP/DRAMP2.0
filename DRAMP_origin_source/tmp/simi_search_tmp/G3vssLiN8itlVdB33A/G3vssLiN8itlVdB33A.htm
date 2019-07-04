@@ -1,0 +1,126 @@
+<div style='world-break:break-all'><pre><code>BLASTP 2.2.25+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: DRAMP.fa
+           18,013 sequences; 517,387 total letters
+
+
+
+Query= 
+Length=29
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  DRAMP00009                                                          55.5    2e-10
+  DRAMP00023                                                          30.8    0.008
+  DRAMP04410                                                          21.6    4.4  
+  DRAMP00021                                                          21.2    6.1  
+  DRAMP00013                                                          21.2    6.2  
+  DRAMP00011                                                          20.4    9.0  
+
+
+> DRAMP00009
+Length=29
+
+ Score = 55.5 bits (132),  Expect = 2e-10, Method: Compositional matrix adjust.
+ Identities = 29/29 (100%), Positives = 29/29 (100%), Gaps = 0/29 (0%)
+
+Query  1   TTPATPAISILSAYISTNTCPTTKCTRAC  29
+           TTPATPAISILSAYISTNTCPTTKCTRAC
+Sbjct  1   TTPATPAISILSAYISTNTCPTTKCTRAC  29
+
+
+> DRAMP00023
+Length=32
+
+ Score = 30.8 bits (68),  Expect = 0.008, Method: Compositional matrix adjust.
+ Identities = 13/17 (77%), Positives = 13/17 (77%), Gaps = 0/17 (0%)
+
+Query  13  AYISTNTCPTTKCTRAC  29
+            YIS  TCPTT CTRAC
+Sbjct  16  GYISNQTCPTTACTRAC  32
+
+
+> DRAMP04410
+Length=30
+
+ Score = 21.6 bits (44),  Expect = 4.4, Method: Compositional matrix adjust.
+ Identities = 9/15 (60%), Positives = 10/15 (67%), Gaps = 0/15 (0%)
+
+Query  15  ISTNTCPTTKCTRAC  29
+           +S   CPTTKCT  C
+Sbjct  16  VSVALCPTTKCTSQC  30
+
+
+> DRAMP00021
+Length=24
+
+ Score = 21.2 bits (43),  Expect = 6.1, Method: Compositional matrix adjust.
+ Identities = 9/15 (60%), Positives = 10/15 (67%), Gaps = 0/15 (0%)
+
+Query  15  ISTNTCPTTKCTRAC  29
+           +S   CPTTKCT  C
+Sbjct  10  VSVALCPTTKCTSQC  24
+
+
+> DRAMP00013
+Length=32
+
+ Score = 21.2 bits (43),  Expect = 6.2, Method: Compositional matrix adjust.
+ Identities = 9/15 (60%), Positives = 11/15 (74%), Gaps = 0/15 (0%)
+
+Query  15  ISTNTCPTTKCTRAC  29
+           +S + CPTTKCT  C
+Sbjct  18  VSASLCPTTKCTSRC  32
+
+
+> DRAMP00011
+Length=32
+
+ Score = 20.4 bits (41),  Expect = 9.0, Method: Compositional matrix adjust.
+ Identities = 8/14 (58%), Positives = 10/14 (72%), Gaps = 0/14 (0%)
+
+Query  16  STNTCPTTKCTRAC  29
+           S   CPTTKC++ C
+Sbjct  14  SIAVCPTTKCSKRC  27
+
+
+
+Lambda     K      H
+   0.317    0.121    0.384 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+Effective search space used: 12996747
+
+
+  Database: DRAMP.fa
+    Posted date:  Oct 26, 2013  5:02 PM
+  Number of letters in database: 517,387
+  Number of sequences in database:  18,013
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
+</code></pre></div>

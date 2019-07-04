@@ -1,0 +1,136 @@
+# ../seq-search/bin/ssearch35 -H -m 6 ../dyr_human.aa ../../db_standone/db_ssearch/FASTA.fa
+<pre>
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+</pre>
+Query: ../dyr_human.aa
+<pre>
+  1>>>gi|118992|sp|P00374.2|DYR_HUMAN RecName: Full=Dihydrofolate - 187 aa
+Library: ../../db_standone/db_ssearch/FASTA.fa
+   702635 residues in  1721 sequences
+
+Statistics:  Expectation_n fit: rho(ln(x))= 8.9479+/-0.00105; mu= -8.8782+/- 0.062
+ mean_var=39.1669+/-20.284, 0's: 0 Z-trim: 0  B-trim: 0 in 0/20
+ Lambda= 0.204934
+ statistics sampled from 1721 (1721) to 1721 sequences
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.1 Aug 2009)
+Parameters: BL50 matrix (15:-5), open/ext: -10/-2
+ Scan time:  0.100
+</pre>
+<p>
+<hr>
+<p>
+<p><tt><pre>
+
+The best scores are:                                      s-w bits <font color="darkred">E(1721)</font>
+AFM83209 A/mallard/Netherlands/29/2010 2010// PB1- (  90)   63 24.2 <font color="darkred">    1.5</font> <A HREF="#AFM83209">align</A>
+AFM82845 A/mallard/Sweden/57/2002 2002// PB1-F2    (  90)   63 24.2 <font color="darkred">    1.5</font> <A HREF="#AFM82845">align</A>
+AFM82586 A/northern shoveler/Georgia/1/2010 2010// (  90)   57 22.4 <font color="darkred">    5.1</font> <A HREF="#AFM82586">align</A>
+AFJ13301 A/mallard/Alberta/242/2004 2004/08/15 PB1 (  90)   54 21.6 <font color="darkred">    9.4</font> <A HREF="#AFJ13301">align</A>
+</pre></tt><p><hr><p>
+
+>>>gi|118992|sp|P00374.2|DYR_HUMAN, 187 aa vs ../../db_standone/db_ssearch/FASTA.fa library
+
+<A name=AFM83209>
+<tt><pre>
+>>AFM83209 A/mallard/Netherlands/29/2010 2010// PB1-F2    (90 aa)
+ s-w opt:  63  Z-score: 100.5  bits: 24.2 <font color="darkred">E(1721):  1.5</font>
+Smith-Waterman score: 63; 30.9% identity (55.9% similar) in 68 aa overlap (12-78:18-79)
+<A HREF="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=Protein&fcmd=Search&doptcmd1=DocSum&term=AFM83209">Entrez lookup</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchfa.cgi?query=AFM83209&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=18&stop=79&n1=90">Re-search database</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchxf.cgi?query=AFM83209&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=18&stop=79&n1=90">General re-search</A>
+<p>
+
+                     10        20        30        40        50    
+gi|118       MVGSLNCIVAVSQNMGIGKNGDLPWPPLRNEFRYFQRMTTTSSVEGKQNLVIMG
+                        .:. : :.. . :  :  ...      ::...   ::   :  
+AFM832 MEQEQDTPWTQSTEHINTQKKGNGQQTQRPEHPNSTQLMDHYLRTTSQADMHKQ---IAC
+               10        20        30        40        50          
+
+           60        70         80        90       100       110   
+gi|118 KKTWFSIPEKNRPLKGRIN-LVLSRELKEPPQGAHFLSRSLDDALKLTEQPELANKVDMV
+        : :.:.  :: : .: .. :::.:                                   
+AFM832 WKQWLSL--KN-PTQGSLKTLVLKRWKSFSKQEWTN                        
+        60           70        80        90                        
+
+</pre></tt>
+<hr>
+<A name=AFM82845>
+<tt><pre>
+>>AFM82845 A/mallard/Sweden/57/2002 2002// PB1-F2         (90 aa)
+ s-w opt:  63  Z-score: 100.5  bits: 24.2 <font color="darkred">E(1721):  1.5</font>
+Smith-Waterman score: 63; 30.9% identity (55.9% similar) in 68 aa overlap (12-78:18-79)
+<A HREF="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=Protein&fcmd=Search&doptcmd1=DocSum&term=AFM82845">Entrez lookup</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchfa.cgi?query=AFM82845&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=18&stop=79&n1=90">Re-search database</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchxf.cgi?query=AFM82845&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=18&stop=79&n1=90">General re-search</A>
+<p>
+
+                     10        20        30        40        50    
+gi|118       MVGSLNCIVAVSQNMGIGKNGDLPWPPLRNEFRYFQRMTTTSSVEGKQNLVIMG
+                        .:. : :.. . :  :  ...      ::...   ::   :  
+AFM828 MEQEQDTPWTQSTEHINTQKRGSGQQTQRPEHPNSTQLMDHYLRTTSQADMHKQ---IAC
+               10        20        30        40        50          
+
+           60        70         80        90       100       110   
+gi|118 KKTWFSIPEKNRPLKGRIN-LVLSRELKEPPQGAHFLSRSLDDALKLTEQPELANKVDMV
+        : :.:.  :: : .: .. :::.:                                   
+AFM828 WKQWLSL--KN-PTQGSLKTLVLKRWKSFSKQEWTN                        
+        60           70        80        90                        
+
+</pre></tt>
+<hr>
+<A name=AFM82586>
+<tt><pre>
+>>AFM82586 A/northern shoveler/Georgia/1/2010 2010// PB1  (90 aa)
+ s-w opt:  57  Z-score: 90.9  bits: 22.4 <font color="darkred">E(1721):  5.1</font>
+Smith-Waterman score: 57; 28.6% identity (60.3% similar) in 63 aa overlap (18-78:24-79)
+<A HREF="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=Protein&fcmd=Search&doptcmd1=DocSum&term=AFM82586">Entrez lookup</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchfa.cgi?query=AFM82586&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=24&stop=79&n1=90">Re-search database</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchxf.cgi?query=AFM82586&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=24&stop=79&n1=90">General re-search</A>
+<p>
+
+                     10        20        30         40        50   
+gi|118       MVGSLNCIVAVSQNMGIGKNGDLPWPPLRNEFR-YFQRMTTTSSVEGKQNLVIM
+                              :.. . :  :  ...  ..:: :. .... .    : 
+AFM825 MEQEQDTPWTQSTEHINTQRRESGQQTQRPEHPNSTQLMDHYQRTTSQADMHKR----IA
+               10        20        30        40        50          
+
+            60        70         80        90       100       110  
+gi|118 GKKTWFSIPEKNRPLKGRIN-LVLSRELKEPPQGAHFLSRSLDDALKLTEQPELANKVDM
+         : :.:.  :: : .: .. :::.:                                  
+AFM825 CWKQWLSL--KN-PTQGSLKTLVLKRWKSFSKQEWTN                       
+         60           70        80        90                       
+
+</pre></tt>
+<hr>
+<A name=AFJ13301>
+<tt><pre>
+>>AFJ13301 A/mallard/Alberta/242/2004 2004/08/15 PB1-F2   (90 aa)
+ s-w opt:  54  Z-score: 86.1  bits: 21.6 <font color="darkred">E(1721):  9.4</font>
+Smith-Waterman score: 54; 24.3% identity (54.1% similar) in 74 aa overlap (12-81:13-81)
+<A HREF="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=Protein&fcmd=Search&doptcmd1=DocSum&term=AFJ13301">Entrez lookup</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchfa.cgi?query=AFJ13301&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=13&stop=81&n1=90">Re-search database</A>&nbsp;&nbsp;<A HREF="http://your_fasta_host_here/searchxf.cgi?query=AFJ13301&db=Protein&lib=../../db_standone/db_ssearch/FASTA.fa&pgm=sw&start=13&stop=81&n1=90">General re-search</A>
+<p>
+
+                10        20        30            40        50     
+gi|118  MVGSLNCIVAVSQNMGIGKNGDLPWPPLRNEFRYFQRMT----TTSSVEGKQNLVIMGK
+                   ... .: : :. :     ..    : :     :::.:. ... :  . 
+AFJ133 MGQEQDTPWTQSTEHTNIQKRGNGPQTQKLEHHNLTQLMDHYLRTTSQVDMHKQTV--SW
+               10        20        30        40        50          
+
+          60        70        80        90       100       110     
+gi|118 KTWFSIPEKNRPLKGRINLVLSRELKEPPQGAHFLSRSLDDALKLTEQPELANKVDMVWI
+       : :.:.   . : .: ..  .:.. :                                  
+AFJ133 KQWLSL---KSPTQGSLKTRVSKRWKLFNKQEWTS                         
+       60           70        80        90                         
+
+</pre></tt>
+<hr>
+<p><pre>
+
+
+187 residues in 1 query   sequences
+702635 residues in 1721 library sequences
+ Scomplib [36.05]
+ start: Sat Jun  1 20:33:41 2013 done: Sat Jun  1 20:33:41 2013
+ Total Scan time:  0.100 Total Display time:  0.010
+
+Function used was SSEARCH [version 36.05 March, 2010]
+</pre>

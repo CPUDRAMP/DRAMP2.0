@@ -1,0 +1,90 @@
+BLASTP 2.2.25+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: DRAMP.fa
+           18,013 sequences; 517,387 total letters
+
+
+
+Query= DDDC
+
+Length=30
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  DRAMP00005                                                          62.0    3e-12
+  DRAMP05600                                                          26.9    0.093
+  DRAMP00039                                                          26.9    0.093
+
+
+> DRAMP00005
+Length=30
+
+ Score = 62.0 bits (149),  Expect = 3e-12, Method: Compositional matrix adjust.
+ Identities = 30/30 (100%), Positives = 30/30 (100%), Gaps = 0/30 (0%)
+
+Query  1   SLGPAIKATRQVCPKATRFVTVSCKKSDCQ  30
+           SLGPAIKATRQVCPKATRFVTVSCKKSDCQ
+Sbjct  1   SLGPAIKATRQVCPKATRFVTVSCKKSDCQ  30
+
+
+> DRAMP05600
+Length=34
+
+ Score = 26.9 bits (58),  Expect = 0.093, Method: Compositional matrix adjust.
+ Identities = 17/32 (54%), Positives = 22/32 (69%), Gaps = 4/32 (12%)
+
+Query  3   GPAIKATRQVCPK---ATRFVTVSCK-KSDCQ  30
+           GPAI+A+ + C K   ATR  TVSCK K+ C+
+Sbjct  3   GPAIRASVKQCQKTLKATRLFTVSCKGKNGCK  34
+
+
+> DRAMP00039
+Length=34
+
+ Score = 26.9 bits (58),  Expect = 0.093, Method: Compositional matrix adjust.
+ Identities = 17/32 (54%), Positives = 22/32 (69%), Gaps = 4/32 (12%)
+
+Query  3   GPAIKATRQVCPK---ATRFVTVSCK-KSDCQ  30
+           GPAI+A+ + C K   ATR  TVSCK K+ C+
+Sbjct  3   GPAIRASVKQCQKTLKATRLFTVSCKGKNGCK  34
+
+
+
+Lambda     K      H
+   0.321    0.128    0.398 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+Effective search space used: 13478108
+
+
+  Database: DRAMP.fa
+    Posted date:  Oct 26, 2013  5:02 PM
+  Number of letters in database: 517,387
+  Number of sequences in database:  18,013
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

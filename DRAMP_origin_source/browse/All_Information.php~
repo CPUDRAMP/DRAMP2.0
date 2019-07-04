@@ -1,0 +1,202 @@
+<?php 
+
+require_once '../Public_Class/public_mysql_tool.class.php';
+
+$this_id=$_REQUEST['id'];
+#$this_id="DR0010";
+
+$query_mysql_one="SELECT * FROM peptide WHERE DRAMP_ID = ";
+
+$query_mysql=$query_mysql_one." \"".$this_id."\"";
+
+//$query_mysql="SELECT * FROM peptide WHERE DRAMP_ID = 'DR0001'";
+
+$mysql_helper=new public_mysql_tool();
+
+$result=$mysql_helper->execute_dql($query_mysql);
+
+$row_info=$result[0];
+//print_r ($row_info);
+
+
+echo<<<END_PAGE_ONE
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<link href="../css/all_information.css" rel="stylesheet" type="text/css" />
+	<title>The All Information Of $this_id</title>
+
+</head>
+<body">
+	
+<div style="border:0px solid Blue;width:1100px;margin:0 auto">
+	
+
+	<div style="border:0px solid yellow;width:680px;margin:0 auto"><h1>The All Information Of $this_id</h1></div>
+	
+	
+	<div>
+		<div id="sections">
+			<div id="section_general" class="nice">
+			<h2><acronym>General Information</acronym></h2>
+			<div id="content-name" class="nice-content">
+				<table>
+					<tbody>
+						<tr>
+							<td class="first-column"><acronym>DRAMP ID</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'DRAMP_ID'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Peptide Name</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Peptide_Name'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Source</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Source'}}</acronym></td>
+						</tr>	
+						<tr>
+							<td class="first-column"><acronym>Gene</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Gene'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Sequence</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Sequence'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Swiss-Prot Entry</acronym></td>
+							<td class="first-colomn"><acronym><a href="#" onclick="javascript:window.open('http://www.uniprot.org/uniprot/{$row_info{'Swiss-Prot_Entry'}}')">{$row_info{'Swiss-Prot_Entry'}}</a></acronym></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+
+			<div id="section_activity" class="nice">
+			<h2><acronym>Activity information</acronym></h2>
+			<div id="content-name" class="nice-content">
+				<table>
+					<tbody>
+						<tr>
+							<td class="first-column"><acronym>Biological Activity</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Biological_Activity'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Target Organism</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Target_Organism'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Binding Traget</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Binding_Traget'}}</acronym></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+
+			<div id="section_structure" class="nice">
+			<h2><acronym>Structure Information</acronym></h2>
+			<div id="content-name" class="nice-content">
+				<table>
+					<tbody>
+						<tr>
+							<td class="first-column"><acronym>Structure</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Structure'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Structure Description</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Structure_Description'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>PDB ID</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'PDB_ID'}}</acronym></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+			
+
+			<div id="section_physical" class="nice">
+			<h2><acronym>physical Information</acronym></h2>
+			<div id="content-name" class="nice-content">
+				<table>
+					<tbody>
+						<tr>
+							<td class="first-column"><acronym>Structure</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Structure'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Structure Description</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Structure_Description'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>PDB ID</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'PDB_ID'}}</acronym></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+END_PAGE_ONE;
+
+include '../TEST/all_info.php'; 
+
+// 那个图
+
+$my_url=$_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING'];
+
+echo<<<END_PAGE_TWO
+			</div>
+		
+	
+			<div id="section_comments" class="nice">
+			<h2><acronym>Comments Information</acronym></h2>
+			<div id="content-name" class="nice-content">
+				<table>
+					<tbody>
+						<tr>
+							<td class="first-column"><acronym>Comments</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Comments'}}</acronym></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+		
+			<div id="section_literature" class="nice">
+			<h2><acronym>Literature Information</acronym></h2>
+			<div id="content-name" class="nice-content">
+				<table>
+					<tbody>
+						<tr>
+							<td class="first-column"><acronym>Pubmed ID</acronym></td>
+							<td class="first-colomn"><acronym><a href="#" onclick="javascript:window.open('http://www.ncbi.nlm.nih.gov/pubmed/?term={$row_info{'Pubmed_ID'}}')">{$row_info{'Pubmed_ID'}}</a></acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Reference</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Reference'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Author</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Author'}}</acronym></td>
+						</tr>
+						<tr>
+							<td class="first-column"><acronym>Title</acronym></td>
+							<td class="first-colomn"><acronym>{$row_info{'Title'}}</acronym></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div>
+
+	<div style="width:80px;margin:0px auto;border:0px solid red"><a href="{$my_url}">Back</a>&nbsp;&nbsp;&nbsp;<a href="../index.html">Home</a></div>
+
+</div>
+</div>
+</body>
+</html>
+END_PAGE_TWO;
+
+?>

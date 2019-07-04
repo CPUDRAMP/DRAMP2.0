@@ -1,0 +1,20 @@
+<html>
+
+<head>
+
+<title>SSI Test Page</title>
+
+</head>
+
+<body>
+<!--#echo var="fdsf"-->
+<!--#config timefmt="%Y/%m/%d %a %H:%M:%S" -->Today is <!--#echo var="DATE_LOCAL" -->
+<!--#echo var="REMOTE_ADDR"-->
+
+<!--#include file="ss.htm"--> 
+
+<a href="#" >HINK</a>
+
+</body>
+
+</html>

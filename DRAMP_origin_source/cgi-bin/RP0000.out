@@ -1,0 +1,23 @@
+BLASTP 2.2.28+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
+A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
+David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
+generation of protein database search programs", Nucleic
+Acids Res. 25:3389-3402.
+
+
+RID: R1H5PKMZ014
+
+
+No alias or index file found for protein database [swissport] in search path [/export/home/web/public/htdocs/blast/SPLITD:/export/home/splitd/blastdb/blast:/blast/db/blast:/blast/db/disk.blast/blast2:]
+
+Query= RP0000
+
+Length=33
+
+
+<b>No significant similarity found.</b> For reasons why, <A HREF = "Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=FAQ"><b>click here</A>.</b><br><br>
+
+
+
+

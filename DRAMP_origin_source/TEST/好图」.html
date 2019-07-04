@@ -1,0 +1,101 @@
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+      <html xmlns="http://www.w3.org/1999/xhtml">  
+      <head>  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+</script>
+<style type="text/css">
+		body{margin:0;padding:0;}
+ul,li,dl,dd,dt,p{margin:0;padding:0;}
+ul,li{list-style:none;}
+/*柱状图样式*/
+.histogram-container{position:relative;margin-left:60px;margin-top:10px;margin-bottom:25px;}
+.histogram-bg-line{border:#999 solid;border-width:0 1px 1px 1px;border-right-color:#eee;overflow:hidden;width:99%;}
+.histogram-bg-line ul{overflow:hidden;border:#eee solid;border-width:1px 0 0 0;}
+.histogram-bg-line li{float:left;width:20%;/*根据.histogram-bg-line下的ul里面li标签的个数来控制比例*/overflow:hidden;}
+.histogram-bg-line li div{border-right:1px #eee solid;}
+.histogram-content{position:absolute;left:0px;top:0;width:99%;height:100%;}
+.histogram-content ul{height:100%;}
+.histogram-content li{float:left;height:100%;width:7%;/*根据直方图的个数来控制这个width比例*/text-align:center;position:relative;}
+.histogram-box{position:relative;display:inline-block;height:100%;width:20px;}
+.histogram-content li a{position:absolute;bottom:0;right:0;display:block;width:20px;}
+.histogram-content li .name{position:absolute;bottom:-20px;left:0px;white-space:nowrap;display:inline-block;width:100%;font-size:12px;}
+.histogram-y{position:absolute;left:-60px;top:-10px;font:12px/1.8 verdana,arial;}
+.histogram-y li{text-align:right;width:55px;padding-right:5px;color:#333;}
+.histogram-bg-line li div,.histogram-y li{height:60px;/*控制单元格的高度及百分比的高度，使百分数与线条对齐*/}
+</style>
+      </head>  
+      <body>  
+		<div class="histogram-container" id="histogram-container">
+    <!--背景方格-->
+    <div class="histogram-bg-line">
+        <ul>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+        </ul>
+        <ul>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+        </ul>
+        <ul>
+            <li><div>ef</div></li>
+            <li><div>ef</div></li>
+            <li><div>e</div></li>
+            <li><div>fe</div></li>
+        </ul>
+        <ul>
+            <li><div>ddd</div></li>
+            <li><div>sss</div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+        </ul>
+        <ul>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+            <li><div></div></li>
+        </ul>
+    </div>
+    <!--柱状条-->
+    <div class="histogram-content">
+        <ul>
+            <li>
+                <span class="histogram-box"><a style="height:20%;background:#2f87d9;" title="20%"></a></span>
+                <span class="name">百度一下</span>
+            </li>
+            <li>
+                <span class="histogram-box"><a style="height:40%;background:green;" title="40%"></a></span>
+                <span class="name">夜深风竹敲秋韵</span>
+            </li>
+            <li>
+                <span class="histogram-box"><a style="height:50%;background:orange;" title="50%"></a></span>
+                <span class="name">腾讯</span>
+            </li>
+            <li>
+                <span class="histogram-box"><a style="height:80%;background:gray;" title="80%"></a></span>
+                <span class="name">小虾虎鱼一下</span>
+            </li>
+            <li>
+                <span class="histogram-box"><a style="height:80%;background:gray;" title="80%"></a></span>
+                <span class="name">小虾虎鱼一下</span>
+            </li>
+        </ul>
+    </div>
+    <!--百分比 y轴-->
+    <div class="histogram-y">
+        <ul>
+            <li>100%</li>
+            <li>80%</li>
+            <li>60%</li>
+            <li>40%</li>
+            <li>20%</li>
+            <li>0%</li>
+        </ul>
+    </div>
+</div>
+    </body>  
+   </html>    

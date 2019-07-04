@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  toos: sequence alignment   -->
+
+<head>
+    <title>Similarity Search-Tools</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/private.css">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/public.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script language="JavaScript" src="http://dramp.cpu-bioinfor.org/lazysheep/js/bootstrap.js"></script>
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="lazysheep">
+    <div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="http://dramp.cpu-bioinfor.org">DRAMP</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-left:30px;">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://dramp.cpu-bioinfor.org/search/simple_search.html">Simple search</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org/search/advanced_search.html">Advanced search</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://dramp.cpu-bioinfor.org">General</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org">Patent</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org">Clinical</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org">Physicochemical</a></li>
+            </ul>
+          </li>
+          <li class="dropdown active">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tools <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="http://dramp.cpu-bioinfor.org/tools/similarity-search.html">Similarity search</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org/tools/prediction.html">Prediction</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org/tools/cd-search.html">CD Search</a></li>
+              <li><a href="http://dramp.cpu-bioinfor.org/tools/">Sequence Alignment</a></li>
+            </ul>
+          </li>
+          <li><a href="http://dramp.cpu-bioinfor.org/statistic/statistic.html">Statistics</a></li>
+          <li><a href="http://dramp.cpu-bioinfor.org/download/">Downloads</a></li>
+          <li><a href="http://dramp.cpu-bioinfor.org/statistic/quicklink.html">Quicklink</a></li>
+          <li><a href="http://dramp.cpu-bioinfor.org/statistic/help.html">Help</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Join</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Submit <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Patent</a></li>
+              <li><a href="#">Clinical</a></li>
+              <li><a href="#">Physicalchemical</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Plant</a></li>
+              <li><a href="#">Bacterial</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="http://dramp.cpu-bioinfor.org">Home</a></li>
+            <li><a href="http://dramp.cpu-bioinfor.org/tools/similarity-search.html">Tools</a></li>
+            <li class="active">Similarity Search</li>
+        </ol>
+    </div>
+    <div class="row mt40">
+        <div class="col-md-3 mt30">
+            <div class="row">
+        <div class="panel panel-success">
+            <div class="panel-heading">Tools</div>
+            <div class="panel-footer">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="http://dramp.cpu-bioinfor.org/tools/similarity-search.html">Similarity search</a></li>
+                        <li><a href="http://dramp.cpu-bioinfor.org/tools/prediction.html">Prediction</a></li>
+                        <li><a href="http://dramp.cpu-bioinfor.org/tools/cd-search.html">CD Search</a></li>
+                        <li><a href="http://dramp.cpu-bioinfor.org/tools/">Sequence Alignment</a></li>
+                    </ul>
+            </div>
+            </div>
+      </div>
+
+            <div class="row">
+        <div class="panel panel-info">
+            <div class="panel-heading">Browse</div>
+            <div class="panel-footer">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="http://dramp.cpu-bioinfor.org/browse/GeneralData.php">General Data</a></li>
+                    <li><a href="http://dramp.cpu-bioinfor.org/browse/PatentData.php">Patent Data</a></li>
+                    <li><a href="http://dramp.cpu-bioinfor.org/browse/ClinicalTrialsData.php">Clinical Data</a></li>
+                    <li><a href="http://dramp.cpu-bioinfor.org/browse/PhysicochemicalData.php">Physicochemical Data</a></li>
+                </ul>
+            </div>
+        </div>
+            </div>
+
+        </div>
+
+   <!-- the content -->
+
+        <div class="col-md-offset-1  col-md-8 mt30" >
+
+            <div class="row highlight">
+
+            <ul class="nav nav-tabs nav-justified" id="myTab">
+                <li class="active"><a href="#blast" data-toggle="tab">Blast</a></li>
+                <li><a href="#ssearch" data-toggle="tab">Ssearch</a></li>
+                <li><a href="#fasta" data-toggle="tab">FASTA</a></li>
+            </ul>
+                
+            <!-- Tab panes -->
+            <div class="col-md-12" style="background:white;">
+
+            <div class="tab-content" style="padding-top:40px; padding-bottom:30px;" >
+            <div class="tab-pane  active" id="blast">
+                <!-- begin for form  -->
+          <div class="col-md-12" sytle="background:white;">
+          <form method="get" action="http://dramp.cpu-bioinfor.org/cgi-bin/seq-search/simi-search.cgi">
+
+             <div class="form-group">
+                 <label for="seq_one">Sequence One (FASTA)</label>
+                 <input type="text"  name="simi_area" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter sequence">
+             </div>
+
+             <div class="form-group mt20">
+                  <label for="InputFile">Or,upload a file</label>
+                  <input type="file" id="exampleInputFile" >
+             </div>     
+
+             <div class="form-group mt20">
+                            <label for="seq_two">Scoring Matrix</label>
+                            <select class="form-control input-lg" name="matrix">
+                      
+                                <option value="BLOSUM45">BLOSUM45</option>
+                                <option value="BLOSUM50">BLOSUM50</option>
+                                <option value="BLOSUM62" selected="selected">BLOSUM62</option>
+                                <option value="BLOSUM80">BLOSUM80</option>
+                                <option value="BLOSUM90">BLOSUM90</option>
+                                <option value="PAM30">PAM30</option>
+                                <option value="PAM70">PAM70</option>
+                                <option value="PAM250">PAM250</option>
+                                
+                            </select>
+             </div>
+
+             <div class="form-group mt20">
+                            <label for="seq_two"> Database</label>
+                            <select class="form-control input-lg" name="database">
+                      
+                                <option value="DRAMP">DRAMP</option>
+                                <option value="DRAMP">UniProtKB/Swiss-Prot</option>
+                                <option value="DRAMP">Protein Structure Sequence(PDB)</option>
+                                               
+                            </select>
+             </div>
+
+                  <button type="submit" class="btn btn-success btn-lg btn-block mt30">Submit</button>
+                  <button type="reset" class="btn btn-success btn-lg btn-block">Reset</button>
+                  <input type="hidden" name="tool_name" value="fm_blast">
+ 
+          </form>
+          </div>
+            </div>
+            <div class="tab-pane fade" id="ssearch">
+          <div class="col-md-12" sytle="background:white;">
+          <form method="get" action="http://dramp.cpu-bioinfor.org/cgi-bin/seq-search/simi-search.cgi">
+
+             <div class="form-group">
+                 <label for="seq_one">Sequence (FASTA)</label>
+                 <input type="text"  name="simi_area" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter sequence">
+             </div>
+
+             <div class="form-group mt20">
+                  <label for="InputFile">Or,upload a file</label>
+                  <input type="file" id="exampleInputFile">
+             </div>     
+
+             <div class="form-group mt20">
+                            <label for="seq_two">Scoring Matrix</label>
+                            <select class="form-control input-lg" name="matrix">
+
+                    <option value="BLOSUM50">BLOSUM50</option>
+                    <option value="BLOSUM60">BLOSUM60</option>
+                    <option value="BLASTP62" selected="selected">BLASTP62</option>
+                    <option value="BLOSUM80">BLOSUM80</option>
+                    <option value="PAM120">PAM120</option>
+                    <option value="PAM250">PAM250</option>
+                    <option value="MDM10">MDM10</option>
+                    <option value="MDM20">MDM20</option>
+                    <option value="MDM40">MDM40</option>
+                    
+                            </select>
+             </div>
+
+             <div class="form-group mt20">
+                            <label for="seq_two">E-value upper limit</label>
+                            <select class="form-control input-lg" name="matrix">
+
+
+                    <option value="20.0">20.0</option>
+                    <option value="10.0">10.0</option>
+                    <option value="5.0">5.0</option>
+                    <option value="2.0">2.0</option>
+                    <option value="1.0">1.0</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.005">0.005</option>
+                    
+                    
+                            </select>
+             </div>
+
+             <div class="form-group mt20">
+                            <label for="seq_two">E-value lower limit</label>
+                            <select class="form-control input-lg" name="matrix">
+
+                    <option value="none">none</option>
+                    <option value="1e-10">1e-10</option>
+                    <option value="1e-8">1e-8</option>
+                    <option value="1e-6">1e-6</option>
+                    <option value="1e-4">1e-4</option>
+                    <option value="1e-2">1e-2</option>
+                    <option value="1">1</option>
+                    <option value="10">10</option>
+                    
+                            </select>
+             </div>
+
+             <div class="form-group mt20">
+                            <label for="seq_two">Alignments</label>
+                            <select class="form-control input-lg" name="matrix">
+
+
+                    <option value="10">10</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    
+                    
+                            </select>
+             </div>
+
+                  <button type="submit" class="btn btn-success btn-lg btn-block mt30">Submit</button>
+                  <button type="reset" class="btn btn-success btn-lg btn-block">Reset</button>
+                  <input type="hidden" name="align_name" value="matcherp">
+ 
+          </form>
+          </div>
+      </div>
+            <div class="tab-pane fade" id="fasta">
+          <div class="col-md-12" sytle="background:white;">
+          <form method="get" action="http://dramp.cpu-bioinfor.org/cgi-bin/seq-search/simi-search.cgi">
+
+             <div class="form-group">
+                 <label for="seq_one">Sequence (FASTA)</label>
+                 <input type="text"  name="simi_area" class="form-control input-lg" id="exampleInputEmail1" placeholder="Enter sequence">
+             </div>
+
+             <div class="form-group mt20">
+                  <label for="InputFile">Or,upload a file</label>
+                  <input type="file" id="exampleInputFile">
+             </div>     
+
+             <div class="form-group mt20">
+                            <label for="seq_two">Search</label>
+                            <select class="form-control input-lg" id="mySelect" name="methods">
+
+                    <option value="TiGRFAM">TiGRFAM</option>
+                    <option value="Pfam">Pfam</option>
+                    <option value="SMART" selected="selected">SMART</option>
+                    <option value="PTRSF">PTRSF</option>
+                    
+                            </select>
+             </div>
+
+             <div class="form-group mt20">
+                            <label for="seq_two">Alignment</label>
+                            <select class="form-control input-lg" id="myOption" name="methods">
+
+                    <option value="10">10</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    
+                            </select>
+             </div>
+
+
+                  <button type="submit" class="btn btn-success btn-lg btn-block mt30">Submit</button>
+                  <button type="reset" class="btn btn-success btn-lg btn-block">Reset</button>
+                  <input type="hidden" name="align_name" value="mutiple">
+ 
+          </form>
+          </div>
+
+
+
+
+
+      </div>    
+            </div>
+            </div>
+
+            
+
+
+
+        <div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

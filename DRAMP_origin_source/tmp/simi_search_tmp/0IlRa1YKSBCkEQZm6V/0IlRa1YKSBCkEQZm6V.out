@@ -1,0 +1,110 @@
+# ../../cgi-bin/seq-search/bin/ssearch35 -Q -s BL62 -b 10 -d 10 -E 20.0 -T 8 ../../tmp/simi_search_tmp/0IlRa1YKSBCkEQZm6V/0IlRa1YKSBCkEQZm6V.in ./database/DRAMP.fa
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+Query: ../../tmp/simi_search_tmp/0IlRa1YKSBCkEQZm6V/0IlRa1YKSBCkEQZm6V.in
+  1>>>sdafasdfsa - 23 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+       opt      E()
+< 20  3188     0:============================================================
+  22     2     0:=          one = represents 54 library sequences
+  24     4     0:=
+  26    21     0:=
+  28    54     4:*
+  30    84    25:*=
+  32   106    96:=*
+  34   454   260:====*====
+  36   271   534:======   *
+  38   639   883:============    *
+  40   888  1232:=================     *
+  42   987  1506:===================        *
+  44  1155  1661:======================        *
+  46  1323  1692:=========================      *
+  48  1427  1620:===========================  *
+  50  1194  1478:=======================    *
+  52  1212  1300:======================= *
+  54  1100  1110:====================*
+  56   809   927:===============  *
+  58   581   761:===========   *
+  60   548   617:===========*
+  62   632   494:=========*==
+  64   322   393:====== *
+  66   226   311:=====*
+  68   185   244:====*
+  70   135   192:===*
+  72    88   150:==*
+  74    74   117:==*
+  76    76    91:=*
+  78    62    71:=*
+  80    29    55:=*
+  82    23    42:*
+  84    21    33:*
+  86    28    26:*
+  88    17    20:*          inset = represents 1 library sequences
+  90    14    15:*
+  92    13    12:*         :===========*=
+  94     7     9:*         :======= *
+  96     7     7:*         :======*
+  98     5     6:*         :=====*
+ 100     1     4:*         :=  *
+ 102     0     3:*         :  *
+ 104     0     3:*         :  *
+ 106     0     2:*         : *
+ 108     0     2:*         : *
+ 110     1     1:*         :*
+ 112     0     1:*         :*
+ 114     0     1:*         :*
+ 116     0     1:*         :*
+ 118     0     0:          *
+>120     0     0:          *
+   517387 residues in 18013 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 3.9356+/-0.000416; mu= -2.4990+/- 0.014
+ mean_var=14.4180+/- 3.266, 0's: 3153 Z-trim: 3188  B-trim: 0 in 0/24
+ Lambda= 0.337770
+ statistics sampled from 18013 (18013) to 18013 sequences
+ Kolmogorov-Smirnov  statistic: 0.2137 (N=29) at  88
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.1 Aug 2009)
+Parameters: BL62 matrix (11:-4), open/ext: -7/-1
+ Scan time:  0.070
+
+The best scores are:                                      s-w bits E(18013)
+DRAMP17852                                         (  86)   38 23.0     4.3
+DRAMP09095                                         (  12)   26 18.1      18
+
+>>DRAMP17852                                              (86 aa)
+ s-w opt:  38  Z-score: 110.5  bits: 23.0 E(18013):  4.3
+Smith-Waterman score: 38; 42.1% identity (73.7% similar) in 19 aa overlap (1-19:29-47)
+
+                                           10        20            
+sdafas                             FSADVAVSDVSDAFVDSFSADFS         
+                                   .:  : : :..: :.::..             
+DRAMP1 MYYKIGDVCQKVINVDGFDFKLAVKKQDYSILVNVLDLEDRFIDSINITDENDLYTALDI
+               10        20        30        40        50        60
+
+DRAMP1 LNQSIYEWIEENTDERDRLINLVMRW
+               70        80      
+
+>>DRAMP09095                                              (12 aa)
+ s-w opt:  26  Z-score: 99.3  bits: 18.1 E(18013):   18
+Smith-Waterman score: 26; 58.3% identity (83.3% similar) in 12 aa overlap (6-17:1-11)
+
+               10        20   
+sdafas FSADVAVSDVSDAFVDSFSADFS
+            :: ::.:. .::      
+DRAMP0      AVHDVKDV-LDSV     
+                     10       
+
+
+
+23 residues in 1 query   sequences
+517387 residues in 18013 library sequences
+ Scomplib [36.05]
+ start: Fri Dec 13 22:44:24 2013 done: Fri Dec 13 22:44:24 2013
+ Total Scan time:  0.070 Total Display time:  0.000
+
+Function used was SSEARCH [version 36.05 March, 2010]

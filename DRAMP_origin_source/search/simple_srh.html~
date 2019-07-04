@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="simp_srh.css" rel="stylesheet" type="text/css" />
+<link href="../SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<script src="../SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+<script src="../SpryAssets/SpryDOMUtils.js" type="text/javascript"></script>
+</head>
+<body class="body_redesign">
+<div id="page">
+<div class="reposition">
+<div id="home"><a href="../index.html">Home</a></div>
+<div id="content">
+  <div id="content_bgtop">
+		  <div id="content_bgbtm">
+				<div class="post">
+					<h2>Simple Search<a href="../home/help.html#002"><img src="../images/help2.png" /></a></h2>
+					  <form  action="./simple_search.php" id="form1" name="form1" method="get" >
+                      <div class="upload">
+                        <p>Select an item:</p>
+            <select id="slt" name="slt">
+							<option value="DRAMP_ID">DRAMP ID</option>
+							<option value="Sequence">Sequence</option>
+							<option value="Source">Source</option>
+							<option value="`Swiss-Prot_Entry`">Swiss-prot Entry</option>
+							<option value="PDB_ID">PDB ID</option>
+							<option value="Pubmed_ID">Pubmed ID</option>
+							<option value="Reference">Reference Title</option>
+	            <option value="Patent_Title">Patent No</option>
+	            <option value="Stage_of_development">Clinical Trials.gov Identifier</option>
+						</select>
+                        </div>
+                        <div class="upload">
+                        <p>Please enter the approate content below.</p>
+			            <textarea name="txtarea" id="txtarea" cols="30" rows="5"></textarea>
+                        </div>
+                        <div class="upload">
+                        <input type="reset" name="upload_reset" id="upload_reset" value="Reset" />
+                        <input type="submit" name="upload_smt" id="upload_smt" value="Submit" />
+                        </div>
+			      </form>
+				</div>
+			</div>
+		</div>
+	</div>
+   
+	<!-- end #content -->
+<div id="logo_sidebar">
+    <div id="logo"><a href="../index.html"><img src="../images/logo.jpg" width="240" height="42" /></a>
+        <p><em>data respository of antimicrobial peptide</em></p>
+    </div>
+	<!-- end #logo -->
+          <div id="Accordion1" class="Accordion"  tabindex="0">
+            <div class="AccordionPanel">
+              <div class="AccordionPanelTab">About&nbsp;&nbsp;&nbsp;DRAMP</div>
+              <div class="AccordionPanelContent">
+              <p>RDAMP database is a manually curated data repository of anti microbial peptides, which currently contains ** AMPs.</p>
+               <p>Last updated on 24 May 2013.</p>
+                <p id="more"><a href="#">more>></a></p>
+              </div>
+            </div>
+<div class="AccordionPanel">
+        <div class="AccordionPanelTab">Search</div>
+              <div class="AccordionPanelContent">
+                <ul>
+                  <li><a href="simple_srh.html">Simple Search</a></li>
+                  <li><a href="adv_srh.html">Advanced Search</a></li>
+                </ul>
+              </div>
+            </div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Browse</div>
+  <div class="AccordionPanelContent">
+    <ul>
+      <li><a href="../browse/general.html">General Data</a></li>
+      <li><a href="../browse/physicochemical.html">Physicochemical Data</a></li>
+      <li><a href="../browse/clinic_trials.html">Clinical trials</a></li>
+      <li><a href="../browse/patent.html">Patent Data</a></li><a href="../browse/all_item.html" class="more">more>></a>
+    </ul>
+  </div>
+</div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Tools</div>
+  <div class="AccordionPanelContent">
+    <ul>
+        <li><a href="../tools/prediction.html">Prediction</a></li>
+        <li><a href="../tools/simi_search.html">Similarity Search</a></li>
+        <li><a href="../tools/alignment.html">Sequence Alignment</a></li>
+    </ul>
+  </div>
+</div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Others</div>
+  <div class="AccordionPanelContent">
+        <ul>
+        <li><a href="#">Statistics</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="../others/links.html">Links</a></li>
+        </ul>
+  </div>
+  </div>
+ </div>
+	<!-- end #Accordion1 -->
+    <div class="clearfloat"></div>
+  </div>
+  <!-- end #logo_sidebar-->
+ </div>
+	<!-- end #repositon -->
+    <div class="clearfloat"></div>
+	<div id="footer">
+		<p>Copyright (c)</p>
+	</div>
+	<!-- end #footer -->
+</div>
+ <!--end #page-->
+<script>
+var Accordion1;
+Spry.Utils.addLoadListener(function() {
+Accordion1 = new Spry.Widget.Accordion("Accordion1",1);
+});
+</script>
+</body>
+</html>

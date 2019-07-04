@@ -1,0 +1,40 @@
+<?php
+
+require_once 'public_mysql_tool.class.php';
+class EmpService {
+	
+	function getFenyepage($quick_key_word,$fengyePage){
+		$sqlHelper=new public_mysql_tool();
+		
+		$query_mysql1="SELECT RDAMP_ID,Peptide_Name,Sequence FROM peptide ";
+		$query_mysql2="
+		 WHERE RDAMP_ID LIKE '%$quick_key_word%' or 
+		Sequence LIKE  '%$quick_key_word%' or  
+		Squence_Length LIKE  '%$quick_key_word%' or  
+		Peptide_name LIKE  '%$quick_key_word%' or  
+		Gene LIKE  '%$quick_key_word%'  or 
+		Source LIKE  '%$quick_key_word%' or 
+		Biological_Activity LIKE  '%$quick_key_word%' or 
+		Structure LIKE  '%$quick_key_word%' or 
+		Structure_Description LIKE  '%$quick_key_word%' or 
+		PDB_ID LIKE  '%$quick_key_word%' or 
+		Comments LIKE  '%$quick_key_word%' or 
+		Target_Organism LIKE  '%$quick_key_word%' or 
+		Binding_Traget LIKE  '%$quick_key_word%' or 
+		`Swiss-Prot_Entry` LIKE  '%$quick_key_word%' or 
+		Pubmed_ID LIKE  '%$quick_key_word%' or 
+		Reference LIKE  '%$quick_key_word%' or 
+		Author LIKE  '%$quick_key_word%' or 
+		Title  LIKE  '%$quick_key_word%'";
+		
+		//$sql1="select RDAMP_ID,Peptide_Name,Sequence FROM peptide LIMIT "
+				//.($fengyePage->pageNow-1)*$fengyePage->pageSize.",".$fengyePage->pageCount;
+		$sql1=$query_mysql1.$query_mysql2."LIMIT ".($fengyePage->pageNow-1)*$fengyePage->pageSize.",".$fengyePage->pageSize;
+		$sql2="select count(RDAMP_ID) from peptide ".$query_mysql2;
+		
+		$sqlHelper->exectue_dql_fenye($sql1, $sql2, $fengyePage);
+	}
+
+	}
+
+?>

@@ -1,0 +1,7 @@
+# ./bin/ssearch35 -Q -s BP62 -b 10 -d 10 -E 20 -T 8 ../../temp/dyr_human.aa ../../tmp/FASTA.fa
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+

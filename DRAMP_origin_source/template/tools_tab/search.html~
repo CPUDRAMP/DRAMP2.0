@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Similarity-Search</title>
+<meta name="description" content="jQuery选项卡特效制作选项卡标签上下带按钮控制滚动切换选项卡的形式，选项卡切换过程中，对应的选项卡图片内容异步加载显示。当选项卡切换到最后或最前面时会提示用户信息。" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "宋体";}
+/* tabshow */
+.tabshow{width:750px;height:422px;position:relative;margin:40px auto;}
+.tabshow .hide{display:none;}
+.tabshow .udbtn,.tabshow .tabTagBox li{background:url(images/tab-all-bg-search.png) no-repeat;}
+.tabshow .udbtn{display:block;width:194px;height:35px;line-height:999em;overflow:hidden;}
+.tabshow .uPrev{background-position:0 -580px;}
+.tabshow .dNext{background-position:0 -615px;}
+.tabshow .tabTagBox{height:348px;width:194px;overflow:hidden;position:relative;z-index:9;margin:2px 0;}
+.tabshow .tabTagBox .tabTagList{position:absolute;left:0;height:999em;}
+.tabshow .tabTagBox li{float:left;width:193px;height:58px;line-height:99em;overflow:hidden;cursor:pointer;}
+.tabshow .tabTagBox li.current{width:194px;}
+.tabshow .tabTagBox li#tag01{background-position:-194px 0;}
+.tabshow .tabTagBox li#tag01.current{background-position:0 0;}
+.tabshow .tabTagBox li#tag02{background-position:-194px -58px;}
+.tabshow .tabTagBox li#tag02.current{background-position:0 -58px;}
+.tabshow .tabTagBox li#tag03{background-position:-194px -116px;}
+.tabshow .tabTagBox li#tag03.current{background-position:0 -116px;}
+.tabshow .tabTagBox li#tag04{background-position:-194px -174px;}
+.tabshow .tabTagBox li#tag04.current{background-position:0 -174px;}
+.tabshow .tabTagBox li#tag05{background-position:-194px -232px;}
+.tabshow .tabTagBox li#tag05.current{background-position:0 -232px;}
+.tabshow .tabTagBox li#tag06{background-position:-194px -290px;}
+.tabshow .tabTagBox li#tag06.current{background-position:0 -290px;}
+.tabshow .tabTagBox li#tag07{background-position:-194px -348px;}
+.tabshow .tabTagBox li#tag07.current{background-position:0 -348px;}
+.tabshow .tabTagBox li#tag08{background-position:-194px -406px;}
+.tabshow .tabTagBox li#tag08.current{background-position:0 -406px;}
+.tabshow .tabTagBox li#tag09{background-position:-194px -464px;}
+.tabshow .tabTagBox li#tag09.current{background-position:0 -464px;}
+.tabshow .tabTagBox li#tag10{background-position:-194px -522px;}
+.tabshow .tabTagBox li#tag10.current{background-position:0 -522px;}
+
+.tabshow .tabcon{position:absolute;top:0;right:0;z-index:1;border:solid 1px gray;background:#FCFCFC;height:500px;width:555px;overflow:hidden;}
+.tabshow .tabcon h2{height:30px;line-height:30px;font-size:14px;color:#333;padding:10px 0 10px 25px;}
+.tabshow .tabcon p{height:30px;line-height:30px;font-size:14px;color:#333;padding:10px 0 10px 25px;}
+.tabshow .tabcon textarea{height: 100px;width: 380px;resize: none;border: 1px solid rgb(51, 153, 153);}
+
+
+.tabshow .tabcon li{float:left;width:152px;height:177px;overflow:hidden;margin:0 0 10px 24px;display:inline;}
+.tabshow .tabcon li .pic{display:block;border:solid 1px #ddd;width:150px;height:150px;}
+.tabshow .tabcon li .pic:hover{border:solid 1px #C00F15;}
+.tabshow .tabcon li .tit{height:20px;line-height:20px;display:block;margin:5px 0 0 0;}
+.tabshow .tabcon li .tit a{font-size:12px;color:#5e5e5e;text-decoration:none;}
+
+.tabshow .tabcon .option{border: 1px dashed rgb(102, 102, 102);width: 350px;padding: 20px;margin-top: 25px;position: relative;}
+#option_title {
+    position: absolute;
+    top: -11px;
+    font-family: "Arial Black",Gadget,sans-serif;
+    color: rgb(255, 102, 0);
+    background: none repeat scroll 0% 0% rgb(255, 255, 204);
+}
+
+.option label {
+    float: left;
+    padding-top: 12px;
+    width: 120px;
+    font-size: 12px;
+}
+
+
+#btn_box {
+    padding-left: 210px;
+    margin-top: 20px;
+}
+
+
+</style>
+
+<div class="tabshow">
+	
+<div class="tabTagBox">
+		<ul class="tabTagList">
+			<li id="tag01" class="current"></li>
+			<li id="tag02">教育培训</li>
+			<li id="tag03">律所行业</li>
+		</ul>
+</div>
+	
+	<div class="tabcon">
+		<h2>Blast:</h2>
+		<div style="margin-left:50px;">
+			<form action="../../cgi-bin/seq-search/simi-search.cgi" method="get" name="blast">
+                    <p>Please paste your FASTA sequence here.</p>        
+                    <textarea name="simi_area"  cols="30" rows="3" wrap="virtual"></textarea>
+                    <br />
+                    <table summary="" >
+                    <tr><td><label id="file">Or, upload a file </label> </td><td><input type="file" name="simi_file" class="btn_file" /></td></tr>                                       
+						  </table>
+                       
+                    <div class="option">
+                    <div id="option_title">option</div>
+                    <table summary="" >
+
+
+                    <tr>
+                    <td><label>Matrix</label></td>
+                    <td>
+                    <select name="" >
+                    <option value="BLOSUM45">BLOSUM45</option>
+                    <option value="BLOSUM50" >BLOSUM50</option>
+                    <option value="BLOSUM62" selected="selected">BLOSUM62</option>
+                    <option value="BLOSUM80">BLOSUM80</option>
+                    <option value="BLOSUM90">BLOSUM90</option>
+                    <option value="PAM30">PAM30</option>
+                    <option value="PAM70">PAM70</option>
+                    <option value="PAM250">PAM250</option>
+                    </select>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><label>DataBase</label></td>
+                    <td>
+                    <select name="database">
+                    <option value="DRAMP">DRAMP</option>
+                    <option value="DRAMP">UniProtKB/Swiss-Prot</option>
+                    <option value="DRAMP">Protein Structure Sequence(PDB)</option>
+                    </select>
+                    </td>
+                    </tr>
+                    </table>
+                    </div>
+                    <div id="btn_box"> 
+                        <input type="hidden" value="fm_blast" name="tool_name" />              
+                        <input type="submit"  class="btn_smt" value="Submit"/>
+                        <input type="reset" class="btn_reset" value="Reset" />                       
+                    </div>
+			      </form>
+		</div>
+	</div>	
+	
+	<div class="tabcon hide">
+		<h2>Ssearch</h2>
+		<div style="margin-left:50px;">
+			 <form action="../../cgi-bin/seq-search/simi-search.cgi" method="get" name="sseach" enctype="multipart/form-data" >
+                    <p>Please paste your FASTA sequence here.</p>        
+                    <textarea name="simi_area"  cols="30" rows="3" wrap="virtual"></textarea><br />
+                    <table summary="" >
+                    <tr><td><label id="file">Or, upload a file </label> </td><td><input type="file" name="simi_file" class="btn_file" /></td></tr>
+                                           
+                        
+                    </table>
+                    <div class="option">
+                    <div id="option_title">option</div>
+                    <table summary="" >
+                    <tr>
+                    <td><label>Matrix</label></td>
+                    <td>
+                    <select name="" >
+                    <option value="BLOSUM50">BLOSUM50</option>
+                    <option value="BLOSUM60" >BLOSUM60</option>
+                    <option value="BLASTP62" selected="selected">BLASTP62</option>
+                    <option value="BLOSUM80">BLOSUM80</option>
+                    <option value="PAM120">PAM120</option>
+                    <option value="PAM250">PAM250</option>
+                    <option value="MDM10">MDM10</option>
+                    <option value="MDM20">MDM20</option>
+                    <option value="MDM40">MDM40</option>
+                    </select>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><label>E-value upper limit</label></td>		
+						  <td>                    
+                    <select name="">
+                    <option value="20.0">20.0</option>
+                    <option value="10.0">10.0</option>
+                    <option value="5.0">5.0</option>
+                    <option value="2.0">2.0</option>
+                    <option value="1.0">1.0</option>
+                    <option value="0.5">0.5</option>
+                    <option value="0.2">0.2</option>
+                    <option value="0.1">0.1</option>
+                    <option value="0.005">0.005</option>
+                    </select> 
+						  </td>
+						  </tr>
+						  <tr>
+                    <td><label>E-value lower limit</label></td>
+                    <td>
+                    <select name="">
+                    <option value="none">none</option>
+                    <option value="1e-10">1e-10</option>
+                    <option value="1e-8">1e-8</option>
+                    <option value="1e-6">1e-6</option>
+                    <option value="1e-4">1e-4</option>
+                    <option value="1e-2">1e-2</option>
+                    <option value="1">1</option>
+                    <option value="10">10</option>
+                    </select>
+                    </td>
+						  </tr>
+						  <td>
+                    <td><label>Alignments</label></td>
+                    <td>
+                    <select name="">
+                    <option value="10">10</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    </select> 
+                    </td>
+                    </tr>
+                    </table>
+                    </div>
+                    <div id="btn_box"> 
+                        <input type="hidden" value="fm_ssearch" name="tool_name" />              
+                        <input type="submit"  class="btn_smt" value="Submit"/>
+                        <input type="reset" class="btn_reset" value="Reset" />                       
+                    </div>
+			      </form>
+		</div>
+	</div>
+	
+	<div class="tabcon hide">
+		<h2>HmmPfam:</h2>
+		<div style="margin-left:50px;">
+			<form action="" method="get" name="hmmPfam">
+                    <p>Please paste your FASTA sequence here.</p>        
+                    <textarea name="simi_area"  cols="30" rows="3" wrap="virtual"></textarea><br />
+                    <table summary="" >
+                    <tr>
+                        <td><label id="file">Or, upload a file </label></td>                   
+                        <td><input type="file" name="simi_file" class="btn_file" /></td>
+                    </tr>
+                    </table>
+                    <div class="option">
+                    <div id="option_title">option</div>
+						  <table summary="" >                  
+                    <tr>
+                    <td><label>Search</label></td>
+                    <td>
+                    <select name="" >
+                    <option value="TiGRFAM">TiGRFAM</option>
+                    <option value="Pfam" >Pfam</option>
+                    <option value="SMART" selected="selected">SMART</option>
+                    <option value="PTRSF">PTRSF</option>
+                    </select>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td><label>Alignments</label></td>
+                    <td>
+                    <select name="">
+                    <option value="10">10</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="70">70</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1000</option>
+                    </select> 
+                    </td>
+                    </tr>
+                    </table>
+                   </div>
+                    <div id="btn_box"> 
+                        <input type="hidden" value="fm_blast" name="tool_name" />              
+                        <input type="submit"  class="btn_smt" value="Submit"/>
+                        <input type="reset" class="btn_reset" value="Reset" />                       
+                    </div>
+			      </form>
+		
+		</div> 
+		
+	</div>
+
+
+</div><!--tabshow end-->
+
+
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/lazyload.js"></script>
+<script type="text/javascript">
+//选项卡与延迟插件结合
+$(function(){
+	$("img[original]").lazyload({ placeholder:"http://www.jsfoot.com/skinnew/images/color3.gif" });
+});
+
+function lazyloadForPart(container){
+    container.find('img').each(function(){
+        var original = $(this).attr("original");
+        if (original) {
+            $(this).attr('src', original).removeAttr('original');
+        }
+    });
+}
+
+$(function(){           
+	
+	var navBox = $('.tabTagBox'), navList = $('.tabTagList'), navs = navList.children('li'), upBtn = $('.uPrev'), downBtn = $('.dNext'), contentBoxs = $('.tabcon');
+	
+	var opts = {
+		moveH: 58,
+		moveSpeed: 200,
+		curMoveH: 0,
+		curSumH: 0,
+		curNavIndex: 0
+	}
+	
+	opts.curSumH = (opts.moveH * navs.size()) - navBox.height();
+	
+	var navToContentBox = function () {
+		navs.removeClass('current');
+		contentBoxs.hide().eq(opts.curNavIndex).show();
+	}
+	
+	var navMove = function () {
+		
+		var _arg = arguments.length > 0 ? arguments[0] : '';
+		
+		if (_arg === 'up') {
+			if (-opts.curSumH === opts.curMoveH) {
+				alert('温馨提示：其他行业敬请期待！');
+				return;
+			}
+			opts.curMoveH -= opts.moveH;
+			opts.curNavIndex += 1;
+		}
+		
+		if (_arg === 'down') {
+			if (opts.curMoveH === 0) {
+				alert('温馨提示：其他行业敬请期待！');
+				return;
+			}
+			opts.curMoveH += opts.moveH;
+			opts.curNavIndex -= 1;
+		}
+		
+		navToContentBox();
+		navs.eq(opts.curNavIndex).addClass('current');
+		navList.animate({ top: opts.curMoveH + 'px' }, opts.moveSpeed);
+		lazyloadForPart(contentBoxs);
+	}
+	
+	upBtn.click(function () {
+		navMove('down');
+	});
+	
+	downBtn.click(function () {
+		navMove('up');
+	});
+	
+	navs.click(function () {
+		opts.curNavIndex = $(this).index();
+		navToContentBox();
+		$(this).addClass('current');
+		lazyloadForPart(contentBoxs);
+	});
+	
+});
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

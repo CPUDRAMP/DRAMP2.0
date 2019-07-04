@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+use strict;
+
+use CGI;
+
+my $pen = new->CGI();
+
+
+my $par=$pen->param();
+

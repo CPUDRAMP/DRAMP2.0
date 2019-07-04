@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仿taobao拼音检索效果 - 阿里西西 网页特效演示页</title>
+<style type="text/css">
+ *{ margin:0;padding:0;}
+ body{ font:normal 12px Verdana, Arial, Helvetica, sans-serif; text-align:center;}
+ #warpper{ position:absolute; left:100px; top:100px;}
+ h5{ float:left;}
+ a{ text-decoration:underline; cursor:pointer; font-weight:bold;}
+ dl{ height:18px; line-height:18px; background:#f7f7f7; padding:0 10px;}
+ dt,.normal{ float:left; padding:0 10px; border-right:1px solid #ccc; text-decoration:none; width:auto; cursor:pointer;}
+ dt.over{ position:relative;border:1px solid #86e5f0; padding:0 10px 15px 10px; border-bottom:1px solid #caf1f1; margin:-1px 0 0 -1px; z-index:1000; color:#ff6026; text-decoration:underline; background:#caf1f1; height:22px; }
+ li{ float:left; list-style-type:none; margin:5px 10px; width:120px;}
+ dl dd{ position:absolute; width:500px; left:0;top:37px!important; border:1px solid #86e5f0; background:#caf1f1; filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=120, color=#cccccc); padding:10px 0;}
+ .block{ display:block;}
+ .none{ display:none;}
+</style>
+<script language="javascript">
+ function $(str){ return document.getElementById(str);}
+ function $$(str){ return document.getElementsByTagName(str);}
+ var timer;
+ function changeMenu(thisObj,num){
+  if(thisObj.className=="over") return false;
+  hids(thisObj);
+  thisObj.className="over";
+  $("c"+(num+1)).className="block";
+  
+  $("c"+(num+1)).onmouseover=function(){clearTimeout(timer);}
+  $("c"+(num+1)).onmouseout=function(){timer=setTimeout(function(){hids(thisObj);},500)}
+  thisObj.onmouseout=function(){timer=setTimeout(function(){hids(thisObj);},3000)}
+  
+ }
+ function hids(thisObj){
+  clearTimeout(timer);
+  var tabObj=thisObj.parentNode.getAttribute("id");
+  var obj_dt=$(tabObj).getElementsByTagName("dt");
+  for(var i=0;i<obj_dt.length;i++){
+   obj_dt[i].className="normal";
+   $("c"+(i+1)).className="none";
+  }
+ }
+</script>
+</head>
+<body>
+ <dl id="warpper">
+  <h5>拼音检索：</h5>
+  
+  <dt onmouseover="changeMenu(this,0);"><a href="http://www.baidu.com">Home</a></dt>
+  <dd id="c1" class="none">
+   <ul>
+    <li><a herf="http://www.alixixi.com">阿里西西</a></li>
+    <li><a herf="#">AEE/爱意</a></li>
+    <li><a herf="#">AF</a></li>
+    <li><a herf="#">AF棒球帽</a></li>
+    <li><a herf="#">Agatha</a></li>
+    <li><a herf="#">Albion/奥尔滨</a></li>
+    <li><a herf="#">AMD</a></li>
+    <li><a herf="#">Andox</a></li>
+    <li><a herf="#">Artini</a></li>
+    <li><a herf="#">爱普生</a></li>
+   </ul>
+  </dd>
+  
+  <dt onmouseover="changeMenu(this,1);">Search</dt>
+  <dd id="c2" class="none">
+   <ul>
+    <li><a herf="http://www.alixixi.cn">Simple Search</a></li>
+    <li><a herf="http://js.alixixi.com">Advanced Search</a></li>
+    <li><a herf="http://down.alixixi.com">Conserved Domain Search</a></li>
+
+   </ul>
+  </dd>
+  
+  <dt onmouseover="changeMenu(this,2);">Tools</dt>
+  <dd id="c3" class="none">
+   <ul>
+    <li><a herf="#">Similarity Search</a></li>
+    <li><a herf="#">Advanced Search</a></li>
+    <li><a herf="#">Conserved Domain Search</a></li>
+   </ul>
+  </dd>
+  
+  <dt onmouseover="changeMenu(this,3);">d</dt>
+  <dd id="c4" class="none">
+   <ul>
+    <li><a herf="#">fasfs</a></li>
+    <li><a herf="#">fsdfsd</a></li>
+    <li><a herf="#">fdsfas</a></li>
+    <li><a herf="#">fasdffsd</a></li>
+   </ul>
+  </dd>
+  
+  <dt onmouseover="changeMenu(this,4);">e</dt>
+  <dd id="c5" class="none">
+   <ul>
+    <li><a herf="#">fasfs</a></li>
+    <li><a herf="#">fsdfsd</a></li>
+    <li><a herf="#">fdsfas</a></li>
+    <li><a herf="#">fasdffsd</a></li>
+    <li><a herf="#">fasdfsaf</a></li>
+   </ul>
+  </dd>
+  
+  <dt onmouseover="changeMenu(this,5);">f</dt>
+  <dd id="c6" class="none">
+   <ul>
+    <li><a herf="http://www.alixixi.cn">网页模板</a></li>
+    <li><a herf="http://js.alixixi.com">特效代码</a></li>
+    <li><a herf="http://down.alixixi.com">源码下载</a></li>
+   </ul>
+  </dd>
+ </dl>
+<a>dfasdfsadf</a>
+</body>
+</html>

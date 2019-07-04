@@ -1,0 +1,311 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="SHORTCUT ICON" href="http://www.ebi.ac.uk/bookmark.ico" />
+<link rel="alternate" type="application/rss+xml" title="SRS@EBI News" href="/srs/news/srs/news.rss" />
+<link rel="alternate" type="application/rss+xml" title="SRS@EBI Databank Updates" href="http://srs.ebi.ac.uk/srsbin/wgetz?-page+databanksRss" />
+<TITLE>Tool Invocation</TITLE>
+<link rel="stylesheet"  href="http://www.ebi.ac.uk/inc/css/contents.css"     type="text/css" />
+<link type="text/css" rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/mitigation/develop/ebi-mitigation.css"/>
+<link type="text/css" rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/mitigation/develop/embl-petrol-colours.css"/>
+<script defer="defer" src="//www.ebi.ac.uk/web_guidelines/js/cookiebanner.js"></script>
+<script defer="defer" src="//www.ebi.ac.uk/web_guidelines/js/foot.js"></script>
+<link rel="stylesheet" href="/srs/styles/quick.css">
+<style type="text/css">
+@media print {
+     body, .contents, .headerdiv, .footer {
+         position: relative;
+     }
+}
+</style>
+<script language="JavaScript">
+function newWindow(url) {
+  window.open(url, "sideWin", 
+          'toolbar=no,location=no,scrollbars=yes,resizable=yes')
+}
+
+function newWindow2(url) {
+  var hw=window.open(url, "sideWin2", 'toolbar=yes,location=yes,scrollbars=yes,status=yes,menubar=yes,resizable=yes,personalbar=yes')
+  hw.focus()
+}
+
+function subgif(form, addEl) {
+  form.elements[form.elements.length-1].name = addEl
+  form.submit() 
+}
+function clearForm() {
+document.forms[1].reset()
+}
+function changeGifDown(form, name, elt) {
+  var tmp 
+  var front
+  var docsrcList = document.images[0].src.split("/")
+  listlen = docsrcList.length
+  front = ""
+  for (var j=0; j<listlen-1; j++) {
+    front += docsrcList[j] + "/"    
+  }
+  if (docsrcList[j] != "default") front += "default/" 
+  var gifName = front + name + "_up.png"
+  for (var i=0; i<document.images.length;i++) {
+    tmp = document.images[i]
+    if (tmp.src == gifName) {
+      tmp.src = front + name + "_down.png"
+      break
+    }
+  }
+}
+function changeGifUp(form, name) {
+  var tmp 
+  var front
+  var docsrcList = document.images[0].src.split("/")
+  listlen = docsrcList.length
+  front = ""
+  for (var j=0; j<listlen-1; j++) {
+    front += docsrcList[j] + "/"    
+  }
+  if (docsrcList[j] != "default") front += "default/"  
+  var gifName = front + name + "_down.png"
+  for (var i=0; i<document.images.length;i++) {
+    tmp = document.images[i]
+    if (tmp.src == gifName) {
+      tmp.src = front + name + "_up.png"
+      break
+    }
+  }
+}
+
+// Use a distinct style for external links
+function checkLinks() {
+  var host = location.host;
+  for (var i=0; i<document.links.length; i++) {
+ 	if (
+      (document.links[i].href.match(host) == null) &&
+      (document.links[i].href.match('http://[0-9A-Za-z]+.embl.org') == null) &&
+      (document.links[i].href.match('http://[0-9A-Za-z]+.ebi.ac.uk') == null) &&
+      (document.links[i].href.match('javascript') == null) &&
+      (document.links[i].href.match('mailto') == null)
+    ) {
+      document.links[i].setAttribute("style", 'font-weight: bold; color: #e33e3e');
+      document.links[i].style.color='#e33e3e';
+      document.links[i].style.fontWeight='bold';
+      if(document.links[i].title == null || document.links[i].title == '') {
+        document.links[i].title = 'External to SRS@EMBL-EBI';
+      } else {
+        document.links[i].title=document.links[i].title + ' (External to SRS@EMBL-EBI)';
+      }
+    }
+  }
+}
+
+// http connection object for job status
+var httpConnectionB;
+
+// Get current job status and set tab accordingly
+function getBatchJobStatusAndUpdate() {
+  var currDate = new Date();
+  var url = 'http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-id+21ApI1ifEUi+-ascii+-page+jobStatus+'+currDate.getMilliseconds();
+  // code for Mozilla, etc.
+  if (window.XMLHttpRequest) {
+    httpConnectionB = new XMLHttpRequest();
+  } else if (window.ActiveXObject) {
+    httpConnectionB = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  // Get the page (synchronous)
+  /* if(httpConnectionB) {
+    httpConnectionB.open('GET', url, false);
+    httpConnectionB.send(null);
+    getBatchJobStatusAndUpdateCallBack();
+  } */
+  // Get the page (asynchronous)
+  if(httpConnectionB) {
+    httpConnectionB.onreadystatechange = getBatchJobStatusAndUpdateCallBack;
+    httpConnectionB.open('GET', url, true);
+    httpConnectionB.send(null);
+  }
+}
+
+// Set the tab to the correct state for the current status
+function getBatchJobStatusAndUpdateCallBack() {
+  if(httpConnectionB.readyState==4) {
+    if(httpConnectionB.status==200) {
+      tmpStr = httpConnectionB.responseText;
+      if(tmpStr.search(/<TITLE>SRS error<\/TITLE>/) < 0) {
+        resultList = tmpStr.split(/\n/);
+        statusList = resultList[0].split(/\t/);
+        if(statusList[2] > 0) {
+          document['JobStatusTab'].src='/srs/images/jobs_running.png';
+          document['JobStatusTab'].alt=statusList[2]+' of '+statusList[0]+' jobs running';
+          document['JobStatusTab'].title=statusList[2]+' of '+statusList[0]+' jobs running';
+        } else if(statusList[0] > 0) {
+          document['JobStatusTab'].src='/srs/images/jobs_done.png';
+          document['JobStatusTab'].alt=statusList[1]+' of '+statusList[0]+' jobs done';
+          document['JobStatusTab'].title=statusList[1]+' of '+statusList[0]+' jobs done';
+          clearInterval(statusPoll);
+        } else {
+          document['JobStatusTab'].src='/srs/images/jobs_status.png';
+          document['JobStatusTab'].alt='No jobs have been run';
+          document['JobStatusTab'].title='No jobs have been run';
+          clearInterval(statusPoll);
+        }
+      }
+    }
+  }
+}
+
+// Check batch jobs status every 60s
+var statusPoll = setInterval(getBatchJobStatusAndUpdate, 60000);
+
+// Body onLoad event
+function srsBodyOnload() {
+  if(navigator.userAgent.indexOf('MSIE') != -1) {
+    document.getElementById('head').allowTransparency = true;
+  }
+  checkLinks();
+  getBatchJobStatusAndUpdate();
+}
+</script>
+<script language="JavaScript">
+function fill () {
+   var form = document.forms[1];
+   var len = form.elements.length;
+   if ( !0 ) return;
+   for( i=0; i < len; i++ ){
+     var tmp=form.elements[i];
+     if ( tmp.name == "refreshResults" && tmp.value == "1" )
+        location = "http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-id+21ApI1ifEUi+-vn+0+-page+qResult+-qfrom+pageQuery+-lv+10+[SSEARCH-JobName:temp_job11]"
+   }
+}
+</script>
+
+</HEAD>
+<BODY marginwidth="0" marginheight="0" leftmargin="0" topmargin="0" rightmargin="0" bottommargin="0" BGCOLOR="#FFFFFF" onLoad="srsBodyOnload();fill();"
+ link="#0000ff" onload="srsBodyOnload();">
+<div class="headerdiv" id="headerdiv">
+  <div class="header">
+    <div id="global-masthead" class="masthead grid_24">
+      <!--This has to be one line and no newline characters-->
+      <a href="//www.ebi.ac.uk/" title="Go to the EMBL-EBI homepage"><img src="//www.ebi.ac.uk/web_guidelines/images/logos/EMBL-EBI/EMBL_EBI_Logo_white.png" alt="EMBL European Bioinformatics Institute" /></a>
+
+      <div class="nav">
+        <ul id="global-nav">
+          <!-- set active class as appropriate -->
+          <li class="first active" id="services"><a href="//www.ebi.ac.uk/services">Services</a></li>
+          <li id="research"><a href="//www.ebi.ac.uk/research">Research</a></li>
+          <li id="training"><a href="//www.ebi.ac.uk/training">Training</a></li>
+          <li id="industry"><a href="//www.ebi.ac.uk/industry">Industry</a></li>
+          <li id="about" class="last"><a href="//www.ebi.ac.uk/about">About us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="local-masthead" class="masthead grid_24">
+
+      <!-- local-title -->
+      <!-- NB: for additional title style patterns, see http://frontier.ebi.ac.uk/web/style/patterns -->
+
+      <div class="grid_24 alpha omega" id="local-title">
+				<h1><a href="/" title="Back to SRS@EMBL-EBI homepage">SRS@EMBL-EBI</a></h1>
+      </div>
+      
+      <!-- /local-title -->
+
+    </div>
+  </div>
+</div>
+<div class="contents" id="contents">
+<table class="contentspane" id="contentspane" summary="The main content pane of the page">
+<tr>
+<td class="contentsarea" id="contentsarea">
+<!-- InstanceBeginEditable name="contents" -->
+<FORM id="srs_form" name="srs_form" method=POST action=http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz>
+<INPUT TYPE=hidden NAME="@@sub~" VALUE=1>
+<INPUT TYPE=hidden NAME=userId VALUE=21ApI1ifEUi>
+<TABLE border=0 cellspacing=0 cellpadding=0 WIDTH="100%" bgcolor="#efefef">
+<TR>
+<TD BGCOLOR="#efefef" VALIGN="top"><IMG border=0 ALIGN=center  SRC="/srs/images/default/top-inactive.gif" usemap="#topGif" ><map name="topGif"><area shape="rect" coords="0,0,97,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+quickSearch+-id+21ApI1ifEUi" alt="Quick Search" title="Quick Search"><area shape="rect" coords="96,4,193,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+top+-id+21ApI1ifEUi" alt="Select Databanks to Search" title="Select Databanks to Search"><area shape="rect" coords="194,4,291,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+query+-id+21ApI1ifEUi" alt="Create your Query" title="Create your Query"><area shape="rect" coords="291,4,388,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+applSelect+-id+21ApI1ifEUi" alt="Use Analysis Tools" title="Use Analysis Tools"><area shape="rect" coords="388,4,485,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+results+-id+21ApI1ifEUi" alt="Manage your Query Results" title="Manage your Query Results"><area shape="rect" coords="485,4,582,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+sessions+-id+21ApI1ifEUi" alt="Manage your Projects" title="Manage your Projects"><area shape="rect" coords="582,4,679,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+viewMan1+-id+21ApI1ifEUi+-libList+reset" alt="Create Custom Views" title="Create Custom Views"><area shape="rect" coords="679,4,776,22" href="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+databanks+-id+21ApI1ifEUi" alt="DataBanks Information Page" title="DataBanks Information Page"><area shape="rect" coords="796,7,828,19" href="javascript:newWindow2('/srs/doc/index.html')" alt="Help Page" title="Help Page"></map></TD>
+<TD BGCOLOR="#efefef" VALIGN="top" ALIGN="right"><A HREF="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-id+21ApI1ifEUi+-page+batchJobStatus"><IMG ALIGN=center BORDER=0 SRC="/srs/images/jobs_running.png" name="JobStatusTab"  alt="There are running jobs" title="There are running jobs" ></A></TD>
+</TR>
+<TR>
+<TD BGCOLOR="#316363" HEIGHT="2" VALIGN="top" COLSPAN="2"><IMG border=0 ALIGN=left  SRC="/srs/images/null.gif" height=1 ></TD>
+</TR>
+</TABLE>
+<TABLE border=0 cellspacing=0 cellpadding=0 WIDTH="100%">
+<TR>
+<TD HEIGHT="2" VALIGN="top"><IMG border=0 ALIGN=left  SRC="/srs/images/null.gif" height=1 ></TD>
+</TR>
+</TABLE>
+<TABLE border=0 cellspacing=0 cellpadding=0 WIDTH="100%">
+<TR>
+<TD VALIGN="top" ALIGN="center"><BR>
+<FONT face="verdana,helvetica,arial,sans-serif"><B>Tool was submitted to Queue:normal -R 'sss order[p_fasta:r15s:pg] span[hosts=1]' -n 4 -L /bin/sh(batch).</B><BR>
+Tool command:<BR><TEXTAREA COLS=80 WRAP=OFF ROWS=1 
+ >/ebi/extserv/bin/fasta-35.4.12/ssearch35_t -Q   -L -l "/ebi/services/idata/latest/fastacfg/fasta3db" -f -12 -g -2 -b 100 -d 100  -E 10   -T 8 ./temp_ssearch_11_in '+uniprotkb+' > temp_job11.ssearch
+</TEXTAREA>
+<BR>
+Use <i> Batch job status page </i> to view the
+<A   HREF="http://srs.ebi.ac.uk/srsbin/cgi-bin/wgetz?-page+batchJobStatus+-id+21ApI1ifEUi">results</A>
+
+</TD>
+</TR>
+</TABLE>
+   
+<INPUT TYPE=hidden NAME="@@sub~" VALUE=1>
+</FORM>
+<!-- InstanceEndEditable -->
+</td>
+</tr>
+</table>
+</div>
+            <table class="footerpane" id="footerpane" summary="The main footer pane of the page">
+                <tr>
+                    <td colspan ="4" class="footerrow">
+<div class="footerdiv" id="footerdiv">
+  <div class="footer">
+    <!-- Optional local footer (insert citation / project-specific copyright / etc here -->
+    <div id="local-footer" class="grid_24 clearfix">
+      <p>SRS Release 7.1.3.2 <a href="/srs/SRScopyright.html">Copyright</a> &copy; 1997-2003 LION bioscience AG. All Rights Reserved.</p>
+    </div>
+    <!-- End optional local footer -->
+
+    <div id="global-footer" class="grid_24 clearfix">
+      <div class="nav" id="global-nav-expanded">
+        <div class="grid_4 alpha">
+          <h3 class="embl-ebi"><a href="//www.ebi.ac.uk/" title="Go to the EMBL-EBI homepage">EMBL-EBI</a></h3>
+        </div>
+
+        <div class="grid_4">
+        <h3 class="services"><a href="//www.ebi.ac.uk/services">Services</a></h3>
+        </div>
+        
+        <div class="grid_4">
+          <h3 class="research"><a href="//www.ebi.ac.uk/research">Research</a></h3>
+        </div>
+        
+        <div class="grid_4">
+          <h3 class="training"><a href="//www.ebi.ac.uk/training">Training</a></h3>
+        </div>
+        
+        <div class="grid_4">
+          <h3 class="industry"><a href="//www.ebi.ac.uk/industry">Industry</a></h3>
+        </div>
+        
+        <div class="grid_4 omega">
+          <h3 class="about"><a href="//www.ebi.ac.uk/about">About us</a></h3>
+        </div>
+      </div>
+
+      <div class="section" id="ebi-footer-meta">
+        <p class="address">EMBL-EBI, Wellcome Trust Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK &nbsp; &nbsp; +44 (0)1223 49 44 44</p>
+        <p>Copyright &copy; EMBL-EBI 2013 | EBI is an outstation of the <a href="http://www.embl.org">European Molecular Biology Laboratory</a> | <a href="/about/privacy">Privacy</a> | <a href="/about/cookies">Cookies</a> | <a href="/about/terms-of-use">Terms of use</a></p>  
+      </div>
+    </div>
+  </div>
+</div>
+              </td></tr>
+            </table>
+        </div>
+</div>
+</BODY>
+</HTML>
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <script type="text/javascript">
+            var qs=function(a){if(""==a)return{};for(var d={},b=0;b<a.length;++b){var c=a[b].split("=");2==c.length&&(d[c[0]]=decodeURIComponent(c[1].replace(/\+/g," ")))}return d}(window.location.search.substr(1).split("&"));
+            function escapeHTML(unsafe) {
+                return unsafe
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/"/g, "&quot;")
+                    .replace(/'/g, "&#039;");
+            }
+            function resize(frame, width, height) {
+                // Resize iframe to fit content
+                // Setting both CSS and iframe elements seems to result in the
+                // most consistent rendering; CSS needs !important.
+                frame.width = width;
+                frame.height = height;
+                frame.style.cssText += 'width:' + width + ' !important; height:' + height + ' !important;';
+            }
+            function load() {
+                var ad = document.getElementById('ad'),
+                    frame = parent.document.getElementById(escape(qs.position)),
+                    width = ad.scrollWidth + 'px',
+                    height = ad.scrollHeight + 'px';
+                resize(frame, width, height);
+                // Try resizing again after a 1 sec delay, just in case.
+                setTimeout(function() {
+                    var newHeight = ad.scrollHeight + 'px',
+                        newWidth = ad.scrollWidth + 'px';
+                    resize(frame, newWidth, newHeight);
+                }, 1000);
+            }
+        </script>
+        <style type="text/css">
+            body { margin: 0; padding: 0; font: 13px/1.22 sans-serif; color: #555; }
+            a { text-decoration: none; color: #07a; outline: medium none; }
+                a:visited { color: #069; }
+                a:hover { color: #09c; text-decoration: underline; }
+                a:active { color: #07a; }
+                a:hover, a:active { outline: medium none; }
+            .ad { margin: 0 auto 20px; overflow: hidden; }
+                /*
+                 * Reset CSS sets <ins> to a yellow background; Google AFC uses
+                 * <ins> as a wrapper for certain ads and we don't want them to
+                 * have a yellow background.
+                 */
+                .ad ins { background-color: transparent; }
+            .medrec { width: 300px; display: block; }
+            .leaderboard { width: 728px; height: 90px; overflow: hidden; text-align: center; margin: 0 auto; line-height: 0; }
+                .leaderboard .google_afc { margin: 0 auto; }
+            .hub { width: 200px; overflow: hidden; }
+        </style>
+        <!-- base href="http://sourceforge.net/static/ads/iframe_ad.html?position=bookend_right&ad=http%3A%2F%2Fad.doubleclick.net%2Fadj%2Fostg.sourceforge%2Fsf_bookend_right%3Bpg%3Dindex.php%3Bpsrch%3D0%3Blogged_in%3D0%3Btile%3D2%3Bsz%3D150x1060%3Bu%3De%253Ae1fb7610-e21b-11e2-9f8c-0200ac1d1d8d%3Bord%3D7595871736231696%3F&class=" -->
+    </head>
+    <body onload="load()">
+        <div id="ad" class="ad">
+            <script type="text/javascript">
+                if (parent.immersion_adcode) {
+                    document.write(parent.immersion_adcode);
+                } else {
+                    document.write('<script type="text/javascript" src="' + escapeHTML(qs.ad) + '"><' + '/script>');
+                }
+            </script><script type="text/javascript" src="iframe_ad_data_002/sf_bookend_right.php%3bpsrch=0%3blogged_in=0%3btile=2%3bs"></script>
+        </div>
+        <script type="text/javascript">
+            if (qs['class']) {
+                document.getElementById('ad').className += ' ' + escape(qs['class']);
+            }
+        </script>
+    
+
+</body></html>

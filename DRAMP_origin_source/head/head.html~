@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>Welcome To Dramp Database</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="./css/global.css" type="text/css">
+ 	<link rel="stylesheet" href="./css/head.css" type="text/css">
+</head>
+
+<body id="pg_index" class="">
+	<div id="site-header">
+    <div class="wrapper">
+    	  <div id="nav-logo">
+        <a href="127.0.0.1" class="logo">
+            <span>DRAMP</span>
+        </a>
+        </div>
+			
+        <div id="nav-site">
+        	<a href="http://sourceforge.net/directory/" title="Simple Search" >Simple Search</a>
+            <a href="http://sourceforge.net/directory/" title="Browse our Databases." >Browse</a>
+            <a href="http://sourceforge.net/directory/enterprise" title="The Statistics Of Our Databases.">Statistics</a>
+            <a href="http://sourceforge.net/blog/" title="DownLoad  General .">DownLoads</a>
+            <a href="http://sourceforge.net/support" title="Contact us for help and feedback.">Help</a>
+            <a href="http://sourceforge.net/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">QuickLink</a>
+        </div>
+        
+        <div id="nav-account">
+              <div class="logged_out">
+                <a href="#">Log In</a>
+                <span>or</span>
+                <a href="#">Submit</a>
+              </div>
+        </div>
+    </div>
+	</div>
+
+	<div id="site-sec-header">
+    <div class="wrapper">
+        <div id="nav-hubs">
+            <h4>Solution Tools ：</h4>
+        </div>
+        <div id="nav-collateral"> 
+        		<a href="./tools/similarity-search.html">Similarity Search</a>
+            <a href="./tools/prediction.html">Prediction</a>   
+            <a href="./tools/">Sequence Alignment</a> 
+            <a href="./tools/cd-search.html">CD-Search</a>         
+        </div>
+    </div>
+	</div>
+
+
+</body>
+</html>

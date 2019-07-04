@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="../style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="feedback.css" rel="stylesheet" type="text/css" />
+<link href="../SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<script src="../SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+<script src="../SpryAssets/SpryDOMUtils.js" type="text/javascript"></script>
+</head>
+<body class="body_redesign">
+<div id="page">
+<div class="reposition">
+<div id="index"><a href="../index.html">home</a></div>
+<div id="content">
+  <div id="content_bgtop">
+		  <div id="content_bgbtm">
+				<div class="post">
+					<h2>Feedback Form</h2>
+                    <p>If you have any comment or suggestion ,please leave a message using 
+                    the feedback form below.</p>
+                     <div class="fback_frame">
+                     <form id="fback_form" name="fback_form" method="get" action="">
+                     <div class="fback_upload">
+                     <label>Your Name:</label>
+                     <input type="text" name="name_txt" />
+                     </div>
+                    <div class="fback_upload">
+                     <label>Your e-mail Address:</label>
+                     <input type="text" name="add_txt" />
+                     </div>
+                     <div class="fback_upload">
+                     <label>Subject :</label>
+                     <input type="text" name="sub_txt" />
+                     </div>
+                     <div class="fback_area">
+                     <label>Message:</label>
+                     <textarea name="fback_area" cols="30" rows="3" wrap="virtual"></textarea>
+                     </div>
+                     <div class="fback_smt ">
+                     <input type="submit" id="smt_btn" name="fback_smt" value="Submit" />
+                     </div>
+                     </form>
+                     </div>
+				</div>
+			</div>
+		</div>
+	</div>
+   
+	<!-- end #content -->
+<div id="logo_sidebar">
+    <div id="logo"><a href="../index.html"><img src="../images/logo.jpg" width="240" height="42" /></a>
+        <p><em>data respository of antimicrobial peptide</em></p>
+    </div>
+	<!-- end #logo -->
+          <div id="Accordion1" class="Accordion"  tabindex="0">
+            <div class="AccordionPanel">
+              <div class="AccordionPanelTab">About&nbsp;&nbsp;&nbsp;DRAMP</div>
+              <div class="AccordionPanelContent">
+                <p>RDAMP database currently contains 111 bacteriocins, 111 plant AMPs, 111 animal host defense peptides, and 111 synthetic construct peptides. Last updated on 24 April 2013.</p><span><a href="#">more>></a></span>
+              </div>
+            </div>
+<div class="AccordionPanel">
+        <div class="AccordionPanelTab">Search</div>
+              <div class="AccordionPanelContent">
+                <ul>
+                  <li><a href="../search/simple_srh.html">Simple Search</a></li>
+                  <li><a href="../search/adv_srh.html">Advanced Search</a></li>
+                </ul>
+              </div>
+            </div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Brouse</div>
+  <div class="AccordionPanelContent">
+    <ul>
+      <li><a href="#">General Data</a></li>
+      <li><a href="#">Structure Data</a></li>
+      <li><a href="#">Physicochemical Data</a></li>
+      <li><a hrefr="#">MIC Value</a></li>
+    </ul>
+  </div>
+</div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Tools</div>
+  <div class="AccordionPanelContent">
+    <ul>
+        <li><a href="../tools/prediction.html">Prediction</a></li>
+        <li><a href="../tools/simi_search.html">Similarity Search</a></li>
+        <li><a href="../tools/alignment.html">Sequence Alignment</a></li>
+    </ul>
+  </div>
+</div>
+<div class="AccordionPanel">
+  <div class="AccordionPanelTab">Others</div>
+  <div class="AccordionPanelContent">
+        <ul>
+        <li><a href="#">Statistics</a></li>
+        <li><a href="#">Downloads</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Links</a></li>
+        </ul>
+  </div>
+  </div>
+	<!-- end #sidebar -->
+    <div class="clearfloat"></div>
+  </div>
+  <!-- end #logo_sidebar-->
+ </div>
+	<!-- end #repositon -->
+</div>
+ <!--end #page-->
+    <div class="clearfloat"></div>
+	<div id="footer">
+		<p>Copyright (c)</p>
+	</div>
+	<!-- end #footer -->
+</div>
+<script>
+var Accordion1;
+Spry.Utils.addLoadListener(function() {
+Accordion1 = new Spry.Widget.Accordion("Accordion1",0);
+});
+</script>
+</body>
+</html>

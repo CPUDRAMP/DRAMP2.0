@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HotWebsiteTemplates.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+<!-- CuFon ends -->
+
+<script src="js/jquery.js" type="text/javascript"></script>
+<script type="text/javascript">
+// <![CDATA[
+jQuery(document).ready(function(){
+	$('#contactform').submit(function(){				  
+		var action = $(this).attr('action');
+		$.post(action, { 
+			name: $('#name').val(),
+			email: $('#email').val(),
+			company: $('#company').val(),
+			subject: $('#subject').val(),
+			message: $('#message').val()
+		},
+			function(data){
+				$('#contactform #submit').attr('disabled','');
+				$('.response').remove();
+				$('#contactform').before('<p class="response">'+data+'</p>');
+				$('.response').slideDown();
+				if(data=='Message sent!') $('#contactform').slideUp();
+			}
+		); 
+		return false;
+	});
+});
+// ]]>
+</script>
+</head>
+<body>
+<div class="main">
+  <div class="header">
+    <div class="header_resize">
+    <div class="rss"> <img src="images/rss.gif" alt="img" width="19" height="19" />
+        <p><a href="#">Subscribe to our RSS</a><br />
+          Receive updates as soon as they are posted.</p>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html" class="active">Contact Us</a></li>
+        </ul>
+      </div>
+       <div class="clr"></div>
+      <div class="logo"><h1><a href="index.html"><span>Best</span> and necessary<br /><small>Runs faster. Costs less. And never breaks</small></a></h1></div>
+      <div class="header_text">
+      <p>Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu leo a pharetra condimentum, lorem tellus eleifend </p>
+      </div>
+       <img src="images/main_img.jpg" alt="img" width="943" height="207" class="main_img" />
+      <div class="clr"></div>
+    </div>
+ </div>
+  <div class="body">
+    <div class="body_resize">
+
+      <div class="left">
+        <h2><span>Contact</span> Us</h2>
+        <p class="big bgline">Mauris ornare aliquam urna, accumsan bibendum eros auctor ac.</p>
+        <p>Suspendisse adipiscing rhoncus massa, sit amet sollicitudin quam vulputate non. In non turpis nisl. Curabitur purus mi, pharetra vitae viverra et, mattis sit amet nunc.</p>
+        <p>Quisque enim ipsum, convallis sit amet molestie in, placerat vel urna.Suspendisse adipiscing rhoncus massa, sit amet sollicitudin quam vulputate non. In non turpis nisl.</p>
+        <form action="contact.php" method="post" id="contactform">
+          <ol>
+            <li>
+              <label for="name">Your Name*</label>
+              <input id="name" name="name" class="text" />
+            </li>
+            <li>
+              <label for="email">E-Mail*</label>
+              <input id="email" name="email" class="text" />
+            </li>
+            <li>
+              <label for="company">Website</label>
+              <input id="company" name="company" class="text" />
+            </li>
+            <li>
+              <label for="message">Your Message*</label>
+              <textarea id="message" name="message" rows="6" cols="50"></textarea>
+            </li>
+            <li class="buttons">
+              <input type="submit" name="imageField" id="imageField"  value="Send message" class="send" />
+              <div class="clr"></div>
+            </li>
+          </ol>
+        </form>
+      </div>
+      <div class="right">
+        <div class="blog">
+          <h2><span>What</span> They Say</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed   do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris   nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum   dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non   proident, sunt in culpa qui off icia deserunt mollit anim id estlaborum.</p>
+          <img src="images/img_1.jpg" width="108" height="122" alt="picture" />
+          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris   nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in   reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla   pariatur.</p>
+        </div>
+        <div class="blog">
+          <h2>Search</h2>
+          <div class="search">
+            <form id="form1" name="form1" method="post" action="">
+              <span>
+              <input name="q" type="text" class="keywords" id="textfield" maxlength="50" value="Search..." />
+              </span>
+              <input name="b" type="image" src="images/search.gif" class="button" />
+            </form>
+          </div>
+          <div class="clr"></div>
+        </div>
+        
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+
+  <div class="FBG">
+    <div class="FBG_resize">
+      <div class="blok">
+        <h2>About</h2>
+        <img src="images/fbg_1.gif" alt="img" width="71" height="76" />
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam,  lectus turpis varius lorem, eu  turpis varius lorem, eu posuere nunc justo tempus leo. Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing urna.</p>
+      <a href="#"><img src="images/more.gif" alt="more" width="108" height="23" border="0" /></a></div>
+      <div class="blok">
+        <h2><span>Lorem</span> Ipsum</h2>
+        <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. <br />
+          Donec mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam.</p>
+        <ul>
+          <li><a href="#">• consequat molestie</a></li>
+          <li><a href="#">• sem justo</a></li>
+          <li><a href="#">• semper</a></li>
+          <li><a href="#">• magna sed purus</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">• sem justo</a></li>
+          <li><a href="#">• semper</a></li>
+          <li><a href="#">• magna sed purus</a></li>
+          <li><a href="#">• consequat molestie</a></li>
+        </ul>
+      </div>
+      <div class="blok">
+        <h2>Image Gallery</h2>
+        <img src="images/banner_1.jpg" alt="img" width="68" height="68" /><img src="images/banner_2.jpg" alt="img" width="68" height="68" /><img src="images/banner_3.jpg" alt="img" width="68" height="68" /><img src="images/banner_4.jpg" alt="img" width="68" height="68" /><img src="images/banner_5.jpg" alt="img" width="68" height="68" /><img src="images/banner_6.jpg" alt="img" width="68" height="68" />
+        <div class="clr"></div>
+        <h2>Lorem ipsum </h2>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. </p>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p>© Copyright MyWebSite. Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> </p>
+    </div>
+    <div class="clr"></div>
+  </div>
+</div>
+</body>
+</html>

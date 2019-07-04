@@ -1,0 +1,85 @@
+#!/usr/bin/perl -w
+use strict;
+
+use CGI;
+
+print "content-type: text/html","\n\n";
+
+my $query;
+my $file_path_name;
+
+my $q = CGI->new;
+
+my $maxLenth=5;
+my @pa=('A'..'Z',0..9,'a'..'z');
+my $pa;
+my @subname;
+ $subname[0]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[1]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[2]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+my $job_name=join "-",@subname;
+my $file_name_ini=join "",@subname;
+
+my $file_name_1=$file_name_ini."\_1\.in";
+
+
+my $cd_name=$q->param('cd_name');
+
+my $file_name=$cd_name."\_".$file_name_ini;
+
+my $cd_seq;
+my $database;
+
+if ($cd_name eq "stretcherp"){	
+
+	$cd_seq=$q->param('cd_seq');
+	$database=$q->param('database');
+
+	mkdir("/var/www/tmp/cd-search_tmp/$file_name",0777);
+	
+	open EOF,">/var/www/tmp/cd-search_tmp/$file_name/$file_name.in";
+		print EOF $seq_1;
+	close EOF;
+	
+	
+	$query="./bin/rpsblast -asequence ../../tmp/cd-search_tmp/$file_name/$file_name.in  -bsequence ../../tmp/cd-search_tmp/$file_name/$file_name_2 -datafile $matrix -outfile ../../tmp/cd-search_tmp/$file_name/$file_name_ini.$cd_name";
+}
+
+
+
+print qq(<div style="width:300px;height:50px;margin-top:500px auto;">);
+print qq(<textarea rows="3" cols="150"  disabled="disabled">$query</textarea><br />);
+
+print qq(<div style="width:220px;"><table><tr><td><label>Job Name:</label></td><td width=300px><a href="../../tmp/cd-search_tmp/$file_name/">$job_name VIEW</a></td></tr></table></div>);
+print qq(</div>);
+
+
+system($query);
+
+if(-e "../../tmp/cd-search_tmp/$file_name/$file_name_ini.$cd_name"){
+	open EOF,"</var/www/tmp/cd-search_tmp/$file_name/$file_name_ini.$cd_name";
+	open MOF,">/var/www/tmp/cd-search_tmp/$file_name/$file_name_ini.htm";
+	my @my_line=<EOF>;
+	my $line=join "",@my_line;
+	$line="<pre>".$line."</pre>";
+	print MOF $line;	
+	
+	close EOF;
+	close MOF;
+}
+
+
+
+
+open EOF,">/var/www/tmp/cd-search_tmp/$file_name/index.shtml";
+	print EOF "<html>\n<head>\n</head>\n<body>\n";
+	
+	my $next_query_1="<!--#echo var=\"REMOTE_ADDR\"-->\n";	
+	my $next_query_2="<!--#include file=\"$file_name_ini.htm\"-->";
+	
+	print EOF $next_query_1;
+	print EOF $next_query_2;
+	
+	print EOF "</body></html>";
+close EOF;
+

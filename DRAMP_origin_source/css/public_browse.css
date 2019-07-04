@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+/*quick_ CSS Document */
+
+#myHeader
+	{
+		color:#808080;
+		text-align:center;
+	}
+	
+#myFind{
+	margin-left:30px;
+	padding:0;
+	float:left;
+}	
+
+
+#myFunction{
+	margin-right:30px;
+	padding:0;
+	float:left;	
+}
+
+a:link { text-decoration: none; }
+
+
+#myLine{
+	 
+	margin:10px 30px 10px 30px;
+}
+
+.content{
+	/*border:1px solid blue;*/
+	margin:30px 30px;
+	padding:0px;
+}
+
+.navil{
+	float:left;
+}
+
+
+.navil_two{
+	margin-left:50px;	
+	
+}
+		
+/*.tr {background-color:grey} */
+
+

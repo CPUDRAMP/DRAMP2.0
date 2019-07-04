@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>alignment-tools</title>
+<meta name="description" content="jQuery选项卡特效制作选项卡标签上下带按钮控制滚动切换选项卡的形式，选项卡切换过程中，对应的选项卡图片内容异步加载显示。当选项卡切换到最后或最前面时会提示用户信息。" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+$(document).ready(function(){
+$("#mySelect").change(function()
+{
+       //alert("Hello");
+       //alert($("#selectTest").attr("name"));
+       //$("a").attr("href","xx.html");
+       //window.location.href="xx.html";
+       //alert($("#selectTest").val());
+       	var objselect = document.getElementById("myOption");
+			objselect.options.length = 0; 
+       	
+       	var mutiple=$(this).children('option:selected').val();
+       	if (mutiple == "clustal" ){
+				$("#myOption").append("<option value='clu'>clustal</option>");
+				$("#myOption").append("<option value='fa'>Pearson/FASTA</option>"); 
+				$("#myOption").append("<option value='msf'>MSF</option>"); 
+				$("#myOption").append("<option value='phy'>PHYLIP</option>"); 
+				$("#myOption").append("<option value='selex'>SELEX</option>"); 
+				$("#myOption").append("<option value='st'>STOCKHOLM</option>"); 
+				$("#myOption").append("<option value='vie'>VIENNA</option>"); 
+			}
+			if (mutiple == "muscle") {
+				$("#myOption").append("<option value='-fasta'>Pearson/FASTA</option>");
+				$("#myOption").append("<option value='-clw'>ClustalW</option>"); 
+				$("#myOption").append("<option value='-clwstrict'>ClustalW(strict)</option>"); 
+				$("#myOption").append("<option value='-html'>HTML</option>"); 
+				$("#myOption").append("<option value='-msf'>GCG MSF</option>"); 
+				$("#myOption").append("<option value='-phyi'>Phylip interleaved</option>"); 
+				$("#myOption").append("<option value='-phys'>Phylip sequential</option>"); 				
+					
+			}
+});
+});
+
+</script>    
+
+
+
+</head>
+
+<body>
+
+
+
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "宋体";}
+/* tabshow */
+.tabshow{width:750px;height:422px;position:relative;margin:40px auto;}
+.tabshow .hide{display:none;}
+.tabshow .udbtn,.tabshow .tabTagBox li{background:url(images/tab-all-bg.png) no-repeat;}
+.tabshow .udbtn{display:block;width:194px;height:35px;line-height:999em;overflow:hidden;}
+.tabshow .uPrev{background-position:0 -580px;}
+.tabshow .dNext{background-position:0 -615px;}
+.tabshow .tabTagBox{height:348px;width:194px;overflow:hidden;position:relative;z-index:9;margin:2px 0;}
+.tabshow .tabTagBox .tabTagList{position:absolute;left:0;height:999em;}
+.tabshow .tabTagBox li{float:left;width:193px;height:58px;line-height:99em;overflow:hidden;cursor:pointer;}
+.tabshow .tabTagBox li.current{width:194px;}
+.tabshow .tabTagBox li#tag01{background-position:-194px 0;}
+.tabshow .tabTagBox li#tag01.current{background-position:0 0;}
+.tabshow .tabTagBox li#tag02{background-position:-194px -58px;}
+.tabshow .tabTagBox li#tag02.current{background-position:0 -58px;}
+.tabshow .tabTagBox li#tag03{background-position:-194px -116px;}
+.tabshow .tabTagBox li#tag03.current{background-position:0 -116px;}
+.tabshow .tabTagBox li#tag04{background-position:-194px -174px;}
+.tabshow .tabTagBox li#tag04.current{background-position:0 -174px;}
+.tabshow .tabTagBox li#tag05{background-position:-194px -232px;}
+.tabshow .tabTagBox li#tag05.current{background-position:0 -232px;}
+.tabshow .tabTagBox li#tag06{background-position:-194px -290px;}
+.tabshow .tabTagBox li#tag06.current{background-position:0 -290px;}
+.tabshow .tabTagBox li#tag07{background-position:-194px -348px;}
+.tabshow .tabTagBox li#tag07.current{background-position:0 -348px;}
+.tabshow .tabTagBox li#tag08{background-position:-194px -406px;}
+.tabshow .tabTagBox li#tag08.current{background-position:0 -406px;}
+.tabshow .tabTagBox li#tag09{background-position:-194px -464px;}
+.tabshow .tabTagBox li#tag09.current{background-position:0 -464px;}
+.tabshow .tabTagBox li#tag10{background-position:-194px -522px;}
+.tabshow .tabTagBox li#tag10.current{background-position:0 -522px;}
+
+.tabshow .tabcon{position:absolute;top:0;right:0;z-index:1;border:solid 1px red;background:#FCFCFC;width:555px;overflow:hidden;}
+.tabshow .tabcon h2{height:30px;line-height:30px;font-size:14px;color:#333;padding:10px 0 10px 25px;}
+.tabshow .tabcon p{height:30px;line-height:30px;font-size:14px;color:#333;padding:10px 0 10px 25px;}
+.tabshow .tabcon textarea{height: 100px;width: 380px;resize: none;border: 1px solid rgb(51, 153, 153);}
+
+
+.tabshow .tabcon li{float:left;width:152px;height:177px;overflow:hidden;margin:0 0 10px 24px;display:inline;}
+.tabshow .tabcon li .pic{display:block;border:solid 1px #ddd;width:150px;height:150px;}
+.tabshow .tabcon li .pic:hover{border:solid 1px #C00F15;}
+.tabshow .tabcon li .tit{height:20px;line-height:20px;display:block;margin:5px 0 0 0;}
+.tabshow .tabcon li .tit a{font-size:12px;color:#5e5e5e;text-decoration:none;}
+
+.tabshow .tabcon .option{border: 1px dashed rgb(102, 102, 102);width: 350px;padding: 20px;margin-top: 25px;position: relative;}
+#option_title {
+    position: absolute;
+    top: -11px;
+    font-family: "Arial Black",Gadget,sans-serif;
+    color: rgb(255, 102, 0);
+    background: none repeat scroll 0% 0% rgb(255, 255, 204);
+}
+
+.option label {
+    float: left;
+    padding-top: 12px;
+    width: 120px;
+    font-size: 12px;
+}
+
+
+#btn_box {
+    padding-left: 210px;
+    margin-top: 20px;
+}
+
+
+</style>
+
+
+
+<div class="tabshow">
+	
+<div class="tabTagBox">
+		<ul class="tabTagList">
+			<li id="tag01" class="current">Global Alignment</li>
+			<li id="tag02">Local Alignment</li>
+			<li id="tag03">Mutiple Alignment</li>
+		</ul>
+</div>
+	
+	<div class="tabcon">
+		<h2>StretcherP:</h2>
+		<div style="margin-left:50px;">
+		<form action="../../cgi-bin/alignment/alignment.cgi" method="get" name="">
+                 <p>Please paste your FASTA sequence here.</p>
+                 			<label>Sequence One</label><br />
+                    		<textarea name="seq_1"  cols="30" rows="3" wrap="virtual"></textarea><br />
+								<label>Sequence Two</label><br />
+								<textarea name="seq_2"  cols="30" rows="3" wrap="virtual"></textarea>                    		
+                    		<br />
+                        <label id="file">Or, upload a file </label>            
+                        <input type="file" name="simi_file" class="btn_file" />
+                    
+                    <div class="option">
+                    <div id="option_title">option</div>
+                    <div>                    
+                    </div>
+                    <label>Scoring Matrix</label>
+                    <select name="matrix" style="width: 120px">
+<OPTION VALUE="EBLOSUM30" >EBLOSUM30 BLOSUM Matrix in 1/5 Bit Units for Percentage: >= 30</OPTION>
+<OPTION VALUE="EBLOSUM35" >EBLOSUM35 BLOSUM Matrix in 1/4 Bit Units for Percentage: >= 35</OPTION>
+<OPTION VALUE="EBLOSUM40" >EBLOSUM40 BLOSUM Matrix in 1/4 Bit Units for Percentage: >= 40</OPTION>
+<OPTION VALUE="EBLOSUM45" >EBLOSUM45 BLOSUM Matrix in 1/3 Bit Units for Percentage: >= 45</OPTION>
+<OPTION VALUE="EBLOSUM50" >EBLOSUM50 BLOSUM Matrix in 1/3 Bit Units for Percentage: >= 50</OPTION>
+<OPTION VALUE="EBLOSUM55" >EBLOSUM55 BLOSUM Matrix in 1/3 Bit Units for Percentage: >= 55</OPTION>
+<OPTION VALUE="EBLOSUM60" >EBLOSUM60 BLOSUM Matrix in 1/1 Bit Units for Percentage: >= 60</OPTION>
+<OPTION VALUE="EBLOSUM62"  SELECTED="selected">EBLOSUM62 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 62</OPTION>
+<OPTION VALUE="EBLOSUM62-12" >EBLOSUM62-12 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 62</OPTION>
+<OPTION VALUE="EBLOSUM65" >EBLOSUM65 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 65</OPTION>
+<OPTION VALUE="EBLOSUM70" >EBLOSUM70 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 70</OPTION>
+<OPTION VALUE="EBLOSUM75" >EBLOSUM75 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 75</OPTION>
+<OPTION VALUE="EBLOSUM80" >EBLOSUM80 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 80</OPTION>
+<OPTION VALUE="EBLOSUM85" >EBLOSUM85 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 85</OPTION>
+<OPTION VALUE="EBLOSUM90" >EBLOSUM90 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 90</OPTION>
+<OPTION VALUE="EBLOSUMN" >EBLOSUMN BLOSUM Clustered Scoring Matrix in 1/2 Bit Units for Percentage: >= -2</OPTION>
+<OPTION VALUE="EPAM10" >EPAM10 PAM 10 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM20" >EPAM20 PAM 20 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM30" >EPAM30 PAM 30 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM40" >EPAM40 PAM 40 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM50" >EPAM50 PAM 50 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM60" >EPAM60 PAM 60 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM70" >EPAM70 PAM 70 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM80" >EPAM80 PAM 80 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM90" >EPAM90 PAM 90 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM100" >EPAM100 PAM 100 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM110" >EPAM110 PAM 110 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM120" >EPAM120 PAM 120 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM130" >EPAM130 PAM 130 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM140" >EPAM140 PAM 140 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM150" >EPAM150 PAM 150 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM160" >EPAM160 PAM 160 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM170" >EPAM170 PAM 170 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM180" >EPAM180 PAM 180 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM190" >EPAM190 PAM 190 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM200" >EPAM200 PAM 200 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM210" >EPAM210 PAM 210 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM220" >EPAM220 PAM 220 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM230" >EPAM230 PAM 230 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM240" >EPAM240 PAM 240 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM250" >EPAM250 PAM 250 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM260" >EPAM260 PAM 260 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM270" >EPAM270 PAM 270 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM280" >EPAM280 PAM 280 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM290" >EPAM290 PAM 290 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM300" >EPAM300 PAM 300 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM310" >EPAM310 PAM 310 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM320" >EPAM320 PAM 320 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM330" >EPAM330 PAM 330 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM340" >EPAM340 PAM 340 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM350" >EPAM350 PAM 350 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM360" >EPAM360 PAM 360 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM370" >EPAM370 PAM 370 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM380" >EPAM380 PAM 380 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM390" >EPAM390 PAM 390 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM400" >EPAM400 PAM 400 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM410" >EPAM410 PAM 410 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM420" >EPAM420 PAM 420 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM430" >EPAM430 PAM 430 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM440" >EPAM440 PAM 440 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM450" >EPAM450 PAM 450 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM460" >EPAM460 PAM 460 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM470" >EPAM470 PAM 470 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+<OPTION VALUE="EPAM480" >EPAM480 PAM 480 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+<OPTION VALUE="EPAM490" >EPAM490 PAM 490 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+<OPTION VALUE="EPAM500" >EPAM500 PAM 500 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+</SELECT>
+                    </div>
+                    <div id="btn_box"> 
+                        <input type="hidden" value="stretcherp" name="align_name" />         
+                        <input type="submit"  class="btn_smt" value="Submit"/>
+                        <input type="reset" class="btn_reset" value="Reset" />                       
+                    </div>
+			      </form>
+			      </div>
+	</div>	
+	
+	<div class="tabcon hide">
+		<h2>MatcherP:</h2>
+		<div style="margin-left:50px;">
+		<form action="../../cgi-bin/alignment/alignment.cgi" method="get" name="" >
+                    <p>Please paste your FASTA sequence here.</p>        
+                 			<label>Sequence One</label><br />
+                    		<textarea name="seq_1"  cols="30" rows="3" wrap="virtual"></textarea><br />
+								<label>Sequence Two</label><br />
+								<textarea name="seq_2"  cols="30" rows="3" wrap="virtual"></textarea>                    		
+                    		<br />
+                        <label id="file">Or, upload a file </label>             
+                        <input type="file" name="simi_file" class="btn_file" />
+                    <div class="option">
+                    <div id="option_title">option</div>
+                    <div>
+                    <label>Matrix</label>
+                    <select name="matrix"  style="width: 120px">
+<OPTION VALUE="EBLOSUM30" >EBLOSUM30 BLOSUM Matrix in 1/5 Bit Units for Percentage: >= 30</OPTION>
+<OPTION VALUE="EBLOSUM35" >EBLOSUM35 BLOSUM Matrix in 1/4 Bit Units for Percentage: >= 35</OPTION>
+<OPTION VALUE="EBLOSUM40" >EBLOSUM40 BLOSUM Matrix in 1/4 Bit Units for Percentage: >= 40</OPTION>
+<OPTION VALUE="EBLOSUM45" >EBLOSUM45 BLOSUM Matrix in 1/3 Bit Units for Percentage: >= 45</OPTION>
+<OPTION VALUE="EBLOSUM50" >EBLOSUM50 BLOSUM Matrix in 1/3 Bit Units for Percentage: >= 50</OPTION>
+<OPTION VALUE="EBLOSUM55" >EBLOSUM55 BLOSUM Matrix in 1/3 Bit Units for Percentage: >= 55</OPTION>
+<OPTION VALUE="EBLOSUM60" >EBLOSUM60 BLOSUM Matrix in 1/1 Bit Units for Percentage: >= 60</OPTION>
+<OPTION VALUE="EBLOSUM62"  SELECTED="selected">EBLOSUM62 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 62</OPTION>
+<OPTION VALUE="EBLOSUM62-12" >EBLOSUM62-12 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 62</OPTION>
+<OPTION VALUE="EBLOSUM65" >EBLOSUM65 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 65</OPTION>
+<OPTION VALUE="EBLOSUM70" >EBLOSUM70 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 70</OPTION>
+<OPTION VALUE="EBLOSUM75" >EBLOSUM75 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 75</OPTION>
+<OPTION VALUE="EBLOSUM80" >EBLOSUM80 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 80</OPTION>
+<OPTION VALUE="EBLOSUM85" >EBLOSUM85 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 85</OPTION>
+<OPTION VALUE="EBLOSUM90" >EBLOSUM90 BLOSUM Matrix in 1/2 Bit Units for Percentage: >= 90</OPTION>
+<OPTION VALUE="EBLOSUMN" >EBLOSUMN BLOSUM Clustered Scoring Matrix in 1/2 Bit Units for Percentage: >= -2</OPTION>
+<OPTION VALUE="EPAM10" >EPAM10 PAM 10 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM20" >EPAM20 PAM 20 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM30" >EPAM30 PAM 30 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM40" >EPAM40 PAM 40 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM50" >EPAM50 PAM 50 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM60" >EPAM60 PAM 60 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM70" >EPAM70 PAM 70 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM80" >EPAM80 PAM 80 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM90" >EPAM90 PAM 90 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM100" >EPAM100 PAM 100 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM110" >EPAM110 PAM 110 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM120" >EPAM120 PAM 120 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM130" >EPAM130 PAM 130 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM140" >EPAM140 PAM 140 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM150" >EPAM150 PAM 150 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM160" >EPAM160 PAM 160 substitution matrix, scale = ln(2)/2 = 0.346574</OPTION>
+<OPTION VALUE="EPAM170" >EPAM170 PAM 170 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM180" >EPAM180 PAM 180 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM190" >EPAM190 PAM 190 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM200" >EPAM200 PAM 200 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM210" >EPAM210 PAM 210 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM220" >EPAM220 PAM 220 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM230" >EPAM230 PAM 230 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM240" >EPAM240 PAM 240 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM250" >EPAM250 PAM 250 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM260" >EPAM260 PAM 260 substitution matrix, scale = ln(2)/3 = 0.231049</OPTION>
+<OPTION VALUE="EPAM270" >EPAM270 PAM 270 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM280" >EPAM280 PAM 280 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM290" >EPAM290 PAM 290 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM300" >EPAM300 PAM 300 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM310" >EPAM310 PAM 310 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM320" >EPAM320 PAM 320 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM330" >EPAM330 PAM 330 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM340" >EPAM340 PAM 340 substitution matrix, scale = ln(2)/4 = 0.173287</OPTION>
+<OPTION VALUE="EPAM350" >EPAM350 PAM 350 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM360" >EPAM360 PAM 360 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM370" >EPAM370 PAM 370 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM380" >EPAM380 PAM 380 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM390" >EPAM390 PAM 390 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM400" >EPAM400 PAM 400 substitution matrix, scale = ln(2)/5 = 0.138629</OPTION>
+<OPTION VALUE="EPAM410" >EPAM410 PAM 410 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM420" >EPAM420 PAM 420 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM430" >EPAM430 PAM 430 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM440" >EPAM440 PAM 440 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM450" >EPAM450 PAM 450 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM460" >EPAM460 PAM 460 substitution matrix, scale = ln(2)/6 = 0.115525</OPTION>
+<OPTION VALUE="EPAM470" >EPAM470 PAM 470 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+<OPTION VALUE="EPAM480" >EPAM480 PAM 480 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+<OPTION VALUE="EPAM490" >EPAM490 PAM 490 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+<OPTION VALUE="EPAM500" >EPAM500 PAM 500 substitution matrix, scale = ln(2)/7 = 0.0990210</OPTION>
+</SELECT>
+                    </div>
+                    </div>
+                    <div id="btn_box"> 
+                        <input type="hidden" value="matcherp" name="align_name" />              
+                        <input type="submit"  class="btn_smt" value="Submit"/>
+                        <input type="reset" class="btn_reset" value="Reset" />                       
+                    </div>
+			      </form>
+			      </div>
+	</div>
+	
+	<div class="tabcon hide">
+		<h2>Mutiple Alignment:</h2>
+		<div style="margin-left:50px;" id="mutiple_1">
+		
+		<form action="../../cgi-bin/alignment/alignment.cgi" method="get" name="">
+                    <p>Please paste your FASTA sequence here.</p>        
+                    <textarea name="seqs"  cols="30" rows="3" wrap="virtual"></textarea><br />
+                        <label id="file">Or, upload a file </label>                    
+                        <input type="file" name="simi_file" class="btn_file" />
+                    <div class="option">
+                    <div id="option_title">option</div>
+                    <table summary="" >
+                    <tr>
+                    <td><label>Methods</label></td>
+                    <td>
+                    <select id="mySelect" name="methods">
+                    <option value="clustal">Clustal Omega</option>
+                    <option value="muscle">Muscle</option>
+                    </select>
+                    </td> 
+                    </tr>
+                    <tr>
+                    <div>
+                    <td><label>output alignment format</label></td>
+                    <td>
+                    <select id="myOption" name="outformat">
+                    <option selected="selected" value="clu">Clustal</option>
+                    <option value="fa">Pearson/FASTA</option>
+                    <option value="msf">MSF</option>
+                    <option value="phy">PHYLIP</option>
+                    <option value="selex">SELEX</option>
+                    <option value="st">STOCKHOLM</option>
+                    <option value="vie">VIENNA</option>
+                    </select>
+							</td>
+                    </tr>
+                    </table>
+							</div>                    
+                    <div id="btn_box"> 
+                        <input type="hidden" value="mutiple" name="align_name" />              
+                        <input type="submit"  class="btn_smt" value="Submit"/>
+                        <input type="reset" class="btn_reset" value="Reset" />                       
+                    </div>
+			      </form>
+		</div> 
+		
+	</div>
+
+
+</div><!--tabshow end-->
+
+
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/lazyload.js"></script>
+<script type="text/javascript">
+//选项卡与延迟插件结合
+$(function(){
+	$("img[original]").lazyload({ placeholder:"http://www.jsfoot.com/skinnew/images/color3.gif" });
+});
+
+function lazyloadForPart(container){
+    container.find('img').each(function(){
+        var original = $(this).attr("original");
+        if (original) {
+            $(this).attr('src', original).removeAttr('original');
+        }
+    });
+}
+
+$(function(){           
+	
+	var navBox = $('.tabTagBox'), navList = $('.tabTagList'), navs = navList.children('li'), upBtn = $('.uPrev'), downBtn = $('.dNext'), contentBoxs = $('.tabcon');
+	
+	var opts = {
+		moveH: 58,
+		moveSpeed: 200,
+		curMoveH: 0,
+		curSumH: 0,
+		curNavIndex: 0
+	}
+	
+	opts.curSumH = (opts.moveH * navs.size()) - navBox.height();
+	
+	var navToContentBox = function () {
+		navs.removeClass('current');
+		contentBoxs.hide().eq(opts.curNavIndex).show();
+	}
+	
+	var navMove = function () {
+		
+		var _arg = arguments.length > 0 ? arguments[0] : '';
+		
+		if (_arg === 'up') {
+			if (-opts.curSumH === opts.curMoveH) {
+				alert('温馨提示：其他行业敬请期待！');
+				return;
+			}
+			opts.curMoveH -= opts.moveH;
+			opts.curNavIndex += 1;
+		}
+		
+		if (_arg === 'down') {
+			if (opts.curMoveH === 0) {
+				alert('温馨提示：其他行业敬请期待！');
+				return;
+			}
+			opts.curMoveH += opts.moveH;
+			opts.curNavIndex -= 1;
+		}
+		
+		navToContentBox();
+		navs.eq(opts.curNavIndex).addClass('current');
+		navList.animate({ top: opts.curMoveH + 'px' }, opts.moveSpeed);
+		lazyloadForPart(contentBoxs);
+	}
+	
+	upBtn.click(function () {
+		navMove('down');
+	});
+	
+	downBtn.click(function () {
+		navMove('up');
+	});
+	
+	navs.click(function () {
+		opts.curNavIndex = $(this).index();
+		navToContentBox();
+		$(this).addClass('current');
+		lazyloadForPart(contentBoxs);
+	});
+	
+});
+</script>
+
+
+</body>
+</html>

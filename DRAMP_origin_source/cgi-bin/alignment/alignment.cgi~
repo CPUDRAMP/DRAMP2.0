@@ -1,0 +1,148 @@
+#!/usr/bin/perl -w
+use strict;
+
+use CGI;
+
+print "content-type: text/html","\n\n";
+
+
+my $query;
+my $seq_1;
+my $seq_2;
+my $matrix;
+my $file_path_name;
+
+my $q = CGI->new;
+
+
+
+my $maxLenth=5;
+my @pa=('A'..'Z',0..9,'a'..'z');
+my $pa;
+my @subname;
+ $subname[0]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[1]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[2]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+my $job_name=join "-",@subname;
+my $file_name_ini=join "",@subname;
+
+my $file_name_1=$file_name_ini."\_1\.in";
+my $file_name_2=$file_name_ini."\_2\.in";
+
+
+
+my $align_name=$q->param('align_name');
+
+my $file_name=$align_name."\_".$file_name_ini;
+
+my $seq_1=$q->param('seq_1');
+
+my $seq_2=$q->param('seq_2');
+
+if ($align_name eq "stretcherp"){	
+
+	$seq_1=$q->param('seq_1');
+	$seq_2=$q->param('seq_2');
+	$matrix=$q->param('matrix');
+	
+
+	mkdir("/var/www/tmp/align_tmp/$file_name",0777);
+	
+	open EOF,">/var/www/tmp/align_tmp/$file_name/$file_name_1";
+		print EOF $seq_1;
+	close EOF;
+	open EOF,">/var/www/tmp/align_tmp/$file_name/$file_name_2";
+		print EOF $seq_2;
+	close EOF;
+	
+	
+	$query="./bin/stretcherP -asequence ../../tmp/align_tmp/$file_name/$file_name_1  -bsequence ../../tmp/align_tmp/$file_name/$file_name_2 -datafile $matrix -outfile ../../tmp/align_tmp/$file_name/$file_name_ini.$align_name";
+}
+
+
+if ($align_name eq "matcherp"){
+	
+	$seq_1=$q->param('seq_1');
+	$seq_2=$q->param('seq_2');
+	$matrix=$q->param('matrix');
+	
+	mkdir("/var/www/tmp/align_tmp/$file_name",0777);
+	
+	open EOF,">/var/www/tmp/align_tmp/$file_name/$file_name_1";
+		print EOF $seq_1;
+	close EOF;
+
+	open EOF,">/var/www/tmp/align_tmp/$file_name/$file_name_2";
+		print EOF $seq_2;
+	close EOF;
+
+	$query="./bin/matcherP -asequence  '../../tmp/align_tmp/$file_name/$file_name_1'   -bsequence '../../tmp/align_tmp/$file_name/$file_name_2' -datafile $matrix   -outfile  '../../tmp/align_tmp/$file_name/$file_name_ini.$align_name'";
+}
+
+
+my $seqs;
+my $method;
+my $format;
+
+if ($align_name eq "mutiple"){
+	$seqs=$q->param('seqs');
+	$method=$q->param('methods');
+	$format=$q->param('outformat');
+	mkdir("/var/www/tmp/align_tmp/$file_name",0777);
+	
+	open EOF,">/var/www/tmp/align_tmp/$file_name/$file_name_ini.in";
+		print EOF $seqs;
+	close EOF;
+	
+	if ($method eq "clustal"){
+		$query="./bin/clustalo-1.1.0 --infile '../../tmp/align_tmp/$file_name/$file_name_ini.in' --outfile '../../tmp/align_tmp/$file_name/$file_name_ini.$align_name' --outfmt $format";
+	}
+
+	if ($method eq "muscle"){
+		$query="./bin/muscle-3.8.31 -in '../../tmp/align_tmp/$file_name/$file_name_ini.in' -out '../../tmp/align_tmp/$file_name/$file_name_ini.$align_name' $format";
+		
+
+
+	}
+}
+
+
+
+
+
+print qq(<div style="width:300px;height:50px;margin-top:500px auto;">);
+print qq(<textarea rows="3" cols="150"  disabled="disabled">$query</textarea><br />);
+
+print qq(<div style="width:220px;"><table><tr><td><label>Job Name:</label></td><td width=300px><a href="../../tmp/align_tmp/$file_name/">$job_name VIEW</a></td></tr></table></div>);
+print qq(</div>);
+
+
+system($query);
+
+if(-e "../../tmp/align_tmp/$file_name/$file_name_ini.$align_name"){
+	open EOF,"</var/www/tmp/align_tmp/$file_name/$file_name_ini.$align_name";
+	open MOF,">/var/www/tmp/align_tmp/$file_name/$file_name_ini.htm";
+	my @my_line=<EOF>;
+	my $line=join "",@my_line;
+	$line="<pre>".$line."</pre>";
+	print MOF $line;	
+	
+	close EOF;
+	close MOF;
+}
+
+
+
+
+open EOF,">/var/www/tmp/align_tmp/$file_name/index.shtml";
+	print EOF "<html>\n<head>\n</head>\n<body>\n";
+	
+	my $next_query_1="<!--#echo var=\"REMOTE_ADDR\"-->\n";	
+	my $next_query_2="<!--#include file=\"$file_name_ini.htm\"-->";
+	
+	print EOF $next_query_1;
+	print EOF $next_query_2;
+	
+	print EOF "</body></html>";
+close EOF;
+

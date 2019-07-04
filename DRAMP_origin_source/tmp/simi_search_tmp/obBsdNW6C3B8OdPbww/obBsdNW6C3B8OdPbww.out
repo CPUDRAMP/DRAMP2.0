@@ -1,0 +1,141 @@
+# ../../cgi-bin/seq-search/bin/fasta36 -Q -s BL62 -b 10 -d 10 -E 20.0 -T 8 ../../tmp/simi_search_tmp/obBsdNW6C3B8OdPbww/obBsdNW6C3B8OdPbww.in ./database/DRAMP.fa
+FASTA searches a protein or DNA sequence data bank
+ version 36.3.6 Sep, 2013(preload9)
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+Query: ../../tmp/simi_search_tmp/obBsdNW6C3B8OdPbww/obBsdNW6C3B8OdPbww.in
+  1>>>SDAVSAVSDA - 27 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+Statistics:  Expectation_n fit: rho(ln(x))= 2.7600+/-0.000838; mu= 9.3791+/- 0.028
+ mean_var=17.7041+/- 5.577, 0's: 2484 Z-trim(108.8): 2486  B-trim: 751 in 1/23
+ Lambda= 0.304816
+ statistics sampled from 7754 (7756) to 7754 sequences
+Algorithm: FASTA (3.8 Nov 2011) [optimized]
+Parameters: BL62 matrix (11:-4), open/ext: -11/-1
+ ktup: 1, E-join: 1 (0.895), E-opt: 0.2 (0.431), width:  16
+ Scan time:  0.180
+
+The best scores are:                                      opt bits E(18013)
+DRAMP08965                                         (  18)   49 24.9    0.28
+DRAMP08966                                         (  24)   49 25.0    0.36
+DRAMP08111                                         (  12)   43 22.2     1.2
+DRAMP08064                                         (  12)   42 21.7     1.7
+DRAMP07961                                         (  12)   41 21.3     2.3
+DRAMP08085                                         (  12)   41 21.3     2.3
+DRAMP08028                                         (  12)   41 21.3     2.3
+DRAMP08110                                         (  12)   40 20.8     3.1
+DRAMP07994                                         (  12)   40 20.8     3.1
+DRAMP08121                                         (  12)   40 20.8     3.1
+
+>>DRAMP08965                                              (18 aa)
+ initn:  49 init1:  49 opt:  49  Z-score: 131.8  bits: 24.9 E(18013): 0.28
+Smith-Waterman score: 49; 50.0% identity (57.1% similar) in 14 aa overlap (14-27:1-14)
+
+               10        20           
+SDAVS  VASDSADVSADFGWATWQTREWRTWER    
+                    :  :  : :: :.:    
+DRAMP0              WRRWWRRWWRWWRRWWRR
+                            10        
+
+>>DRAMP08966                                              (24 aa)
+ initn:  49 init1:  49 opt:  49  Z-score: 129.9  bits: 25.0 E(18013): 0.36
+Smith-Waterman score: 49; 50.0% identity (57.1% similar) in 14 aa overlap (14-27:7-20)
+
+               10        20           
+SDAVS  VASDSADVSADFGWATWQTREWRTWER    
+                    :  :  : :: :.:    
+DRAMP0        RRWWRRWRRWWRRWWRWWRRWWRR
+                      10        20    
+
+>>DRAMP08111                                              (12 aa)
+ initn:  43 init1:  43 opt:  43  Z-score: 120.2  bits: 22.2 E(18013):  1.2
+Smith-Waterman score: 43; 60.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    :  :  ::::    
+DRAMP0            RWWKIWVIREWR    
+                          10      
+
+>>DRAMP08064                                              (12 aa)
+ initn:  42 init1:  42 opt:  42  Z-score: 117.8  bits: 21.7 E(18013):  1.7
+Smith-Waterman score: 42; 60.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    :  :: : ::    
+DRAMP0            RWWKIWQIRWWR    
+                          10      
+
+>>DRAMP07961                                              (12 aa)
+ initn:  41 init1:  41 opt:  41  Z-score: 115.4  bits: 21.3 E(18013):  2.3
+Smith-Waterman score: 41; 54.5% identity (54.5% similar) in 11 aa overlap (13-23:2-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                   ::  :  : ::    
+DRAMP0            RGWKIWVIRWWR    
+                          10      
+
+>>DRAMP08085                                              (12 aa)
+ initn:  41 init1:  41 opt:  41  Z-score: 115.4  bits: 21.3 E(18013):  2.3
+Smith-Waterman score: 41; 60.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    :  : :: ::    
+DRAMP0            RWWKIWVTRWWR    
+                          10      
+
+>>DRAMP08028                                              (12 aa)
+ initn:  41 init1:  41 opt:  41  Z-score: 115.4  bits: 21.3 E(18013):  2.3
+Smith-Waterman score: 41; 60.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    : ::  : ::    
+DRAMP0            RWWKTWVIRWWR    
+                          10      
+
+>>DRAMP08110                                              (12 aa)
+ initn:  40 init1:  40 opt:  40  Z-score: 113.0  bits: 20.8 E(18013):  3.1
+Smith-Waterman score: 40; 50.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    :  :  :.::    
+DRAMP0            RWWKIWVIRDWR    
+                          10      
+
+>>DRAMP07994                                              (12 aa)
+ initn:  40 init1:  40 opt:  40  Z-score: 113.0  bits: 20.8 E(18013):  3.1
+Smith-Waterman score: 40; 60.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    :: :  : ::    
+DRAMP0            RWWAIWVIRWWR    
+                          10      
+
+>>DRAMP08121                                              (12 aa)
+ initn:  40 init1:  40 opt:  40  Z-score: 113.0  bits: 20.8 E(18013):  3.1
+Smith-Waterman score: 40; 50.0% identity (60.0% similar) in 10 aa overlap (14-23:3-12)
+
+               10        20       
+SDAVS  VASDSADVSADFGWATWQTREWRTWER
+                    :  :  :.::    
+DRAMP0            RWWKIWVIRQWR    
+                          10      
+
+
+
+27 residues in 1 query   sequences
+517387 residues in 18013 library sequences
+ Tcomplib [36.3.6 Sep, 2013(preload9)] (8 proc in memory [0G])
+ start: Fri Dec 13 23:09:26 2013 done: Fri Dec 13 23:09:26 2013
+ Total Scan time:  0.180 Total Display time:  0.000
+
+Function used was FASTA [36.3.6 Sep, 2013(preload9)]

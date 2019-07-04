@@ -1,0 +1,195 @@
+BLASTP 2.2.26 [Sep-21-2011]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Reference for compositional score matrix adjustment: Altschul, Stephen F., 
+John C. Wootton, E. Michael Gertz, Richa Agarwala, Aleksandr Morgulis,
+Alejandro A. Schaffer, and Yi-Kuo Yu (2005) "Protein database searches
+using compositionally adjusted substitution matrices", FEBS J. 272:5101-5109.
+
+Query= your_sequence
+         (27 letters)
+
+Database: Peptide 
+           3330 sequences; 111,264 total letters
+
+Searching..................................................done
+
+
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+
+DRAMP2                                                                 56   8e-15
+DRAMP1620                                                              19   0.68 
+DRAMP3203                                                              19   0.78 
+DRAMP200                                                               19   0.78 
+DRAMP201                                                               18   1.4  
+DRAMP2185                                                              18   1.8  
+DRAMP2703                                                              18   1.8  
+DRAMP2702                                                              17   4.3  
+DRAMP2671                                                              16   6.7  
+DRAMP3196                                                              16   9.1  
+DRAMP2448                                                              16   9.1  
+
+>DRAMP2
+          Length = 27
+
+ Score = 56.2 bits (134), Expect = 8e-15,   Method: Compositional matrix adjust.
+ Identities = 27/27 (100%), Positives = 27/27 (100%)
+
+Query: 1  STIVCVSLRICNWSLRFCPSFKVRCPM 27
+          STIVCVSLRICNWSLRFCPSFKVRCPM
+Sbjct: 1  STIVCVSLRICNWSLRFCPSFKVRCPM 27
+
+
+>DRAMP1620
+          Length = 66
+
+ Score = 19.2 bits (38), Expect = 0.68,   Method: Compositional matrix adjust.
+ Identities = 7/19 (36%), Positives = 12/19 (63%)
+
+Query: 5  CVSLRICNWSLRFCPSFKV 23
+          C++LR    +L+FC S + 
+Sbjct: 24 CLTLRSLKKTLKFCASGRT 42
+
+
+>DRAMP3203
+          Length = 88
+
+ Score = 19.2 bits (38), Expect = 0.78,   Method: Composition-based stats.
+ Identities = 5/6 (83%), Positives = 6/6 (100%)
+
+Query: 9  RICNWS 14
+          R+CNWS
+Sbjct: 74 RLCNWS 79
+
+
+>DRAMP200
+          Length = 88
+
+ Score = 19.2 bits (38), Expect = 0.78,   Method: Composition-based stats.
+ Identities = 5/6 (83%), Positives = 6/6 (100%)
+
+Query: 9  RICNWS 14
+          R+CNWS
+Sbjct: 74 RLCNWS 79
+
+
+>DRAMP201
+          Length = 90
+
+ Score = 18.5 bits (36), Expect = 1.4,   Method: Composition-based stats.
+ Identities = 5/6 (83%), Positives = 6/6 (100%)
+
+Query: 9  RICNWS 14
+          R+CNWS
+Sbjct: 76 RMCNWS 81
+
+
+>DRAMP2185
+          Length = 42
+
+ Score = 17.7 bits (34), Expect = 1.8,   Method: Compositional matrix adjust.
+ Identities = 7/11 (63%), Positives = 8/11 (72%)
+
+Query: 7  SLRICNWSLRF 17
+           LRICN+  RF
+Sbjct: 16 GLRICNFPSRF 26
+
+
+>DRAMP2703
+          Length = 60
+
+ Score = 18.1 bits (35), Expect = 1.8,   Method: Compositional matrix adjust.
+ Identities = 5/11 (45%), Positives = 8/11 (72%)
+
+Query: 17 FCPSFKVRCPM 27
+          +CP ++V CP 
+Sbjct: 15 YCPEYRVPCPF 25
+
+
+>DRAMP2702
+          Length = 60
+
+ Score = 16.9 bits (32), Expect = 4.3,   Method: Compositional matrix adjust.
+ Identities = 5/11 (45%), Positives = 7/11 (63%)
+
+Query: 17 FCPSFKVRCPM 27
+          +CP F + CP 
+Sbjct: 15 YCPEFLLDCPF 25
+
+
+>DRAMP2671
+          Length = 41
+
+ Score = 16.2 bits (30), Expect = 6.7,   Method: Compositional matrix adjust.
+ Identities = 6/8 (75%), Positives = 6/8 (75%)
+
+Query: 18 CPSFKVRC 25
+          C  FKVRC
+Sbjct: 30 CGHFKVRC 37
+
+
+>DRAMP3196
+          Length = 34
+
+ Score = 15.8 bits (29), Expect = 9.1,   Method: Compositional matrix adjust.
+ Identities = 6/11 (54%), Positives = 7/11 (63%)
+
+Query: 10 ICNWSLRFCPS 20
+          IC    RFCP+
+Sbjct: 2  ICACRRRFCPN 12
+
+
+>DRAMP2448
+          Length = 34
+
+ Score = 15.8 bits (29), Expect = 9.1,   Method: Compositional matrix adjust.
+ Identities = 6/11 (54%), Positives = 7/11 (63%)
+
+Query: 10 ICNWSLRFCPS 20
+          IC    RFCP+
+Sbjct: 2  ICACRRRFCPN 12
+
+
+  Database: Peptide
+    Posted date:  Apr 19, 2013  7:14 AM
+  Number of letters in database: 111,264
+  Number of sequences in database:  3330
+  
+Lambda     K      H
+   0.339    0.141    0.549 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Sequences: 3330
+Number of Hits to DB: 14,595
+Number of extensions: 343
+Number of successful extensions: 62
+Number of sequences better than 10.0: 44
+Number of HSP's gapped: 62
+Number of HSP's successfully gapped: 45
+Length of query: 27
+Length of database: 111,264
+Length adjustment: 1
+Effective length of query: 26
+Effective length of database: 107,934
+Effective search space:  2806284
+Effective search space used:  2806284
+Neighboring words threshold: 11
+Window for multiple hits: 40
+X1: 15 ( 7.3 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 27 (16.0 bits)
+S2: 27 (15.0 bits)

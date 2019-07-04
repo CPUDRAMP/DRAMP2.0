@@ -1,0 +1,47 @@
+/* CSS Document */
+#tb_srh {
+	width: 540px; color:#333; font:14px;
+    cellspacing:0; cellpadding:0;
+}
+.item1 {
+     padding-top:8px; font:15px;
+	 font-style:bold; padding-left:8px;
+	 width:27%; height:30px;
+	 background-color:#CCC;
+}
+.item2 {
+	
+	padding-left:8px;
+	width:50%;
+
+}
+.item2 input {
+	height:19px; width:90%; 
+}
+.item2 select {
+	height:22px; width:92%;
+}
+.item2 textarea {
+	width:90%;
+}
+.item3 {
+
+}
+.btn_smt {
+	background-color:#fc0;
+	border:none;
+	font:17px bold;
+}
+.btn_reset {
+	font:17px bold;
+}
+
+	
+#show_hide{
+	margin:0px 30px;	
+	border:0px solid blue;
+}
+	
+#td{
+	float:left;	
+}

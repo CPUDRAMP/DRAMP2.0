@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Welcome To Dramp Database</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/home.css" media="all">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+	<script type="text/javascript" src="./js/pptBox.js"></script>
+<script type="text/javascript" src="./js/jquery-1.js"></script>
+<script type="text/javascript" src="./js/jquery.js"></script>	
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/pptbox.css" media="all">
+	
+</head>
+<body id="pg_index" class="" style="margin:0px;padding:0px;">
+	
+<iframe src="/head/head.html" height="80px;"  marginheight=0 marginwidth=0 SCROLLING="NO"   frameborder="0" width=100%;></iframe>
+
+	        
+<div id="page-header">
+    <div id="page-header-content-holder">
+        <div id="page-header-content">
+            <h1><a href="http://sourceforge.net/directory" title="Find Open Source software">Browse</a>，
+            <a href="http://sourceforge.net/create" title="Create Open Source software">Create</a> and
+            <a href="http://sourceforge.net/publish" title="Publish Open Source software">Mining</a> <font color=red>Antimicrobial Peptides</font></h1>
+            <form method="get" action="/directory/">
+            	 <div class="in">
+                <input id="words-index"  name="q" type="text">
+					 </div>
+					 <div class="btn">                
+                <a   href="#"><img src="./images/qsearch_bg.png" /></a>
+					 </div>                
+					 <div class="btm">                
+                <a   href="#" /><img src="./images/asearch_bg.png" /></a>
+					 </div>            
+            </form>
+            <div id="page-header-counts">
+                <div class="stat">Classification:</div>
+                <div class="stat"><b><u>P</u></b> <a href="#"><font color=green>Patent</font></a></div>
+                <div class="stat"><b><u>C</u></b> <a href="#"><font color=green>Clinical</font></a></div>
+                <div class="stat"><b><u>B</u></b> <a href="#"><font color=green>Bacteriocins</font></a></div>
+                <div class="stat"><b><u>P</u></b> <a href="#"><font color=green>Physicochemical</font></a></div>
+					 <div class="stat"><b><u>P</u></b> <a href="#"><font color=green>Plant</font></a></div>            
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="messages">
+</div>
+
+<div id="page-body">
+	<div class="main-container">
+   <div class="main-content">
+   <div class="main-content-left"> 
+   
+		<div style="height:150px;margin-top:30px;border:1px dashed #ff6600;background-color:#f8dac2;color:#ff6600;padding:5px;text-align:left;">
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;Last updated on 24 May 2013.&nbsp50 visitors since May 2013.</span>
+			<br>
+			<span>&nbsp;&nbsp;&nbsp;&nbsp;Last Your comments and suggestions are welcome!</span>
+		</div>  	
+   	<br></br>
+   	<h2><b>External Links</b></h2>
+   	<br>
+	  <ul id="tb_links">
+	       <li><a href="http://www.ncbi.nlm.nih.gov/"><img src="./link_images/ncbi.png" /></a>&nbsp&nbsp&nbsp&nbsp<a href="#"><img src="./link_images/camp.png" /></a></li>
+	       <br />
+	       <li><a href="http://sourceforge.net/directory/business-enterprise"><img src="./link_images/uniprot.gif" /></a>&nbsp&nbsp&nbsp&nbsp<a href="#"><img src="./link_images/apd.png" /></a></li>
+			 <br />	       
+	       <li><a href="http://sourceforge.net/directory/communications"><img src="./link_images/expasy.png" /></a>&nbsp&nbsp&nbsp&nbsp<a href="#"><img src="./link_images/pubmed.png" /></a></li>
+			 <br />	       
+	       <li><a href="http://sourceforge.net/directory/development"><img src="./link_images/ebi.png" /></a>&nbsp&nbsp&nbsp&nbsp<a href="#"><img src="./link_images/phytamp.png" /></a></li>
+	       <br />
+	       <li><a href="http://sourceforge.net/directory/home-education"><img src="./link_images/pdb.png" /></a></li>
+	   </ul>
+		<div style="height:50px;"></div>
+	   <div id="twitter" class="editorial-block">
+	       <div>
+	           <h2><a href="http://twitter.com/sourceforge" title="@sourceforge"><img src="./link_images/go_clinical.jpg" /></a></h2>
+	       </div>
+	   </div>
+ 	</div>
+ 	<div class="main-content-right">
+ 		<div class="box" style="margin-top:30px;">   
+		<h2 id="h2_1">Welcome to DRAMP database!</h2>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;DRAMP database is a manually curated data repository of antimicrobial peptides (AMPs), currently holding <strong>*** putative AMPs</strong> collected from public resource, <strong>*** clinical AMPs</strong> and <strong>*** patented AMPs</strong>. The peptides are less than 100 amino acids in length.<a id="more" href="home/read_more.html">Read More..</a>
+		</p>
+      </div>
+      <div class="box" id="box_banner">
+            <h2 id="h2_2">New Released Structures</h2>
+		<div id="xxx">
+		
+     <script>
+     var box =new PPTBox();
+     box.width = 270; //¿í¶È
+     box.height = 220;//žß¶È
+     box.autoplayer = 3;//×Ô
+     
+     box.add({"url":"./images/4HE7.png","href":"http://www.lanrentuku.com/","title":"Ðüž¡ÌáÊŸ±êÌâ1"})
+     box.add({"url":"./images/4K3T.png","href":"http://www.lanrentuku.com/","title":"Ðüž¡ÌáÊŸ±êÌâ2"})
+     box.add({"url":"./images/4JV3.png","href":"http://www.lanrentuku.com/","title":"Ðüž¡ÌáÊŸ±êÌâ3"})
+
+     box.show();
+    </script>
+
+		</div>
+      </div>
+      
+      <div class="box">
+            <h2 id="h2_3">NEWS & EVENTS</h2>
+		    <ul id="news_ul">
+            <li><a href="http://www.fda.gov/NewsEvents/Newsroom/PressAnnouncements/ucm354199.htm">FDA Approves Two Drugs, Companion Diagnostic Test for Advanced Skin Cancer.</a></li>
+            <li><a href="http://www.drugs.com/news/obama-calls-national-debate-mental-health-44833.html">Obama Calls for National Debate on Mental Health.</a>
+</li>
+            <li>this is news!</li>
+            <li>this is news!</li>           
+            </ul>
+      </div> 
+      <!--end of .box-->
+      <div class="box">
+                <h2 id="h2_4">About Us</h2>
+				<p>
+This is the home page of the database, please use the navigation bar in the left-side to browse the database and consult the About pages to discover more. If you encounter any problems in using this database, you can consult the FAQs/help pages for help or feedback to us, we will help you solve as soon as possible.
+contact us: zhengheng (zhengh18@hotmail.com) and ** (*********) in China Pharmaceutical University
+Tong Jia Xiang, Nanjing, Jiangsu Province
+</p>
+      </div>
+ 	</div>
+    </div>
+</div>
+</div>
+
+<iframe src="/head/footer.html" height="60px;"  marginheight=0 marginwidth=0 SCROLLING="NO"   frameborder="0" width=100%;></iframe>
+</body>
+</html>
+

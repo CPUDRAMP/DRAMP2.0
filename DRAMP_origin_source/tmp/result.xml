@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<peptide>
+<search>
+	<DRAMP_ID size="1">DRAMP00001</DRAMP_ID>
+	<Name>Variacin (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>GSGVIPTISHECHMNSFQFVFTCCS</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00002</DRAMP_ID>
+	<Name>Entianin (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>WKSESVCTPGCVTGLLQTCFLQTITCNCKISK</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00003</DRAMP_ID>
+	<Name>Bovicin HJ50 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>ADRGWIKTLTKDCPNVISSICAGTIITACKNCA</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00004</DRAMP_ID>
+	<Name>Lantibiotic (Bacteriocin; Predicted)</Peptide_Name>
+	<Peptide_Seq>MNNTIKDFDLDLKTNKKDTATPYVGSRYLCTPGSCWKLVCFTTTVK</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00005</DRAMP_ID>
+	<Name>Epicidin 280 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>SLGPAIKATRQVCPKATRFVTVSCKKSDCQ</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00006</DRAMP_ID>
+	<Name>Butyrivibriocin OR79 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>GNGVIKTISHECHMNTWQFIFTCCS</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00007</DRAMP_ID>
+	<Name>Thermophilin 1277 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>ADRGWIKTLTKDCPNVISSICAGTIITACKNCA</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00008</DRAMP_ID>
+	<Name>Lacticin 3147 A1 (LtnA1; Bacteriocin; Preclinical)</Peptide_Name>
+	<Peptide_Seq>CSTNTFSLSDYWGNNGAWCTLTHECMAWCK</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00009</DRAMP_ID>
+	<Name>Bacteriocin lacticin 3147 A2 (LtnA2; Bacteriocin; Preclinical)</Peptide_Name>
+	<Peptide_Seq>TTPATPAISILSAYISTNTCPTTKCTRAC</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00010</DRAMP_ID>
+	<Name>Plantaricin W alpha (Plw-alpha; Bacteriocin; Predicted)</Peptide_Name>
+	<Peptide_Seq>KCKWWNISCDLGNNGHVCTLSHECQVSCN</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00011</DRAMP_ID>
+	<Name>Plantaricin W beta (Plw-beta; Bacteriocin; Predicted)</Peptide_Name>
+	<Peptide_Seq>SGIPCTIGAAVAASIAVCPTTKCSKRCGKRKK</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00012</DRAMP_ID>
+	<Name>Lantibiotic lichenicidin VK21 A1 (LchA1; Lchalpha; Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>TITLSTCAILSKPLGNNGYLCTVTKECMPSCN</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00013</DRAMP_ID>
+	<Name>Lantibiotic lichenicidin VK21 A2 (LchA2; Lchbeta; Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>TTPATTSSWTCITAGVTVSASLCPTTKCTSRC</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00014</DRAMP_ID>
+	<Name>Geobacillin I (nisin analog; Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>VTSKSLCTPGCITGVLMCLTQNSCVSCNSCIRC</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00015</DRAMP_ID>
+	<Name>Geobacillin II (nisin analog; Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>STIVCVSLRICNWSLRFCPSFKVRCPM</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00016</DRAMP_ID>
+	<Name>Salivaricin 9 (Sal9; Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>GNGVVLTLTHECNLATWTKKLKCC</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00017</DRAMP_ID>
+	<Name>Microbisporicin A1 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>VTSWSLCTPGCTSPGGGSNCSFCC</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00018</DRAMP_ID>
+	<Name>SmbA1 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>GTTVVNSTFSIVLGNKGYICTVTVECMRNCSK</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00019</DRAMP_ID>
+	<Name>SmbA2 (Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>STPACAIGVVGITVAVTGISTACTSRCINK</Peptide_Seq>
+</search>
+<search>
+	<DRAMP_ID size="1">DRAMP00020</DRAMP_ID>
+	<Name>HalA1 (one chain of haloduracin; Bacteriocin)</Peptide_Name>
+	<Peptide_Seq>CAWYNISCRLGNKGAYCTLTVECMPSCN</Peptide_Seq>
+</search>
+</peptide>

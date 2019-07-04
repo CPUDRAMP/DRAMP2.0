@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+	<title></title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function () {
+
+		$('#dropdown').hover(
+		
+			function () {
+
+				//change the background of parent menu				
+				$('#dropdown down a.parent').addClass('hover');
+				
+				//display the submenu
+				$('#dropdown ul.children').show();
+				
+			},
+		
+			function () {
+
+				//change the background of parent menu
+				$('#dropdown down a.parent').removeClass('hover');			
+
+				//display the submenu
+				$('#dropdown ul.children').hide();
+				
+			}
+		
+		);
+		
+	});
+	
+	</script>
+	
+	<style type="text/css">
+	body {
+		font-family:arial;	
+	}
+	
+	a {
+		text-decoration:none;
+		color:#666;
+	}
+	
+	a:hover {
+		color:#e11;	
+	}
+	
+	
+	#dropdown {
+		/* cancel the default list style */
+		list-style:none;
+		margin:0;
+		padding:0;
+		width:180px;
+		position:relative;
+	}
+	
+	#down{
+		border:0px solid red;
+	}
+	
+	#dropdown down {
+		border:1px solid blue;
+	}
+
+	#parent {
+		display:block; 
+		width:180px; height:40px;
+		font-weight:700;
+		padding:0 0 0 10px;
+		line-height:35px;
+		
+	}
+	
+	a.hover {
+		
+	}
+	
+	.children {
+			
+			/* cancel the default list style */
+			margin:0;
+			padding:0;
+			list-style:none;	
+			display:none;
+			
+			/* make sure it has the highest z-index */
+			position:absolute;
+			left:0;
+			z-index:500;
+			background:white;
+			width:180px;
+			
+			margin-left:10px;
+			border:0px solid red;
+		}
+		
+			ul li {
+				font-size:21px;	
+				
+			}
+			
+				#down li {
+					display:block; 
+					font-weight:700;
+					padding:0 0 0 10px;
+					height:30px;
+					color:black;
+					border:0px solid green;
+				}
+	</style>
+	
+</head>
+<body>
+<div>
+<form action="http://www.baidu.com" method="get">
+<div id="dropdown">
+	<div id="down"><a href="#" id="parent">Down &raquo;</a>	
+		<form>
+
+			<ul class="children">
+				<li><input type="radio"  name="format">html</input></li>
+				<li><input type="radio"  name="format">xml</input></li>	
+				<li><input type="radio"  name="format">fasta</input></li>
+				<li><input type="radio"  name="format">xls</input></li>
+				<li>&nbsp&nbsp&nbsp<input type="submit" id="srh_smt" value="create file"/></li>
+			</ul>
+			
+	</form>
+	</div>
+</div>
+</form>
+</div>
+<div>Page Content</div>
+</body>
+</html>

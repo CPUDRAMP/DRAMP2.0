@@ -1,0 +1,51 @@
+/* CSS Document */
+.post p {
+	font-size:15px; color:#000;
+	line-height:1.5;
+	margin-bottom:10px;
+}
+.post h2 {
+	text-align:center;	
+}
+.fback_frame {
+	width:535px;
+    padding:30px 0 50px  0;
+	border:1px solid #999;
+	overflow:auto; zoom:1;
+}
+.fback_upload {
+	padding-left:50px;
+    height:40px;
+}
+.fback_upload label{
+	width:130px; display:block; float:left;
+	font-size:14px; color:#333;
+	letter-spacing:-1px;
+}
+.fback_upload input {
+	float:left;
+	width:300px;
+	height:21px;
+}
+.fback_area {
+	padding-left:50px;
+    height:140px;
+}
+.fback_area label {
+	width:130px; display:block; float:left;
+	font-size:15px; color:#333;
+}
+.fback_area textarea {
+    float:left;
+	height:120px;
+	width:300px;
+	font-size:18px;
+    resize:none;
+	border:1px solid #666;
+}
+#smt_btn{
+	float:right;
+	margin-right:70px;
+	color:#006;
+}
+

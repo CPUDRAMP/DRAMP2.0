@@ -1,0 +1,293 @@
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, menu, time, mark, audio, video {
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    outline: 0px none;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+}
+
+
+
+
+#pg_index #page-header {
+    width: 950px;
+	background:url("../images/search_bg.png") no-repeat ;
+    margin:60px auto;
+    display: block;
+    float: none;
+    height: 200px;
+    
+	
+}
+
+#pg_index #page-header-content-holder {
+    margin: 18px;
+    color: rgb(255, 255, 255);
+}
+
+#pg_index #page-header-content {
+    padding: 4px;
+}
+#pg_index #page-header-content h1 a:hover {
+    text-decoration: underline;
+}
+
+#pg_index #page-header-content h1 a:hover {
+    color: rgb(255, 255, 255);
+}
+
+a:hover, a:active {
+    outline: medium none;
+}
+
+#pg_index #page-header-content h1 {
+    font-size: 2em;
+	text-align:center;
+	margin-top:31px;
+	
+	
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    
+}
+h1, h2 {
+    line-height: 18px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Ubuntu",sans-serif;
+}
+
+a {
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: none repeat scroll 0% 0% transparent;
+    outline: medium none;
+    color: rgb(170, 170, 170);
+    text-decoration: none;
+}
+
+
+#pg_index #page-header-content form {
+   
+    border: 0px solid rgb(34, 34, 34);
+    margin-left:102px;
+    height:80px;
+    width: 1000px;
+    margin-top:12px;
+    
+    padding:0px;
+    
+    }
+   
+#pg_index #page-header-content form .in{
+	float:left;
+	margin-top:13px;
+	
+
+}
+
+#pg_index #page-header-content form .in input{
+    width: 420px;
+    margin-left:17px;
+    height: 32px;
+    font-size: 1.3em;
+	background:none;
+	border:none;
+	border: 0px solid rgb(34, 34, 34);
+	color: gray;
+}
+
+
+
+#pg_index #page-header-content form .btn{
+    float: left;
+    font-weight: normal;
+    color:#000;
+    line-height: 103px;
+    width: auto;
+    
+    
+    font-size: 1.4em;
+    text-shadow: none;
+    border:0px solid red;
+	margin-left:18px;
+	margin-top:10px;
+	
+	
+	
+}
+
+#pg_index #page-header-content form .btm{
+    float: left;
+    font-weight: normal;
+    color:#000;
+    line-height: 108px;
+    width: auto;
+    font-size: 1.4em;
+    text-shadow: none;
+    border:0px solid red;
+	margin-left:7px;
+	margin-top:6px;
+	
+}
+
+#pg_index #page-header-content #page-header-counts {
+    width: 940px;
+    margin: 10px 10px 0px 90px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    float: none;
+    display: block;
+}
+
+#pg_index #page-header-content #page-header-counts .stat {
+    text-align: left;
+    float: left;
+    margin-right: 35px;
+}
+
+#pg_index #page-header-content #page-header-counts .stat a:hover{
+	color: red;
+}
+
+
+#page-body {
+    margin: 2px auto 20px;
+    overflow: hidden;
+    width: 960px;
+}
+
+
+#pg_create .main-container, #pg_index .main-container, #pg_publish .main-container, #pg_installer_faq .main-container {
+    width: 940px;
+    display: inline;
+    float: left;
+    margin: 0px 10px 2em;
+    border-radius: 4px 4px 4px 4px;
+    border: medium none;
+}
+
+
+#pg_create .main-content, #pg_index .main-content, #pg_publish .main-content, #pg_installer_faq .main-content {
+    display: inline-block;
+    margin-left: -10px;
+    margin-right: -10px;
+    width: auto;
+}
+
+
+#pg_index .main-content-left {
+    width: 180px;
+    display: inline;
+    float: left;
+    margin: 20px 10px 0px;
+}
+
+
+ul, ol {
+    list-style: none outside none;
+}
+p, ul, ol {
+    text-align: justify;
+}
+
+
+/*------------right--------------*/
+#pg_index .main-content-right {
+    width: 740px;
+    display: inline;
+    float: left;
+    margin: 0px 10px;
+}
+
+.box {
+    padding: 15px 20px 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 15px 15px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 10px 10px 10px 10px;
+}
+
+
+#h2_1 {
+    color: saddlebrown;
+    border-bottom: 3px solid rgb(204, 204, 204);
+}
+
+
+.box p {
+    padding: 10px 0px;
+    color: rgb(0, 0, 0);
+    line-height: 1.5;
+}
+p, ul, ol {
+    text-align: justify;
+}
+
+
+#pg_create .main-container p a, #pg_index .main-container p a, #pg_publish .main-container p a, #pg_installer_faq .main-container p a {
+    text-decoration: underline;
+}
+#more {
+    font-weight: bold;
+    margin-left: 8px;
+    text-decoration: none;
+    color: rgb(51, 0, 204);
+}
+a:hover {
+    text-decoration: none;
+    color: rgb(107, 107, 107);
+    border: medium none;
+}
+
+
+#h2_2 {
+    color: rgb(102, 51, 255);
+    border-bottom: 3px solid rgb(204, 204, 204);
+}
+
+#h2_3 {
+    color: rgb(0, 153, 102);
+    border-bottom: 3px solid rgb(0, 153, 102);
+    margin-bottom: 10px;
+}
+
+#h2_4 {
+    color: rgb(0, 204, 102);
+    border-bottom: 3px solid rgb(0, 204, 102);
+}
+
+#news_ul {
+    list-style: disc outside none;
+}
+
+.box h2 {
+    font-size: 18px;
+    padding-bottom: 6px;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+
+#tb_align li{
+	margin-left:-10px;
+	
+	float:left;
+	
+
+}
+
+ul, ol, li, h1, h2, h3, h4, h5, h6, form, p, dl, dd, hr {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+

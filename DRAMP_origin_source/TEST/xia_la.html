@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="robots" content="all" />
+<title>纯CSS的下拉菜单 支持IE6 IE7 Firefox</title>  
+<style type="text/css">  
+*{margin:0;padding:0;}   
+.menu{font-size:32px;position:relative;z-index:100;}   
+.menu ul{list-style:none;}   
+.menu li {float:left;position:relative;}   
+.menu ul ul {visibility:hidden;position:absolute;left:3px;top:19px;}   
+.menu table {position:absolute; top:0; left:0;}  
+
+.menu ul li:hover ul,   
+.menu ul a:hover ul{visibility:visible;}   
+.menu a{display:block;border:1px solid #aaa;background:#cacaca;padding:2px 10px;margin:3px;color:#fff;text-decoration:none;}   
+.menu a:hover{background:#fafafa;color:#000;border:1px solid #000;}   
+.menu ul ul{}   
+.menu ul ul li {float:left;text-align:left;font-size:32px;}
+.menu ul ul li a{display:block;width:390px;height:35px;margin:0;border:0;border-bottom:1px solid #858585;}   
+.menu ul ul li a:hover{border:0;background:#fafafa;border-bottom:1px solid #fff;}   
+</style>  
+</head>  
+  
+<body>  
+  
+<div class="menu">  
+          <ul>  
+              <li><a href="#">Home</a></li>  
+              <li><a href="#">Search
+                  <!--[if IE 7]><!--></a><!--<![endif]-->  
+                  <!--[if lte IE 6]><table><tr><td><![endif]-->  
+                  <ul>  
+                      <li><a href="#">Simple Search</a></li><li><a href="#">Advanced Search</a></li><li><a href="#">Conserved Domain Search</a></li>  
+                      
+		        
+                  </ul>  
+                  <!--[if lte IE 6]></td></tr></table></a><![endif]-->  
+              </li>  
+              <li><a href="#">Tools   
+                  <!--[if IE 7]><!--></a><!--<![endif]-->  
+                  <!--[if lte IE 6]><table><tr><td><![endif]-->  
+                  <ul>  
+                      <li><a href="#">Similarity Search</a></li>  
+                      <li><a href="#">Sequence Alignment</a></li>
+		      <li><a href="#">Prediction</a></li> 
+                  </ul>  
+                  <!--[if lte IE 6]></td></tr></table></a><![endif]-->  
+              </li>  
+              <li><a href="#">Statistics</a></li>  
+              <li><a href="#">DownLoads</a></li> 
+	      <li><a href="#">FAQs</a></li>
+	      <li><a href="#">External Links</a></li>  
+              <li><a href="#">Help</a></li>  
+</div> 
+<br>
+<div>dsfasdfasd</div> 
+</body>  
+</html></CODE>
+<a href="http://js.alixixi.com/">欢迎访问阿里西西网页特效代码站，js.alixixi.com</a>

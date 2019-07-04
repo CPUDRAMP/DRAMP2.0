@@ -1,0 +1,83 @@
+BLASTP 2.2.28+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro
+A. Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and
+David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new
+generation of protein database search programs", Nucleic
+Acids Res. 25:3389-3402.
+
+
+RID: NAPZ96UY014
+
+
+Database: Non-redundant UniProtKB/SwissProt sequences
+           454,721 sequences; 169,539,820 total letters
+Query= gi|387059|gb|AAA37041.1| insulin [Cavia porcellus]
+
+Length=110
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                       (Bits)  Value
+
+sp|P01308.1|INS_HUMAN  RecName: Full=Insulin; Contains: RecNam...    158   2e-50
+
+ALIGNMENTS
+>sp|P01308.1|INS_HUMAN RecName: Full=Insulin; Contains: RecName: Full=Insulin B chain; 
+Contains: RecName: Full=Insulin A chain; Flags: Precursor
+Length=110
+
+ Score =   158 bits (400),  Expect = 2e-50
+ Identities = 76/110 (69%), Positives = 88/110 (80%), Gaps = 0/110 (0%)
+
+Query  1    MALWMHLLTVLALLALWGPNTNQAFVSRHLCGSNLVETLYSVCQDDGFFYIPKDRRELED  60
+            MALWM LL +LALLALWGP+   AFV++HLCGS+LVE LY VC + GFFY PK RRE ED
+Sbjct  1    MALWMRLLPLLALLALWGPDPAAAFVNQHLCGSHLVEALYLVCGERGFFYTPKTRREAED  60
+
+Query  61   PQVEQTELGMGLGAGGLQPLALEMALQKRGIVDQCCTGTCTRHQLQSYCN  110
+             QV Q ELG G GAG LQPLALE +LQKRGIV+QCCT  C+ +QL++YCN
+Sbjct  61   LQVGQVELGGGPGAGSLQPLALEGSLQKRGIVEQCCTSICSLYQLENYCN  110
+
+
+  Database: Non-redundant UniProtKB/SwissProt sequences
+    Posted date:  Mar 28, 2013  11:10 AM
+  Number of letters in database: 11,401,289
+  Number of sequences in database:  20,659
+
+Lambda      K        H
+   0.324    0.138    0.445 
+Gapped
+Lambda      K        H
+   0.267   0.0410    0.140 
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Sequences: 20659
+Number of Hits to DB: 51048
+Number of extensions: 2157
+Number of successful extensions: 3
+Number of sequences better than 1e-10: 0
+Number of HSP's better than 1e-10 without gapping: 0
+Number of HSP's gapped: 3
+Number of HSP's successfully gapped: 0
+Length of query: 110
+Length of database: 11401289
+Length adjustment: 81
+Effective length of query: 29
+Effective length of database: 9727910
+Effective search space: 282109390
+Effective search space used: 282109390
+T: 11
+A: 40
+X1: 15 (7.0 bits)
+X2: 38 (14.6 bits)
+X3: 64 (24.7 bits)
+S1: 40 (20.0 bits)
+S2: 148 (61.6 bits)
+ka-blk-alpha gapped: 1.9
+ka-blk-alpha ungapped: 0.7916
+ka-blk-alpha_v gapped: 42.6028
+ka-blk-alpha_v ungapped: 4.96466
+ka-blk-sigma gapped: 43.6362
+
+
+
+

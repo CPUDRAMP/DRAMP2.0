@@ -1,0 +1,97 @@
+# ../../cgi-bin/seq-search/bin/fasta36 -Q -s BL62 -b 10 -d 10 -E 20.0 -T 8 ../../tmp/simi_search_tmp/zFuZtsziBVy8iNoXxc/zFuZtsziBVy8iNoXxc.in ./database/DRAMP.fa
+FASTA searches a protein or DNA sequence data bank
+ version 36.3.6 Sep, 2013(preload9)
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+Query: ../../tmp/simi_search_tmp/zFuZtsziBVy8iNoXxc/zFuZtsziBVy8iNoXxc.in
+  1>>>1 - 15 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+Statistics:  Expectation_n fit: rho(ln(x))= 2.3227+/-0.00056; mu= 7.0386+/- 0.018
+ mean_var=9.4117+/- 3.087, 0's: 2747 Z-trim(114.0): 2750  B-trim: 0 in 0/24
+ Lambda= 0.418062
+ statistics sampled from 10831 (10834) to 10831 sequences
+Algorithm: FASTA (3.8 Nov 2011) [optimized]
+Parameters: BL62 matrix (11:-4), open/ext: -11/-1
+ ktup: 1, E-join: 1 (0.999), E-opt: 0.2 (0.601), width:  16
+ Scan time:  0.170
+
+The best scores are:                                      opt bits E(18013)
+DRAMP12982                                         (  15)   74 46.0 5.9e-08
+DRAMP04676                                         (  38)   74 46.0 1.4e-07
+DRAMP04679                                         (  38)   74 46.0 1.4e-07
+DRAMP01871                                         (  24)   29 18.9      14
+DRAMP06553                                         (  12)   27 17.6      16
+DRAMP13589                                         (  70)   31 20.1      17
+
+>>DRAMP12982                                              (15 aa)
+ initn:  74 init1:  74 opt:  74  Z-score: 251.7  bits: 46.0 E(18013): 5.9e-08
+Smith-Waterman score: 74; 100.0% identity (100.0% similar) in 15 aa overlap (1-15:1-15)
+
+               10     
+1      VNPGVVVRISQKGLD
+       :::::::::::::::
+DRAMP1 VNPGVVVRISQKGLD
+               10     
+
+>>DRAMP04676                                              (38 aa)
+ initn:  74 init1:  74 opt:  74  Z-score: 244.7  bits: 46.0 E(18013): 1.4e-07
+Smith-Waterman score: 74; 100.0% identity (100.0% similar) in 15 aa overlap (1-15:1-15)
+
+               10                            
+1      VNPGVVVRISQKGLD                       
+       :::::::::::::::                       
+DRAMP0 VNPGVVVRISQKGLDYASQQGTAALQXXLKHIKIPDYL
+               10        20        30        
+
+>>DRAMP04679                                              (38 aa)
+ initn:  74 init1:  74 opt:  74  Z-score: 244.7  bits: 46.0 E(18013): 1.4e-07
+Smith-Waterman score: 74; 100.0% identity (100.0% similar) in 15 aa overlap (1-15:1-15)
+
+               10                            
+1      VNPGVVVRISQKGLD                       
+       :::::::::::::::                       
+DRAMP0 VNPGVVVRISQKGLDYASQQGTAALQXXLKNIKIPDYL
+               10        20        30        
+
+>>DRAMP01871                                              (24 aa)
+ initn:  29 init1:  29 opt:  29  Z-score: 101.5  bits: 18.9 E(18013):   14
+Smith-Waterman score: 29; 50.0% identity (90.0% similar) in 10 aa overlap (3-12:14-23)
+
+                          10     
+1                 VNPGVVVRISQKGLD
+                    :..: ::..:   
+DRAMP0 FLPIIASVAAKLIPSIVCRITKKC  
+               10        20      
+
+>>DRAMP06553                                              (12 aa)
+ initn:  27 init1:  27 opt:  27  Z-score: 100.2  bits: 17.6 E(18013):   16
+Smith-Waterman score: 27; 50.0% identity (100.0% similar) in 8 aa overlap (4-11:5-12)
+
+                10     
+1       VNPGVVVRISQKGLD
+           :::.:...    
+DRAMP0 RLARGVVIRVAR    
+               10      
+
+>>DRAMP13589                                              (70 aa)
+ initn:  31 init1:  31 opt:  31  Z-score: 99.9  bits: 20.1 E(18013):   17
+Smith-Waterman score: 31; 45.5% identity (90.9% similar) in 11 aa overlap (5-15:52-62)
+
+                                         10             
+1                                VNPGVVVRISQKGLD        
+                                     :..:.:.: .:        
+DRAMP1 KLGNAVLRNKIKRAIREAYRLNIDEKIDIIVIARVSSKDIDKQIQNSLE
+              30        40        50        60        70
+
+
+
+15 residues in 1 query   sequences
+517387 residues in 18013 library sequences
+ Tcomplib [36.3.6 Sep, 2013(preload9)] (8 proc in memory [0G])
+ start: Tue Dec 10 16:24:02 2013 done: Tue Dec 10 16:24:02 2013
+ Total Scan time:  0.170 Total Display time:  0.010
+
+Function used was FASTA [36.3.6 Sep, 2013(preload9)]

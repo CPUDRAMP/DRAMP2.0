@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>jQuery选项卡上下滚动切换图片异步加载选项卡</title>
+<meta name="description" content="jQuery选项卡特效制作选项卡标签上下带按钮控制滚动切换选项卡的形式，选项卡切换过程中，对应的选项卡图片内容异步加载显示。当选项卡切换到最后或最前面时会提示用户信息。" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>   
+</head>
+
+<body>
+
+
+
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "宋体";}
+/* tabshow */
+.tabshow{width:750px;height:422px;position:relative;margin:40px auto;}
+.tabshow .hide{display:none;}
+.tabshow .udbtn,.tabshow .tabTagBox li{background:url(images/tab-all-bg.png) no-repeat;}
+.tabshow .udbtn{display:block;width:194px;height:35px;line-height:999em;overflow:hidden;}
+.tabshow .uPrev{background-position:0 -580px;}
+.tabshow .dNext{background-position:0 -615px;}
+.tabshow .tabTagBox{height:348px;width:194px;overflow:hidden;position:relative;z-index:9;margin:2px 0;}
+.tabshow .tabTagBox .tabTagList{position:absolute;left:0;height:999em;}
+.tabshow .tabTagBox li{float:left;width:193px;height:58px;line-height:99em;overflow:hidden;cursor:pointer;}
+.tabshow .tabTagBox li.current{width:194px;}
+.tabshow .tabTagBox li#tag01{background-position:-194px 0;}
+.tabshow .tabTagBox li#tag01.current{background-position:0 0;}
+.tabshow .tabTagBox li#tag02{background-position:-194px -58px;}
+.tabshow .tabTagBox li#tag02.current{background-position:0 -58px;}
+.tabshow .tabTagBox li#tag03{background-position:-194px -116px;}
+.tabshow .tabTagBox li#tag03.current{background-position:0 -116px;}
+.tabshow .tabTagBox li#tag04{background-position:-194px -174px;}
+.tabshow .tabTagBox li#tag04.current{background-position:0 -174px;}
+.tabshow .tabTagBox li#tag05{background-position:-194px -232px;}
+.tabshow .tabTagBox li#tag05.current{background-position:0 -232px;}
+.tabshow .tabTagBox li#tag06{background-position:-194px -290px;}
+.tabshow .tabTagBox li#tag06.current{background-position:0 -290px;}
+.tabshow .tabTagBox li#tag07{background-position:-194px -348px;}
+.tabshow .tabTagBox li#tag07.current{background-position:0 -348px;}
+.tabshow .tabTagBox li#tag08{background-position:-194px -406px;}
+.tabshow .tabTagBox li#tag08.current{background-position:0 -406px;}
+.tabshow .tabTagBox li#tag09{background-position:-194px -464px;}
+.tabshow .tabTagBox li#tag09.current{background-position:0 -464px;}
+.tabshow .tabTagBox li#tag10{background-position:-194px -522px;}
+.tabshow .tabTagBox li#tag10.current{background-position:0 -522px;}
+
+.tabshow .tabcon{position:absolute;top:0;right:0;z-index:1;border:solid 1px greenyellow;background:#FCFCFC;height:420px;width:520px;overflow:hidden;}
+.tabshow .tabcon h2{height:30px;line-height:30px;font-size:14px;color:#333;padding:10px 0 10px 25px;}
+.tabshow .tabcon p{height:30px;line-height:30px;font-size:14px;color:#333;padding:10px 0 10px 25px;}
+.tabshow .tabcon textarea{height: 100px;width: 380px;resize: none;border: 1px solid rgb(51, 153, 153);}
+
+
+.tabshow .tabcon li{float:left;width:152px;height:177px;overflow:hidden;margin:0 0 10px 24px;display:inline;}
+.tabshow .tabcon li .pic{display:block;border:solid 1px #ddd;width:150px;height:150px;}
+.tabshow .tabcon li .pic:hover{border:solid 1px #C00F15;}
+.tabshow .tabcon li .tit{height:20px;line-height:20px;display:block;margin:5px 0 0 0;}
+.tabshow .tabcon li .tit a{font-size:12px;color:#5e5e5e;text-decoration:none;}
+
+.tabshow .tabcon .option{border: 1px dashed rgb(102, 102, 102);width: 350px;padding: 20px;margin-top: 25px;position: relative;}
+#option_title {
+    position: absolute;
+    top: -11px;
+    font-family: "Arial Black",Gadget,sans-serif;
+    color: rgb(255, 102, 0);
+    background: none repeat scroll 0% 0% rgb(255, 255, 204);
+}
+
+.option label {
+    float: left;
+    padding-top: 12px;
+    width: 120px;
+    font-size: 12px;
+}
+
+
+#btn_box {
+    padding-left: 210px;
+    margin-top: 20px;
+}
+
+
+</style>
+
+
+
+<div class="tabshow">
+	
+	<div class="tabcon">
+		<h2>Prediction:</h2>
+		<div style="margin-left:50px;">
+			<form action="" method="get" name="pred_form" id="fm1">
+                    <p>Please paste your FASTA sequence here.<a href="../home/help.html#004"></a></p>
+                    <textarea name="pred_area"  cols="30" rows="3" wrap="virtual"></textarea><br />
+                    <table summary="" >
+						  <tr>
+						  <td><label>Or, upload a file</label></td>   
+                    <td><input type="file" name="pred_file" class="btn_file" /></td>
+                    </tr> 
+                   </table>
+                   <br />
+                   <table summary="" >
+                    <tr>
+                    <td colspan=“2”>                   
+                     <span><input type="radio" name="pred_radio" value="physicochemical property prediction"/>
+                     physicochemical property prediction</span>
+                     </td>
+                     </tr>
+                     <tr>
+                     <td  colspan=“2”>
+                     <span><input type="radio" name="pred_radio" value="second structure prediction" />
+                     second structure prediction</span>
+							</td>                     
+                     </tr>
+                 
+                    </table>
+                    <div id="btn_box">       
+                      <input type="submit" name="pred_smt" class="btn_smt" value="Submit" />
+                       <input type="reset" name="pred_reset" class="btn_reset" value="Reset" />
+                    </div>
+			 </form>
+		</div>
+	</div>
+</div><!--tabshow end-->
+</body>
+</html>

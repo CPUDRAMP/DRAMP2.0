@@ -1,0 +1,173 @@
+BLASTP 2.2.25+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: Non-redundant UniProtKB/SwissProt sequences
+           456,795 sequences; 170,518,380 total letters
+
+
+
+Query= DDDC
+
+Length=25
+
+RID: ABDGR4JD01R
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+sp|P83674.1|LANA_RUMGN  RecName: Full=Ruminococcin-A; AltName: Fu...  51.6    7e-10
+sp|P83675.1|LANA_RUMHA  RecName: Full=Ruminococcin-A; Flags: Prec...  51.6    7e-10
+sp|P36499.1|LAN4_LACLA  RecName: Full=Lantibiotic lacticin-481; A...  48.5    1e-08
+sp|B5MFD0.1|LANNA_STAHO  RecName: Full=Lantibiotic nukacin; AltNa...  46.2    9e-08
+sp|P36501.1|LANA_STRPY  RecName: Full=Lantibiotic streptococcin A...  46.2    1e-07
+sp|Q54957.1|LANB_STRP9  RecName: Full=Lantibiotic streptococcin A...  45.8    1e-07
+sp|Q9KWM4.1|LANNA_STAWA  RecName: Full=Lantibiotic nukacin; AltNa...  45.8    1e-07
+sp|O54329.1|LANA_STRMU  RecName: Full=Lantibiotic mutacin-2; AltN...  39.7    2e-05
+sp|Q9NSG2.1|CA112_HUMAN  RecName: Full=Uncharacterized protein C1...  26.2    8.4  
+
+
+>sp|P83674.1|LANA_RUMGN RecName: Full=Ruminococcin-A; AltName: Full=RumA protein 1/2/3; 
+Flags: Precursor
+Length=47
+
+ Score = 51.6 bits (122),  Expect = 7e-10, Method: Compositional matrix adjust.
+ Identities = 21/24 (88%), Positives = 24/24 (100%), Gaps = 0/24 (0%)
+
+Query  1   GNGVIKTISHECHMNTWQFIFTCC  24
+           GNGV+KTISHEC+MNTWQF+FTCC
+Sbjct  24  GNGVLKTISHECNMNTWQFLFTCC  47
+
+
+>sp|P83675.1|LANA_RUMHA RecName: Full=Ruminococcin-A; Flags: Precursor
+Length=47
+
+ Score = 51.6 bits (122),  Expect = 7e-10, Method: Compositional matrix adjust.
+ Identities = 21/24 (88%), Positives = 24/24 (100%), Gaps = 0/24 (0%)
+
+Query  1   GNGVIKTISHECHMNTWQFIFTCC  24
+           GNGV+KTISHEC+MNTWQF+FTCC
+Sbjct  24  GNGVLKTISHECNMNTWQFLFTCC  47
+
+
+>sp|P36499.1|LAN4_LACLA RecName: Full=Lantibiotic lacticin-481; AltName: Full=Lactococcin-DR; 
+Flags: Precursor
+Length=51
+
+ Score = 48.5 bits (114),  Expect = 1e-08, Method: Compositional matrix adjust.
+ Identities = 20/25 (80%), Positives = 24/25 (96%), Gaps = 0/25 (0%)
+
+Query  1   GNGVIKTISHECHMNTWQFIFTCCS  25
+           G+GVI TISHEC+MN+WQF+FTCCS
+Sbjct  27  GSGVIHTISHECNMNSWQFVFTCCS  51
+
+
+>sp|B5MFD0.1|LANNA_STAHO RecName: Full=Lantibiotic nukacin; AltName: Full=Nukacin KQ-1; 
+AltName: Full=Nukacin KQU-131; Flags: Precursor
+Length=57
+
+ Score = 46.2 bits (108),  Expect = 9e-08, Method: Compositional matrix adjust.
+ Identities = 18/24 (75%), Positives = 23/24 (96%), Gaps = 0/24 (0%)
+
+Query  2   NGVIKTISHECHMNTWQFIFTCCS  25
+           +GVI T+SH+CHMNT+QF+FTCCS
+Sbjct  34  SGVIPTVSHDCHMNTFQFMFTCCS  57
+
+
+>sp|P36501.1|LANA_STRPY RecName: Full=Lantibiotic streptococcin A-FF22; AltName: Full=Antibacterial 
+peptide SA-FF22; Flags: Precursor
+Length=51
+
+ Score = 46.2 bits (108),  Expect = 1e-07, Method: Compositional matrix adjust.
+ Identities = 19/24 (80%), Positives = 21/24 (88%), Gaps = 0/24 (0%)
+
+Query  2   NGVIKTISHECHMNTWQFIFTCCS  25
+           NGV KTISHECH+NTW F+ TCCS
+Sbjct  28  NGVFKTISHECHLNTWAFLATCCS  51
+
+
+>sp|Q54957.1|LANB_STRP9 RecName: Full=Lantibiotic streptococcin A-M49; AltName: Full=Antibacterial 
+peptide A-M49; Flags: Precursor
+Length=51
+
+ Score = 45.8 bits (107),  Expect = 1e-07, Method: Compositional matrix adjust.
+ Identities = 19/24 (80%), Positives = 21/24 (88%), Gaps = 0/24 (0%)
+
+Query  2   NGVIKTISHECHMNTWQFIFTCCS  25
+           NGV KTISHECH+NTW F+ TCCS
+Sbjct  28  NGVFKTISHECHLNTWAFLATCCS  51
+
+
+>sp|Q9KWM4.1|LANNA_STAWA RecName: Full=Lantibiotic nukacin; AltName: Full=Bacteriocin 
+ISK-1; Flags: Precursor
+ sp|E0WX65.1|LANNA_STASI RecName: Full=Lantibiotic nukacin; AltName: Full=Nukacin 3299; 
+AltName: Full=Simulancin 3299; Flags: Precursor
+Length=57
+
+ Score = 45.8 bits (107),  Expect = 1e-07, Method: Compositional matrix adjust.
+ Identities = 17/24 (71%), Positives = 23/24 (96%), Gaps = 0/24 (0%)
+
+Query  2   NGVIKTISHECHMNTWQFIFTCCS  25
+           +GVI T+SH+CHMN++QF+FTCCS
+Sbjct  34  SGVIPTVSHDCHMNSFQFVFTCCS  57
+
+
+>sp|O54329.1|LANA_STRMU RecName: Full=Lantibiotic mutacin-2; AltName: Full=Lantibiotic 
+mutacin H-29B; AltName: Full=Mutacin II; Flags: Precursor
+Length=53
+
+ Score = 39.7 bits (91),  Expect = 2e-05, Method: Compositional matrix adjust.
+ Identities = 14/22 (64%), Positives = 19/22 (87%), Gaps = 0/22 (0%)
+
+Query  3   GVIKTISHECHMNTWQFIFTCC  24
+           GV+ T+S+EC MN+WQ +FTCC
+Sbjct  32  GVVPTVSYECRMNSWQHVFTCC  53
+
+
+>sp|Q9NSG2.1|CA112_HUMAN RecName: Full=Uncharacterized protein C1orf112
+Length=853
+
+ Score = 26.2 bits (56),  Expect = 8.4, Method: Composition-based stats.
+ Identities = 9/17 (53%), Positives = 12/17 (71%), Gaps = 0/17 (0%)
+
+Query  4    VIKTISHECHMNTWQFI  20
+            VI ++ H  H NTW+FI
+Sbjct  170  VISSMDHAFHANTWKFI  186
+
+
+
+Lambda     K      H
+   0.330    0.137    0.523 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+Effective search space used: 4262959500
+
+
+  Database: Non-redundant UniProtKB/SwissProt sequences
+    Posted date:  Dec 7, 2013 01:43 PM
+  Number of letters in database: 170,518,380
+  Number of sequences in database:  456,795
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

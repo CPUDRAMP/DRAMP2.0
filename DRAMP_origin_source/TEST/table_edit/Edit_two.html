@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE>Test Edit Table </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <style type="text/css">
+    td{
+    border:2px solid red;
+    }
+  </style>
+ </HEAD>
+
+ <BODY>
+  <table>
+      <div>
+        <div id="td1" ondblclick="EditCells(this)">
+            df
+        </div>
+        <div id="td2" ondblclick="EditCells(this)">
+            bbb
+        </div>
+        <div id="td3" ondblclick="EditCells(this)">
+            ccc
+        </div>
+      </div>
+      <tr>
+        <td id="td4" ondblclick="EditCells(this)">
+            aaa
+        </td>
+        <td id="td5" ondblclick="EditCells(this)">
+            bbb
+        </td>
+        <td id="td6" ondblclick="EditCells(this)">
+            ccc
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" value="" id="HValue" />
+ </BODY>
+</HTML>
+<script language="javascript" type="text/javascript">
+    //当用户双击单元格的时候，判断 单元格里是否已经有textbox了，没有的话，再在单元格内显示textbox，value为原来单元格中的值
+    
+    function EditCells(thisCells)
+    {
+        var CellText= thisCells.innerHTML;
+        if(CellText.substring(0,1)!="<")
+        {
+        	alert("<input type=\"text\" id=\"TextBox1"+thisCells.id+"\" value=\""+thisCells.innerHTML+"\" onblur=\"thisTextBoxOnblur(this)\" />");
+            thisCells.innerHTML="<input type=\"text\" id=\"TextBox1"+thisCells.id+"\" value=\""+thisCells.innerHTML+"\" onblur=\"thisTextBoxOnblur(this)\" />";
+        document.getElementById("textBox1"+thisCells.id).focus();
+        }
+        
+    }
+    //当文本框失去焦点后，将修改后的值保存到隐藏控件中。并将单元格的内容变回原来的内容。
+    function thisTextBoxOnblur(thisTextBox)
+    {
+        var thisCellsID=thisTextBox.id;
+        thisCellsID=thisCellsID.substring(8,11);
+        document.getElementById("HValue").value=thisTextBox.value;
+        document.getElementById(thisCellsID).innerHTML=document.getElementById("HValue").value;
+    }
+    function UpdateData()
+    {
+        //在这里用ajax更新数据
+    }
+</script>

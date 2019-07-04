@@ -1,0 +1,164 @@
+@charset "uft-8";
+
+
+
+h1,h2,h3,h4,h5,h6 {
+  color: #193240;
+  text-transform:uppercase;
+}
+
+
+#clear {
+  overflow: auto;
+  clear: both;
+}
+
+#ooo-logo {
+    padding-top: 4px;
+    padding-left: 8px;
+    vertical-align: middle;
+}
+
+#bannera {
+  height: 105px;
+  padding: 0 0 0 8px;
+  color: black;
+  font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+  font-size:12pt;
+  vertical-align: middle;
+}
+
+#bannercenter {
+	margin-left:120px;
+  padding: 26pt 2pt 14pt 2pt;
+  color: #107EC0;
+  vertical-align: middle;
+  font-size:1.3em;
+}
+
+#bannerleft {
+	margin-left:100px;
+  text-align: left;
+  float: left;
+}
+
+#bannerright {
+  text-align: right;
+  float: right;
+  padding: 0 20pt 4pt 16pt;
+  width: 220px;
+}
+
+#query {
+  width: 130px;
+  border: 1px solid #C6CBDD;
+  padding: 2px;
+}
+
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.topsrchbox {
+  width: 220px;
+  padding-right: 20px;
+  text-align: right;
+}
+
+.topsrchbutton {
+  cursor: pointer;
+  height:24px;
+  width: 60px;
+  margin: 0 0 0 3px;
+  border: outset;
+  color: #666666;
+}
+
+
+#announce {
+  height: 24pt;
+  border-top: 1px solid #c6cbdd;
+  margin: 0 0 0 0;
+  background-color: #fbfcfd;
+  padding: 0 0 0 0;
+  color: black;
+  font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+  font-size:18pt;
+  text-align: center;
+  font-weight: bold;
+  clear: both;
+}
+
+#breadcrumbsa {
+  margin: 4px 0px 4px 0px;
+  padding: 4px 8px 3px 20px;
+  background-color: #f5f8fa;
+  color: #333;
+  font-size: 14px;
+  float: left;
+}
+
+#breadcrumbsa a {
+  margin: 0;
+  padding: 2px;
+  background-color: #f5f8fa;
+  text-decoration:none;
+}
+
+#breadcrumbsa a:hover {
+ color: #107EC0;
+ background-color: #e6ebed;
+ text-decoration:underline;
+}
+
+#topbara{
+  border-top: 1px solid #c6cbdd;
+  border-bottom: 1px solid #c6cbdd;
+  height: 24pt;
+  background-color: #f5f8fa;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  color: black;
+  font-family: Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+  font-size:14pt;
+  vertical-align: middle;
+  clear: both;
+}
+
+#topnava {
+  margin: 4px 0px 4px 0px;
+  padding: 4px 20px 3px 8px;
+  color: #333;
+  font-size: 14px;
+  text-align: right;
+  float: right;
+}
+
+#topnava ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+#topnava li {
+  padding: 0 6px 0 8px;
+  border-left: 1px solid #c6cbdd;
+  display:inline;
+}
+
+#topnava a {
+  margin: 0;
+  padding: 2px;
+  background-color: #f5f8fa;
+  text-decoration:none;
+}
+
+#topnava a:hover {
+ color: #107EC0;
+ background-color: #e6ebed;
+ text-decoration:underline;
+}
+
+

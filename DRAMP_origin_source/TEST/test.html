@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head> 
+
+<style type="text/css"> 
+
+body{
+
+text-align:center;
+
+padding-top:20%;
+
+} 
+
+#menu{
+
+margin:0 auto;
+
+cursor:hand;
+
+height:30px; 
+
+width:100px; 
+
+border:1px solid black; 
+
+background-color:white; 
+
+} 
+
+#menu div{
+
+color:#444;
+
+font-size:13px;
+
+visibility:hidden; 
+
+position:relative; 
+
+height:20px; 
+
+width:98px; 
+
+border:1px solid green; 
+
+background-color:white; 
+
+margin-top:30px;
+
+} 
+
+</style> 
+
+<script type="text/javascript"> 
+
+function handleScroll(){ 
+
+document.getElementByIdx_x("menu").style.top = (document.body.offsetHeight*0.87 + document.body.scrollTop) +"px"; 
+
+} 
+
+function pop(){ 
+
+var toogle = document.getElementByIdx_x("menu").childNodes[0]; 
+
+if(toogle.style.visibility == "" || toogle.style.visibility == "hidden"){ 
+
+toogle.style.visibility = "visible"; 
+
+}else{ 
+
+toogle.style.visibility = "hidden"; 
+
+} 
+
+}
+
+function init(){
+
+document.body.onscroll="handleScroll()";
+
+document.body.onload="handleScroll()";
+
+document.getElementByIdx_x("menu").onmouseover=pop;
+
+document.getElementByIdx_x("menu").onmouseout=pop;
+
+}
+
+window.onload=init;
+
+</script>
+
+</head> 
+
+<body> 
+
+<div id="menu"><div>弹出层</div></div> 
+
+</body>
+
+</html>
+

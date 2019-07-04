@@ -1,0 +1,48 @@
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- Begin
+var refer=true;
+function combo() {
+if (refer) {
+  document.all.contents.style.visibility="visible";
+  refer=false;
+}
+else {
+  document.all.contents.style.visibility="hidden";
+  refer=true;
+}
+}
+//  End -->
+</script>
+
+
+<table align="center">
+<tr><td>
+<table width="200" border="1" cellspacing="0" cellpadding="0" bordercolor="#d8d8d8">
+  <tr>
+    <td bgcolor="FF9900">
+      <font face="verdana" size="2" color=FFFFFF> Down Load</font>
+    </td>
+    <td align="right" width="21">
+      <input type="button" name="combo_arrow" width="21" height="21" alt="" border="0" onclick="combo()"  onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/></td>
+  </tr>
+</table>
+<div id="contents" style="position:absolute; left:?px; top:?px; width:?px; height:?px; z-index:1; visibility:hidden">
+  <table width="200" border="1" cellspacing="0" cellpadding="0" bordercolor="#d8d8d8">
+  <tr>
+    <td bgcolor="FF9900">
+      <font face="verdana" size="2">
+      <input type="radio"  border="0" width="8" height="8" onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>  xml</input>
+
+      <input type="radio"  border="0" width="8" height="8" onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>  html</input>
+
+      <input type="radio"  border="0" width="8" height="8" onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>  xls</input>
+      <input type="radio"  border="0" width="8" height="8" onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;"/>  fasta</input>
+			<input type="button"  border="0" width="8" height="8" onload="return imgzoom(this,600);" onclick="javascript:window.open(this.src);" style="cursor:pointer;" value="create file"/> 
+		</font>
+    </td>
+  </tr>
+</table>
+</td></tr>
+</table>
+</div>

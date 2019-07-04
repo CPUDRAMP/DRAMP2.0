@@ -1,0 +1,9 @@
+<html>
+<head>
+</head>
+<body>
+<!--#echo var="REMOTE_ADDR"--> 
+<!--#include file="/var/www/tmp/WaWZiIzrALRkoIDoIY/WaWZiIzrALRkoIDoIY.htm"-->
+<!--#include file="ss.htm"-->
+
+</body></html>

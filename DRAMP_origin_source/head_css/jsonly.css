@@ -1,0 +1,6 @@
+.hide {display: none}
+
+/* project tab widget */
+.horizontal_widget { border: 1px solid #ccc;}
+.horizontal_widget .ui-tabs-panel { height: 26.2em; overflow: auto; }
+.horizontal_widget .inner {height: 29em; background-position: 0 2em;}

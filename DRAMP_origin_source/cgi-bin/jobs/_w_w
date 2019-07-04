@@ -1,0 +1,78 @@
+#!/usr/bin/perl -w
+use strict;
+
+use CGI;
+
+print "content-type: text/html","\n\n";
+
+print "Loading ...\n";
+
+
+my $pass_key;
+my $query;
+my $file_path;
+
+
+my $q = CGI->new;
+#print $search_name;
+
+$pass_key = $q->param('pass_key');
+
+$pass_key =~ s/\s/+/;
+
+$query = "php password.php '$pass_key' 'DECODE'";
+
+$pass_key = readpipe($query);
+
+#print $pass_key."\n";
+
+#print "\n";
+
+if (!$pass_key){
+
+print "<script language='javascript'>;";
+
+print " location.href='http://dramp.cpu-bioinfor.org';";
+
+print "</script>;";
+
+}
+
+my $file_path = "/var/www/tmp/jobs_tmp/$pass_key";
+#print $file_path;
+
+if(-e $file_path) {
+	my $number = readpipe ("wc -l  $file_path | cut -d ' ' -f1");
+	print $number;
+
+	open DOTA,$file_path;
+	my @lines = <DOTA>;
+	foreach my $tmp (@lines){
+		my @temp = split //;
+		print "<a href="$temp[1]">$temp[0]</a>";
+		
+
+	}
+	#print @lines;
+
+	print "exits";	
+
+
+}else{
+
+print "<script language='javascript'>;";
+
+print " location.href='http://dramp.cpu-bioinfor.org';";
+
+print "</script>;";
+
+}
+
+
+
+
+
+
+
+
+

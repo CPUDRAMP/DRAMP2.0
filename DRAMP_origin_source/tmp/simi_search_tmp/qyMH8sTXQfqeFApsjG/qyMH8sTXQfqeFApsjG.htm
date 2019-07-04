@@ -1,0 +1,198 @@
+BLASTP 2.2.25+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: DRAMP.fa
+           18,013 sequences; 517,387 total letters
+
+
+
+Query= 1
+
+Length=19
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  DRAMP00001                                                          42.7    1e-06
+  DRAMP00045                                                          39.7    1e-05
+  DRAMP00044                                                          39.7    1e-05
+  DRAMP00043                                                          38.9    2e-05
+  DRAMP00006                                                          37.0    7e-05
+  DRAMP00049                                                          35.8    2e-04
+  DRAMP00027                                                          35.0    3e-04
+  DRAMP00032                                                          34.3    4e-04
+  DRAMP00052                                                          32.0    0.003
+  DRAMP00030                                                          30.0    0.008
+  DRAMP00029                                                          30.0    0.008
+  DRAMP00016                                                          24.6    0.41 
+
+
+> DRAMP00001
+Length=25
+
+ Score = 42.7 bits (99),  Expect = 1e-06, Method: Compositional matrix adjust.
+ Identities = 19/19 (100%), Positives = 19/19 (100%), Gaps = 0/19 (0%)
+
+Query  1   GSGVIPTISHECHMNSFQF  19
+           GSGVIPTISHECHMNSFQF
+Sbjct  1   GSGVIPTISHECHMNSFQF  19
+
+
+> DRAMP00045
+Length=27
+
+ Score = 39.7 bits (91),  Expect = 1e-05, Method: Compositional matrix adjust.
+ Identities = 16/18 (89%), Positives = 18/18 (100%), Gaps = 0/18 (0%)
+
+Query  2   SGVIPTISHECHMNSFQF  19
+           SGVIPT+SH+CHMNSFQF
+Sbjct  4   SGVIPTVSHDCHMNSFQF  21
+
+
+> DRAMP00044
+Length=27
+
+ Score = 39.7 bits (91),  Expect = 1e-05, Method: Compositional matrix adjust.
+ Identities = 16/18 (89%), Positives = 18/18 (100%), Gaps = 0/18 (0%)
+
+Query  2   SGVIPTISHECHMNSFQF  19
+           SGVIPT+SH+CHMNSFQF
+Sbjct  4   SGVIPTVSHDCHMNSFQF  21
+
+
+> DRAMP00043
+Length=27
+
+ Score = 38.9 bits (89),  Expect = 2e-05, Method: Compositional matrix adjust.
+ Identities = 15/18 (84%), Positives = 18/18 (100%), Gaps = 0/18 (0%)
+
+Query  2   SGVIPTISHECHMNSFQF  19
+           SGVIPT+SH+CHMN+FQF
+Sbjct  4   SGVIPTVSHDCHMNTFQF  21
+
+
+> DRAMP00006
+Length=25
+
+ Score = 37.0 bits (84),  Expect = 7e-05, Method: Compositional matrix adjust.
+ Identities = 15/19 (79%), Positives = 18/19 (95%), Gaps = 0/19 (0%)
+
+Query  1   GSGVIPTISHECHMNSFQF  19
+           G+GVI TISHECHMN++QF
+Sbjct  1   GNGVIKTISHECHMNTWQF  19
+
+
+> DRAMP00049
+Length=27
+
+ Score = 35.8 bits (81),  Expect = 2e-04, Method: Compositional matrix adjust.
+ Identities = 16/19 (85%), Positives = 18/19 (95%), Gaps = 0/19 (0%)
+
+Query  1   GSGVIPTISHECHMNSFQF  19
+           GSGVI TISHEC+MNS+QF
+Sbjct  3   GSGVIHTISHECNMNSWQF  21
+
+
+> DRAMP00027
+Length=25
+
+ Score = 35.0 bits (79),  Expect = 3e-04, Method: Compositional matrix adjust.
+ Identities = 15/19 (79%), Positives = 16/19 (85%), Gaps = 0/19 (0%)
+
+Query  1   GSGVIPTISHECHMNSFQF  19
+           G GVI TISHEC MNS+QF
+Sbjct  1   GGGVIQTISHECRMNSWQF  19
+
+
+> DRAMP00032
+Length=24
+
+ Score = 34.3 bits (77),  Expect = 4e-04, Method: Compositional matrix adjust.
+ Identities = 13/19 (69%), Positives = 18/19 (95%), Gaps = 0/19 (0%)
+
+Query  1   GSGVIPTISHECHMNSFQF  19
+           G+GV+ TISHEC+MN++QF
+Sbjct  1   GNGVLKTISHECNMNTWQF  19
+
+
+> DRAMP00052
+Length=27
+
+ Score = 32.0 bits (71),  Expect = 0.003, Method: Compositional matrix adjust.
+ Identities = 11/16 (69%), Positives = 15/16 (94%), Gaps = 0/16 (0%)
+
+Query  3   GVIPTISHECHMNSFQ  18
+           GV+PT+S+EC MNS+Q
+Sbjct  6   GVVPTVSYECRMNSWQ  21
+
+
+> DRAMP00030
+Length=26
+
+ Score = 30.0 bits (66),  Expect = 0.008, Method: Compositional matrix adjust.
+ Identities = 11/18 (62%), Positives = 15/18 (84%), Gaps = 0/18 (0%)
+
+Query  2   SGVIPTISHECHMNSFQF  19
+           +GV  TISHECH+N++ F
+Sbjct  3   NGVFKTISHECHLNTWAF  20
+
+
+> DRAMP00029
+Length=26
+
+ Score = 30.0 bits (66),  Expect = 0.008, Method: Compositional matrix adjust.
+ Identities = 11/18 (62%), Positives = 15/18 (84%), Gaps = 0/18 (0%)
+
+Query  2   SGVIPTISHECHMNSFQF  19
+           +GV  TISHECH+N++ F
+Sbjct  3   NGVFKTISHECHLNTWAF  20
+
+
+> DRAMP00016
+Length=24
+
+ Score = 24.6 bits (52),  Expect = 0.41, Method: Compositional matrix adjust.
+ Identities = 7/17 (42%), Positives = 15/17 (89%), Gaps = 0/17 (0%)
+
+Query  1   GSGVIPTISHECHMNSF  17
+           G+GV+ T++HEC++ ++
+Sbjct  1   GNGVVLTLTHECNLATW  17
+
+
+
+Lambda     K      H
+   0.325    0.136    0.449 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+Effective search space used: 9830353
+
+
+  Database: DRAMP.fa
+    Posted date:  Oct 26, 2013  5:02 PM
+  Number of letters in database: 517,387
+  Number of sequences in database:  18,013
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40

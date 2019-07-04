@@ -1,0 +1,271 @@
+<div style='world-break:break-all'><pre><code># ../../cgi-bin/seq-search/bin/fasta36 -Q -s BL62 -b 10 -d 10 -E 20.0 -T 8 ../../tmp/simi_search_tmp/ddYSq9BpdN3KKCdRCF/ddYSq9BpdN3KKCdRCF.in ./database/DRAMP.fa
+FASTA searches a protein or DNA sequence data bank
+ version 36.3.6 Sep, 2013(preload9)
+Please cite:
+ W.R. Pearson & D.J. Lipman PNAS (1988) 85:2444-2448
+
+Query: ../../tmp/simi_search_tmp/ddYSq9BpdN3KKCdRCF/ddYSq9BpdN3KKCdRCF.in
+  1>>>dsfdsfsdf - 32 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+Statistics:  Expectation_n fit: rho(ln(x))= 5.2636+/-0.000557; mu= 1.0462+/- 0.019
+ mean_var=11.7579+/- 2.723, 0's: 2881 Z-trim(114.3): 2895  B-trim: 330 in 1/23
+ Lambda= 0.374033
+ statistics sampled from 11072 (11092) to 11072 sequences
+Algorithm: FASTA (3.8 Nov 2011) [optimized]
+Parameters: BL62 matrix (11:-4), open/ext: -11/-1
+ ktup: 1, E-join: 1 (0.968), E-opt: 0.2 (0.616), width:  16
+ Scan time:  0.240
+
+The best scores are:                                      opt bits E(18013)
+DRAMP00002                                         (  32)  182 99.3 2.3e-23
+DRAMP02442                                         (  32)  173 94.5 6.7e-22
+DRAMP00048                                         (  32)  172 93.9 9.7e-22
+DRAMP05601                                         (  56)  172 93.2 2.9e-21
+DRAMP00038                                         (  31)  103 56.7 1.5e-10
+DRAMP00054                                         (  34)  101 55.5 3.7e-10
+DRAMP00037                                         (  34)   98 53.9 1.1e-09
+DRAMP00053                                         (  34)   97 53.4 1.7e-09
+DRAMP05599                                         (  34)   93 51.2 7.5e-09
+DRAMP00036                                         (  34)   93 51.2 7.5e-09
+
+>>DRAMP00002                                              (32 aa)
+ initn: 182 init1: 182 opt: 182  Z-score: 528.3  bits: 99.3 E(18013): 2.3e-23
+Smith-Waterman score: 182; 100.0% identity (100.0% similar) in 32 aa overlap (1-32:1-32)
+
+               10        20        30  
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+       ::::::::::::::::::::::::::::::::
+DRAMP0 WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+               10        20        30  
+
+>>DRAMP02442                                              (32 aa)
+ initn: 173 init1: 173 opt: 173  Z-score: 502.1  bits: 94.5 E(18013): 6.7e-22
+Smith-Waterman score: 173; 93.8% identity (96.9% similar) in 32 aa overlap (1-32:1-32)
+
+               10        20        30  
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+       ::::::::::::::.::::::::::::: :::
+DRAMP0 WKSESVCTPGCVTGVLQTCFLQTITCNCHISK
+               10        20        30  
+
+>>DRAMP00048                                              (32 aa)
+ initn: 172 init1: 172 opt: 172  Z-score: 499.1  bits: 93.9 E(18013): 9.7e-22
+Smith-Waterman score: 172; 90.6% identity (96.9% similar) in 32 aa overlap (1-32:1-32)
+
+               10        20        30  
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+       :::::.:::::::: ::::::::.::::::::
+DRAMP0 WKSESLCTPGCVTGALQTCFLQTLTCNCKISK
+               10        20        30  
+
+>>DRAMP05601                                              (56 aa)
+ initn: 172 init1: 172 opt: 172  Z-score: 490.5  bits: 93.2 E(18013): 2.9e-21
+Smith-Waterman score: 172; 90.6% identity (96.9% similar) in 32 aa overlap (1-32:25-56)
+
+                                       10        20        30  
+dsfds                          WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+                               :::::.:::::::: ::::::::.::::::::
+DRAMP0 MSKFDDFDLDVVKVSKQDSKITPQWKSESLCTPGCVTGALQTCFLQTLTCNCKISK
+               10        20        30        40        50      
+
+>>DRAMP00038                                              (31 aa)
+ initn: 103 init1: 103 opt: 103  Z-score: 298.4  bits: 56.7 E(18013): 1.5e-10
+Smith-Waterman score: 103; 65.4% identity (88.5% similar) in 26 aa overlap (3-28:3-28)
+
+               10        20        30  
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         :.:.::::: ::.:.:: :.: ::.:    
+DRAMP0 ITSKSLCTPGCKTGILMTCPLKTATCGCHFG 
+               10        20        30  
+
+>>DRAMP00054                                              (34 aa)
+ initn: 112 init1: 101 opt: 101  Z-score: 291.1  bits: 55.5 E(18013): 3.7e-10
+Smith-Waterman score: 101; 60.7% identity (82.1% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30    
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK  
+         : :.::::: ::.:. : :.: ::::..    
+DRAMP0 ITSISLCTPGCKTGVLMGCNLKTATCNCSVHVSK
+               10        20        30    
+
+>>DRAMP00037                                              (34 aa)
+ initn:  98 init1:  98 opt:  98  Z-score: 282.4  bits: 53.9 E(18013): 1.1e-09
+Smith-Waterman score: 98; 60.7% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30    
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK  
+         : :.::::: :: :. : ..: ::::.:    
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCNCSIHVSK
+               10        20        30    
+
+>>DRAMP00053                                              (34 aa)
+ initn: 109 init1:  97 opt:  97  Z-score: 279.5  bits: 53.4 E(18013): 1.7e-09
+Smith-Waterman score: 97; 57.1% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30    
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK  
+         : :.::::: :: :. : ..: ::::..    
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCNCSVHVSK
+               10        20        30    
+
+>>DRAMP05599                                              (34 aa)
+ initn:  93 init1:  93 opt:  93  Z-score: 267.8  bits: 51.2 E(18013): 7.5e-09
+Smith-Waterman score: 93; 57.1% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30    
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK  
+         : :.::::: :: :. : ..: ::.:.:    
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCHCSIHVSK
+               10        20        30    
+
+>>DRAMP00036                                              (34 aa)
+ initn:  93 init1:  93 opt:  93  Z-score: 267.8  bits: 51.2 E(18013): 7.5e-09
+Smith-Waterman score: 93; 57.1% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30    
+dsfds  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK  
+         : :.::::: :: :. : ..: ::.:.:    
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCHCSIHVSK
+               10        20        30    
+
+
+  2>>>sdgsdf - 39 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+Statistics:  Expectation_n fit: rho(ln(x))= 5.8684+/-0.000567; mu= -0.4878+/- 0.019
+ mean_var=11.3268+/- 2.590, 0's: 2729 Z-trim(113.9): 2744  B-trim: 331 in 1/23
+ Lambda= 0.381084
+ statistics sampled from 10697 (10717) to 10697 sequences
+Algorithm: FASTA (3.8 Nov 2011) [optimized]
+Parameters: BL62 matrix (11:-4), open/ext: -11/-1
+ ktup: 1, E-join: 1 (0.961), E-opt: 0.2 (0.605), width:  16
+ Scan time:  0.270
+
+The best scores are:                                      opt bits E(18013)
+DRAMP00002                                         (  32)  182 101.0 8.9e-24
+DRAMP02442                                         (  32)  173 96.0 2.8e-22
+DRAMP00048                                         (  32)  172 95.5   4e-22
+DRAMP05601                                         (  56)  172 94.5 1.4e-21
+DRAMP00038                                         (  31)  103 57.6 9.9e-11
+DRAMP00054                                         (  34)  101 56.3 2.6e-10
+DRAMP00037                                         (  34)   98 54.7 8.2e-10
+DRAMP00053                                         (  34)   97 54.1 1.2e-09
+DRAMP05599                                         (  34)   93 52.0 5.5e-09
+DRAMP00036                                         (  34)   93 52.0 5.5e-09
+
+>>DRAMP00002                                              (32 aa)
+ initn: 182 init1: 182 opt: 182  Z-score: 535.7  bits: 101.0 E(18013): 8.9e-24
+Smith-Waterman score: 182; 100.0% identity (100.0% similar) in 32 aa overlap (1-32:1-32)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+       ::::::::::::::::::::::::::::::::       
+DRAMP0 WKSESVCTPGCVTGLLQTCFLQTITCNCKISK       
+               10        20        30         
+
+>>DRAMP02442                                              (32 aa)
+ initn: 173 init1: 173 opt: 173  Z-score: 509.0  bits: 96.0 E(18013): 2.8e-22
+Smith-Waterman score: 173; 93.8% identity (96.9% similar) in 32 aa overlap (1-32:1-32)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+       ::::::::::::::.::::::::::::: :::       
+DRAMP0 WKSESVCTPGCVTGVLQTCFLQTITCNCHISK       
+               10        20        30         
+
+>>DRAMP00048                                              (32 aa)
+ initn: 172 init1: 172 opt: 172  Z-score: 506.0  bits: 95.5 E(18013): 4e-22
+Smith-Waterman score: 172; 90.6% identity (96.9% similar) in 32 aa overlap (1-32:1-32)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+       :::::.:::::::: ::::::::.::::::::       
+DRAMP0 WKSESLCTPGCVTGALQTCFLQTLTCNCKISK       
+               10        20        30         
+
+>>DRAMP05601                                              (56 aa)
+ initn: 172 init1: 172 opt: 172  Z-score: 496.2  bits: 94.5 E(18013): 1.4e-21
+Smith-Waterman score: 172; 90.6% identity (96.9% similar) in 32 aa overlap (1-32:25-56)
+
+                                       10        20        30      
+sdgsd                          WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+                               :::::.:::::::: ::::::::.::::::::    
+DRAMP0 MSKFDDFDLDVVKVSKQDSKITPQWKSESLCTPGCVTGALQTCFLQTLTCNCKISK    
+               10        20        30        40        50          
+
+          
+sdgsd  SDF
+
+>>DRAMP00038                                              (31 aa)
+ initn: 103 init1: 103 opt: 103  Z-score: 301.5  bits: 57.6 E(18013): 9.9e-11
+Smith-Waterman score: 103; 65.4% identity (88.5% similar) in 26 aa overlap (3-28:3-28)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         :.:.::::: ::.:.:: :.: ::.:           
+DRAMP0 ITSKSLCTPGCKTGILMTCPLKTATCGCHFG        
+               10        20        30         
+
+>>DRAMP00054                                              (34 aa)
+ initn: 112 init1: 101 opt: 101  Z-score: 294.0  bits: 56.3 E(18013): 2.6e-10
+Smith-Waterman score: 101; 60.7% identity (82.1% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         : :.::::: ::.:. : :.: ::::..         
+DRAMP0 ITSISLCTPGCKTGVLMGCNLKTATCNCSVHVSK     
+               10        20        30         
+
+>>DRAMP00037                                              (34 aa)
+ initn:  98 init1:  98 opt:  98  Z-score: 285.1  bits: 54.7 E(18013): 8.2e-10
+Smith-Waterman score: 98; 60.7% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         : :.::::: :: :. : ..: ::::.:         
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCNCSIHVSK     
+               10        20        30         
+
+>>DRAMP00053                                              (34 aa)
+ initn: 109 init1:  97 opt:  97  Z-score: 282.1  bits: 54.1 E(18013): 1.2e-09
+Smith-Waterman score: 97; 57.1% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         : :.::::: :: :. : ..: ::::..         
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCNCSVHVSK     
+               10        20        30         
+
+>>DRAMP05599                                              (34 aa)
+ initn:  93 init1:  93 opt:  93  Z-score: 270.2  bits: 52.0 E(18013): 5.5e-09
+Smith-Waterman score: 93; 57.1% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         : :.::::: :: :. : ..: ::.:.:         
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCHCSIHVSK     
+               10        20        30         
+
+>>DRAMP00036                                              (34 aa)
+ initn:  93 init1:  93 opt:  93  Z-score: 270.2  bits: 52.0 E(18013): 5.5e-09
+Smith-Waterman score: 93; 57.1% identity (78.6% similar) in 28 aa overlap (3-30:3-30)
+
+               10        20        30         
+sdgsd  WKSESVCTPGCVTGLLQTCFLQTITCNCKISK
+         : :.::::: :: :. : ..: ::.:.:         
+DRAMP0 ITSISLCTPGCKTGALMGCNMKTATCHCSIHVSK     
+               10        20        30         
+
+
+
+71 residues in 2 query   sequences
+517387 residues in 18013 library sequences
+ Tcomplib [36.3.6 Sep, 2013(preload9)] (8 proc in memory [0G])
+ start: Thu Dec  5 22:26:16 2013 done: Thu Dec  5 22:26:17 2013
+ Total Scan time:  0.510 Total Display time:  0.000
+
+Function used was FASTA [36.3.6 Sep, 2013(preload9)]
+</code></pre></div>

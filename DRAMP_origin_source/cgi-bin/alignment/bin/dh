@@ -1,0 +1,38 @@
+########################################
+# Program: stretcher
+# Rundate: Sat  6 Jul 2013 23:21:48
+# Commandline: stretcher
+#    -asequence seq_1
+#    -bsequence seq_2
+#    -outfile dh
+# Align_format: markx0
+# Report_file: dh
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: jjj
+# 2: jji
+# Matrix: EBLOSUM62
+# Gap_penalty: 12
+# Extend_penalty: 2
+#
+# Length: 28
+# Identity:      10/28 (35.7%)
+# Similarity:    11/28 (39.3%)
+# Gaps:           4/28 (14.3%)
+# Score: 5
+# 
+#
+#=======================================
+
+                 10          20    
+   jjj DDLD--DLLDLLDSSDLAKD--KLDSAF
+        :    :   :   .:  ::  ::::  
+   jji KDSAFLDKASLFKLADSFKDSFKLDSFK
+               10        20        
+
+
+#---------------------------------------
+#---------------------------------------

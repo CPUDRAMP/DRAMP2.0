@@ -1,0 +1,26 @@
+<html>
+
+<head>
+
+<title>SSI Test Page</title>
+
+</head>
+
+<body>
+
+<!--#echo var="fdsf"-->
+<!--#config timefmt="%Y/%m/%d %a %H:%M:%S" -->Today is <!--#echo var="DATE_LOCAL" -->
+<!--#echo var="REMOTE_ADDR"--> 
+
+
+<!--#set var="color"value="红色"--> 
+
+
+
+<!--#include virtual="../cgi-bin/index.cgi"-->
+
+<!--#exec cmd="./df.sh"-->
+
+</body>
+
+</html>

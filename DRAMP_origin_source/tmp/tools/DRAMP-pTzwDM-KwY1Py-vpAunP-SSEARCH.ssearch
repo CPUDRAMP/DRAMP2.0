@@ -1,0 +1,9 @@
+# ../seq-search/bin/ssearch35 -H -m 6 ../dyr_human.aa ../../db_standone/db_ssearch/FASTA.fa
+<pre>
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+</pre>

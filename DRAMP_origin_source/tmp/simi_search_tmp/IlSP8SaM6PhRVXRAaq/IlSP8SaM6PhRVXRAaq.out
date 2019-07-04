@@ -1,0 +1,83 @@
+# ../../cgi-bin/seq-search/bin/ssearch35 -Q -s BL62 -b 10 -d 10 -E 20.0 -T 8 ../../tmp/simi_search_tmp/IlSP8SaM6PhRVXRAaq/IlSP8SaM6PhRVXRAaq.in ./database/DRAMP.fa
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+Query: ../../tmp/simi_search_tmp/IlSP8SaM6PhRVXRAaq/IlSP8SaM6PhRVXRAaq.in
+  1>>>sdfasdfas - 27 aa
+Library: ./database/DRAMP.fa
+   517387 residues in 18013 sequences
+
+       opt      E()
+< 20  3190     0:============================================================
+  22     3     0:=          one = represents 54 library sequences
+  24     7     0:=
+  26    12     0:=
+  28    29     4:*
+  30    72    25:*=
+  32   111    96:=*=
+  34   171   260:====*
+  36   549   534:=========*=
+  38   431   883:========        *
+  40   945  1232:==================    *
+  42  1400  1506:========================== *
+  44  1215  1661:=======================       *
+  46  1189  1692:=======================        *
+  48  1196  1620:=======================      *
+  50  1181  1478:======================     *
+  52  1038  1300:====================    *
+  54  1395  1110:====================*=====
+  56   794   927:===============  *
+  58   710   761:==============*
+  60   512   617:========== *
+  62   397   494:======== *
+  64   343   393:=======*
+  66   292   311:=====*
+  68   224   244:====*
+  70   154   192:===*
+  72   117   150:==*
+  74   101   117:==*
+  76    57    91:=*
+  78    53    71:=*
+  80    41    55:=*
+  82    21    42:*
+  84    19    33:*
+  86    11    26:*
+  88    12    20:*          inset = represents 1 library sequences
+  90     6    15:*
+  92     9    12:*         :=========  *
+  94     2     9:*         :==      *
+  96     4     7:*         :====  *
+  98     0     6:*         :     *
+ 100     0     4:*         :   *
+ 102     0     3:*         :  *
+ 104     0     3:*         :  *
+ 106     0     2:*         : *
+ 108     0     2:*         : *
+ 110     0     1:*         :*
+ 112     0     1:*         :*
+ 114     0     1:*         :*
+ 116     0     1:*         :*
+ 118     0     0:          *
+>120     0     0:          *
+   517387 residues in 18013 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 4.4545+/-0.000464; mu= -4.5526+/- 0.016
+ mean_var=14.4951+/- 3.379, 0's: 3153 Z-trim: 3190  B-trim: 1585 in 1/23
+ Lambda= 0.336871
+ statistics sampled from 18013 (18013) to 18013 sequences
+ Kolmogorov-Smirnov  statistic: 0.2120 (N=29) at  88
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.1 Aug 2009)
+Parameters: BL62 matrix (11:-4), open/ext: -7/-1
+ Scan time:  0.060
+!! No sequences with E() < 20
+
+
+27 residues in 1 query   sequences
+517387 residues in 18013 library sequences
+ Scomplib [36.05]
+ start: Fri Dec 13 22:53:03 2013 done: Fri Dec 13 22:53:03 2013
+ Total Scan time:  0.060 Total Display time:  0.000
+
+Function used was SSEARCH [version 36.05 March, 2010]

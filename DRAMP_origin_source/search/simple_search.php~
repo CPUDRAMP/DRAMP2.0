@@ -1,0 +1,215 @@
+<?php
+// this is for simple search
+
+	require_once '../Public_Class/Fengyepage.class.php';
+	require_once '../Public_Class/EmpService.class.php';
+	require_once '../Public_Class/public_paging.class.php';
+
+echo <<<END_PAGE
+<!DOCTYPE html>
+	 <html>
+	 <head>
+		 <title>The Results Of Simple Search</title>
+		 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		 <link href="../css/quick_search.css" rel="stylesheet" type="text/css" media="screen" />
+		 <link href="../css/public_search_head.css" rel="stylesheet" type="text/css" media="screen" />
+ 		 <link href="../css/public_table.css"  rel="stylesheet" type="text/css" media="screen" />
+ 		 <link href="../css/public_navil.css"  rel="stylesheet" type="text/css" media="screen" />
+ 		 <link href="../css/public_down.css"   rel="stylesheet" type="text/css" media="screen" />
+ 		 <link href="../css/public_search.css"  rel="stylesheet" type="text/css" media="screen" />		
+ 		 <script src="../js/public_search.js"></script>
+ 		 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+ 		 
+ 		 
+ 	<link rel="stylesheet" href="../css/sf.css" type="text/css">
+	
+	<link rel="stylesheet" type="text/css" href="./search_files/style.css" media="all">
+   <link rel="stylesheet" type="text/css" href="./search_files/global.css" media="all">        
+   <link rel="stylesheet" type="text/css" href="./search_files/sfx.css" media="all">
+   <link href="./search_files/css.css" rel="stylesheet" type="text/css">
+   <link rel="stylesheet" type="text/css" href="./search_files/openid.css">
+   <link rel="stylesheet" type="text/css" href="../css/global.php.css">
+   <link href="./search_files/jsonly.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="./search_files/jquery.css" media="screen">   
+	</head>
+END_PAGE;
+	
+		$search_name=$_GET['slt'];
+
+			$keyword=$_GET['txtarea'];
+			
+					$query_mysql=" WHERE $search_name LIKE '%$keyword%'";
+					
+					$db_table="table_general";
+
+					$special="cat";
+					
+					if ($search_name == 'DRGE_ID'){
+						$special=$search_name;
+						$search_name="Sequence";
+				  		$query_mysql_one="SELECT DRGE_ID,Peptide_Name,Sequence FROM $db_table ".$query_mysql;
+						$query_mysql_two="select count(DRGE_ID) from $db_table ".$query_mysql;
+						
+					}
+					
+					if($search_name == "Patent_Title"){
+							$db_table="table_patent";
+							$query_mysql_one="SELECT DRPA_ID,Peptide_Name,Sequence FROM $db_table ".$query_mysql;
+							$query_mysql_two="select count(DRPA_ID) from $db_table ".$query_mysql;	
+						}
+						
+
+					if($search_name == "Stage_of_development"){
+						$db_table="table_clinical";
+						$query_mysql_one="SELECT DRCN_ID ,$search_name,Drug FROM $db_table ".$query_mysql;
+						$query_mysql_two="select count(DRCN_ID) from $db_table ".$query_mysql;
+					}
+					
+
+					$colum_name=$search_name;
+
+					if ($colum_name == "Swiss_Prot_Entry"){
+						$colum_name="Swiss-Prot Entry";
+						$search_name="Swiss-Prot_Entry";
+						$query_mysql_one="SELECT DRGE_ID,Peptide_Name,Swiss_Prot_Entry FROM $db_table ".$query_mysql;
+						$query_mysql_two="select count(DRGE_ID) from $db_table ".$query_mysql;
+					}
+					
+					$colum_name=preg_replace("/-/","","$colum_name");
+					
+					
+$my_url=$_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING'];
+
+$fengyepage=new Fengyepage();
+if (!empty($_GET['pageNow'])) {
+	$fengyepage->pageNow=$_GET['pageNow'];
+}else{
+	$fengyepage->pageNow=1;
+}
+
+if (!empty($_GET['begin'])){
+	$begin=$_GET['begin'];
+}else{
+	$begin=1;
+}
+
+if (!empty($_GET['end'])){
+	$end=$_GET['end'];
+}else{
+	$end=5;
+}
+
+	if($fengyepage->pageNow >= $end){
+		$begin=$fengyepage->pageNow;
+		$end=$fengyepage->pageNow+4;
+	}else{
+			if($begin >= $fengyepage->pageNow && $fengyepage->pageNow !=1 ){
+			$end=$fengyepage->pageNow;
+				if($fengyepage->pageNow-4 >0){
+					$begin=$fengyepage->pageNow-4;
+				}else{
+					$begin=1;
+				}
+			}
+	}			
+
+$fengyepage->pagesize=10;
+$empService=new EmpService();
+$empService->GETFenyepage($query_mysql_one,$query_mysql_two,$fengyepage);
+echo<<<END_PAGE_TWO
+	 <body id="pg_index" class="">
+	   
+	<div style="display: none;" id="busy-spinner"></div>
+	
+	<header id="site-header">
+    <div class="wrapper">
+        <a href="http://sourceforge.net/" class="logo">
+            <span>DRAMP</span>
+        </a>
+        <form method="get" action="/directory/">
+            <input id="words" name="q" placeholder="Search" type="text">
+        </form>
+        <!--Switch to {language}-->
+        <nav id="nav-site">
+            <a href="http://sourceforge.net/directory/" title="Browse our software.">Browse</a>
+            <a href="http://sourceforge.net/directory/enterprise" title="Browse our Enterprise software.">Statistics</a>
+            <a href="http://sourceforge.net/blog/" title="Read the latest news from the SF HQ.">DownLoads</a>
+            <a href="http://sourceforge.net/support" title="Contact us for help and feedback.">Help</a>
+            <a href="http://sourceforge.net/jobs?source=header" title="Search 80k+ tech jobs." class="featured-link">QuickLink</a>
+        </nav>
+        <nav id="nav-account">
+              <div class="logged_out">
+                <a href="https://sourceforge.net/account/login.php">Log In</a>
+                <span>or</span>
+                <a href="https://sourceforge.net/user/registration">Join</a>
+              </div>
+        </nav>
+    </div>
+	</header>
+	
+	
+	<header id="site-sec-header">
+    <div class="wrapper">
+        <nav id="nav-hubs">
+            <h4>Solution Tools ：</h4>
+            
+        </nav>
+        <nav id="nav-collateral"> 
+        		<a href="http://goparallel.sourceforge.net/">Similarity Search</a>
+            <a href="http://ibmsmarteritservices.sourceforge.net/">Prediction</a>   
+            <a href="https://sourceforge.net/user/registration">Sequence Alignment</a>            
+        </nav>
+    </div>
+	</header>
+	 
+<div id="messages">
+</div>
+
+	<div id="topbara">
+	    <div id="topnava"><ul>
+				<li><a href="/" title="Apache OpenOffice product description">Home</a></li>
+				<li><a href="../tools/simi_search.html" title="Download OpenOffice.org">Blast</a></li>
+				<li><a href="../tools/alignment.html" title="Find Support for OpenOffice.org">Alignment</a></li>
+				<li><a href="../tools/prediction.html" title="Download OpenOffice.org">Pridiction</a></li>
+				<li><a href="../browse/all_item.html" title="Get involved in Apache OpenOffice">Browse</a></li>
+				<li><a href="#" title="Apache OpenOffice development focus areas">Statistics</a></li>
+				<li><a href="/" title="Apache OpenOffice in your Native Language">FAQs</a></li>
+				</ul>
+			</div>
+	    <div id="breadcrumbsa">Found <font color="blue"><i><u>$fengyepage->rowCount</u></i></font> Entries Matching Your Query</div>
+  </div>
+	<div id="clear"></div>
+	<div id="clear"></div>
+	<div class="content">
+END_PAGE_TWO;
+
+include("../template/browse_funtion.php");
+ 		
+$paging_adv=new Paging_me();
+$paging_adv->paging($fengyepage->pageNow,$fengyepage->pageCount,$fengyepage->rowCount,$my_url,$begin,$end);
+	
+
+echo "<div style='clear:both'></div>";
+echo "<div>";
+echo "<table summary='The Result Of Ser' class='datatable' >";
+echo<<<END_PAGE_TREE
+			 <tr>	<th style="border-right-style: none"><input id="CheckAll" onclick="SelectAll('search_all','search_child')" name="search_all" type="checkbox" style="width:20px;"/></th><th style="width:120px;border-left-style: none">RDAMP ID</th><th style="width:450px;">Peptide NAME</th><th style="width:550px;">{$colum_name}</th></tr>
+END_PAGE_TREE;
+		
+		for ($i=0;$i<count($fengyepage->res_array);$i++){
+			$row=$fengyepage->res_array[$i];
+			if ($special != "DRGE_ID"){
+				$row[$search_name]=preg_replace("/$keyword/","<font color='blue'>$keyword</font>",$row[$search_name]);
+			}
+			
+			if ($i%2 == 0) {
+				echo "<tr  class='altrow'><td style='border-right-style: none'><input type='checkBox' name='search_child' value='{$row['DRGE_ID']}' /></td><td style='border-left-style: none'><a href='../browse/All_Information.php?id={$row['DRGE_ID']}'>{$row['DRGE_ID']}</a></td><td>{$row['Peptide_Name']}</td><td>{$row[$search_name]}</td></tr>";
+			}else{
+				echo "<tr ><td style='border-right-style: none'><input type='checkBox' name='search_child' value='{$row['DRGE_ID']}' /></td><td style='border-left-style: none'><a href='../browse/All_Information.php?id={$row['DRGE_ID']}'>{$row['DRGE_ID']}</a></td><td>{$row['Peptide_Name']}</td><td>{$row[$search_name]}</td></tr>";
+			}
+		}
+		
+echo "</table>";
+echo "</div>";
+			
+?>

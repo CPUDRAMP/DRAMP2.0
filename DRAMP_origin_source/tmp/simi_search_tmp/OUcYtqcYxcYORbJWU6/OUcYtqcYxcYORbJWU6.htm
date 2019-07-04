@@ -1,0 +1,130 @@
+<div style='world-break:break-all'><h2><b>Job Information :</b></h2><br><ul><li>Query job id : OUcYtq-cYxcYO-RbJWU6</li><li>Query sequence : MNNTIKDFDLDLKTNKKDTATPYVGSRYLCTP(32 AA)</li><li>Program : BLASTP 2.2.28+ </li><li>Database Name : swissprot -remote</li><li>Matrix : BLOSUM62</li></ul>The Blast program will compare your input with all sequences Stored in corresponding database, and identity greater than 30% amino acid sequence(s) will be listed below.<br><pre><code>BLASTP 2.2.25+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Reference for composition-based statistics: Alejandro A. Schaffer,
+L. Aravind, Thomas L. Madden, Sergei Shavirin, John L. Spouge, Yuri
+I. Wolf, Eugene V. Koonin, and Stephen F. Altschul (2001),
+"Improving the accuracy of PSI-BLAST protein database searches with
+composition-based statistics and other refinements", Nucleic Acids
+Res. 29:2994-3005.
+
+
+
+Database: Non-redundant UniProtKB/SwissProt sequences
+           456,795 sequences; 170,518,380 total letters
+
+
+
+Query= 1
+
+Length=32
+
+RID: ABSP3PG5014
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+sp|P0C0H8.1|SRTA_STRPY  RecName: Full=Lantibiotic streptin; Flags...  67.8    6e-16
+sp|P21838.2|LANG_STAGA  RecName: Full=Lantibiotic gallidermin; Fl...  32.7    0.009
+sp|P13068.1|LANN_LACLA  RecName: Full=Lantibiotic nisin-A; Flags:...  28.5    0.31 
+sp|P29559.1|LANZ_LACLA  RecName: Full=Lantibiotic nisin-Z; Flags:...  28.5    0.32 
+sp|Q2QBT0.1|LANNU_STRUB  RecName: Full=Lantibiotic nisin-U; Flags...  26.9    0.99 
+sp|Q4JTH1.1|DNAE2_CORJK  RecName: Full=Error-prone DNA polymerase     27.3    4.3  
+
+
+>sp|P0C0H8.1|SRTA_STRPY RecName: Full=Lantibiotic streptin; Flags: Precursor
+ sp|P0C0H9.1|SRTA_STRP1 RecName: Full=Lantibiotic streptin; Flags: Precursor
+Length=46
+
+ Score = 67.8 bits (164),  Expect = 6e-16, Method: Compositional matrix adjust.
+ Identities = 32/32 (100%), Positives = 32/32 (100%), Gaps = 0/32 (0%)
+
+Query  1   MNNTIKDFDLDLKTNKKDTATPYVGSRYLCTP  32
+           MNNTIKDFDLDLKTNKKDTATPYVGSRYLCTP
+Sbjct  1   MNNTIKDFDLDLKTNKKDTATPYVGSRYLCTP  32
+
+
+>sp|P21838.2|LANG_STAGA RecName: Full=Lantibiotic gallidermin; Flags: Precursor
+Length=52
+
+ Score = 32.7 bits (73),  Expect = 0.009, Method: Compositional matrix adjust.
+ Identities = 14/29 (49%), Positives = 20/29 (69%), Gaps = 4/29 (13%)
+
+Query  8   FDLDLKTNKKDT----ATPYVGSRYLCTP  32
+           FDLD+K N K++    A P + S++LCTP
+Sbjct  11  FDLDVKVNAKESNDSGAEPRIASKFLCTP  39
+
+
+>sp|P13068.1|LANN_LACLA RecName: Full=Lantibiotic nisin-A; Flags: Precursor
+Length=57
+
+ Score = 28.5 bits (62),  Expect = 0.31, Method: Compositional matrix adjust.
+ Identities = 16/29 (56%), Positives = 21/29 (73%), Gaps = 2/29 (6%)
+
+Query  6   KDFDLDL-KTNKKDT-ATPYVGSRYLCTP  32
+           KDF+LDL   +KKD+ A+P + S  LCTP
+Sbjct  4   KDFNLDLVSVSKKDSGASPRITSISLCTP  32
+
+
+>sp|P29559.1|LANZ_LACLA RecName: Full=Lantibiotic nisin-Z; Flags: Precursor
+Length=57
+
+ Score = 28.5 bits (62),  Expect = 0.32, Method: Compositional matrix adjust.
+ Identities = 16/29 (56%), Positives = 21/29 (73%), Gaps = 2/29 (6%)
+
+Query  6   KDFDLDL-KTNKKDT-ATPYVGSRYLCTP  32
+           KDF+LDL   +KKD+ A+P + S  LCTP
+Sbjct  4   KDFNLDLVSVSKKDSGASPRITSISLCTP  32
+
+
+>sp|Q2QBT0.1|LANNU_STRUB RecName: Full=Lantibiotic nisin-U; Flags: Precursor
+Length=55
+
+ Score = 26.9 bits (58),  Expect = 0.99, Method: Compositional matrix adjust.
+ Identities = 17/35 (49%), Positives = 25/35 (72%), Gaps = 5/35 (14%)
+
+Query  1   MNNTIKDFDLDL-KTNKKDT--ATPYVGSRYLCTP  32
+           MNN  +DF+LDL K +K++   A+P + S+ LCTP
+Sbjct  1   MNN--EDFNLDLIKISKENNSGASPRITSKSLCTP  33
+
+
+>sp|Q4JTH1.1|DNAE2_CORJK RecName: Full=Error-prone DNA polymerase
+Length=1153
+
+ Score = 27.3 bits (59),  Expect = 4.3, Method: Composition-based stats.
+ Identities = 10/22 (46%), Positives = 16/22 (73%), Gaps = 0/22 (0%)
+
+Query  7    DFDLDLKTNKKDTATPYVGSRY  28
+            D DLD+++ +++ A  YV SRY
+Sbjct  469  DIDLDIESGRREEAIQYVYSRY  490
+
+
+
+Lambda     K      H
+   0.315    0.133    0.400 
+
+Gapped
+Lambda     K      H
+   0.267   0.0410    0.140 
+
+Effective search space used: 4183020375
+
+
+  Database: Non-redundant UniProtKB/SwissProt sequences
+    Posted date:  Dec 8, 2013 01:03 AM
+  Number of letters in database: 170,518,380
+  Number of sequences in database:  456,795
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
+</code></pre></div>

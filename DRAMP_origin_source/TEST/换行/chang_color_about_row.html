@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>隔行换色</title>
+<style>
+p, td, th {
+	font: 0.8em Arial, Helvetica, sans-serif;
+}
+.datatable {
+	border: 1px solid #D6DDE6;
+	border-collapse: collapse;
+	width: 80%;
+}
+.datatable td {
+	border: 1px solid #D6DDE6;	
+	padding: 4px;
+}
+.datatable th {
+	border: 1px solid #828282;
+	background-color: #BCBCBC;
+	font-weight: bold;
+	text-align: left;
+	padding-left: 4px;
+}
+.datatable caption {
+	font: bold 0.9em Arial, Helvetica, sans-serif;
+	color: #33517A;
+	text-align: left;
+	padding-top: 3px;
+	padding-bottom: 8px;
+}
+.datatable tr.altrow {
+	background-color: #DFE7F2;
+	color: #000000;
+}
+</style>
+</head>
+<body>
+<table summary="List of new students 2003" class="datatable">
+  <caption>Student List</caption>
+  <tr>
+    <th scope="col">Student Name</th>
+    <th scope="col">Date of Birth</th>
+    <th scope="col">Class</th>
+    <th scope="col">ID</th>
+  </tr>
+  <tr>
+    <td>Joe Bloggs</td>
+    <td>27/08/1997</td>
+    <td>Mrs Jones</td>
+    <td>12009</td>
+  </tr>
+  <tr class="altrow">
+    <td>William Smith</td>
+    <td>20/07/1997</td>
+    <td>Mrs Jones</td>
+    <td>12010</td>
+  </tr>
+  <tr>
+    <td>Jane Toad</td>
+    <td>21/07/1997</td>
+    <td>Mrs Jones</td>
+    <td>12030</td>
+  </tr>
+  <tr class="altrow">
+    <td>Amanda Williams</td>
+    <td>19/03/1997</td>
+    <td>Mrs Edwards</td>
+    <td>12021</td>
+  </tr>
+  <tr>
+    <td>Kylie Jameson</td>
+    <td>18/05/1997</td>
+    <td>Mrs Jones</td>
+    <td>12022</td>
+  </tr>
+  <tr class="altrow">
+    <td>Louise Smith</td>
+    <td>17/07/1997</td>
+    <td>Mrs Edwards</td>
+    <td>12019</td>
+  </tr>
+  <tr>
+    <td>James Jones</td>
+    <td>04/04/1997</td>
+    <td>Mrs Edwards</td>
+    <td>12007</td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* CSS Document */
+.post p {
+	font-size:14px; 
+	line-height:2;
+}
+#slt {
+  width:280px;
+  height:24px;
+ }
+#txtarea {
+	height:100px;
+	width:280px;
+	font-size:14px;
+	resize:none;
+}
+.upload {
+	padding-top:20px;
+	padding-left:130px;
+	margin-bottom:15px;
+}
+#upload_smt,#upload_reset {
+	color:#000;
+	float:right;
+}
+#upload_smt {
+		margin-right:40px;
+}
+#upload_reset {
+	margin-right:128px;
+}
+.post img {
+	margin-left:10px;
+}

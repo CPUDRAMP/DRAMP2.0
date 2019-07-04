@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+/*quick_ CSS Document */
+body{
+	
+	margin-left:20px;	
+	
+}
+#myHeader
+	{
+		color:blue;
+		text-align:center;
+	}
+	
+#myFind{
+	margin-left:30px;
+	padding:0;
+	float:left;
+}	
+
+#myFunction{
+	margin-right:30px;
+	padding:0;
+	float:right;	
+}
+
+a:link { text-decoration: none; }
+table{
+	border:1px,solid,blue;	
+}
+
+
+
+#myLine{
+	 
+	margin:10px,30px,10px,30px;
+}
+
+
+#head_link{
+ width:200px;
+ background:#7fb80e;
+ float:left;
+ border:3px,solid,red;
+ 
+}
+
+#key{
+		
+	
+}
+#head_a{
+	float:right;
+	margin-right:200px;	
+}
+
+#info{
+	width:1024px;
+	margin-top:30px;
+	padding:0px;
+	background:green;
+	height:25px;
+	font-size:20px;
+}
+
+#test{
+	height:900px;	
+	
+}

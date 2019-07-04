@@ -1,0 +1,144 @@
+# ../../cgi-bin/seq-search/bin/ssearch35 -Q -s BP62 -b 10 -d 10 -E 20 -T 8 ../../tmp/WaWZiIzrALRkoIDoIY/WaWZiIzrALRkoIDoIY.in ../../tmp/FASTA.fa
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+Query: ../../tmp/WaWZiIzrALRkoIDoIY/WaWZiIzrALRkoIDoIY.in
+  1>>>gi|118992|sp|P00374.2|DYR_HUMAN RecName: Full=Dihydrofolate - 187 aa
+Library: ../../tmp/FASTA.fa
+   702635 residues in  1721 sequences
+
+       opt      E()
+< 20     0     0:
+  22     0     0:           one = represents 8 library sequences
+  24     0     0:
+  26     0     0:
+  28     1     0:=
+  30    15     2:*=
+  32   105     9:=*============
+  34    24    25:===*
+  36     7    51:=     *
+  38     1    84:=         *
+  40   135   118:==============*==
+  42    21   144:===              *
+  44   440   159:===================*===================================
+  46    14   162:==                  *
+  48    41   155:======             *
+  50    22   141:===              *
+  52   139   124:===============*==
+  54   166   106:=============*=======
+  56   187    89:===========*============
+  58    42    73:======   *
+  60   136    59:=======*=========
+  62   105    47:=====*========
+  64    23    38:=== *
+  66    12    30:== *
+  68    45    23:==*===
+  70    12    18:==*
+  72    10    14:=*
+  74    10    11:=*
+  76     0     9: *
+  78     3     7:*
+  80     5     5:*
+  82     0     4:*
+  84     0     3:*
+  86     0     2:*
+  88     0     2:*          inset = represents 1 library sequences
+  90     0     1:*
+  92     0     1:*         :*
+  94     0     1:*         :*
+  96     0     1:*         :*
+  98     0     1:*         :*
+ 100     0     0:          *
+ 102     0     0:          *
+ 104     0     0:          *
+ 106     0     0:          *
+ 108     0     0:          *
+ 110     0     0:          *
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120     0     0:          *
+   702635 residues in  1721 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 5.0338+/-0.000971; mu= 1.7662+/- 0.057
+ mean_var=9.4155+/- 5.023, 0's: 0 Z-trim: 0  B-trim: 0 in 0/20
+ Lambda= 0.417978
+ statistics sampled from 1721 (1721) to 1721 sequences
+ Kolmogorov-Smirnov  statistic: 0.1303 (N=24) at  50
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.1 Aug 2009)
+Parameters: BL62 matrix (11:-4), open/ext: -11/-1
+ Scan time:  0.100
+
+The best scores are:                                      s-w bits E(1721)
+AFM82845 A/mallard/Sweden/57/2002 2002// PB1-F2    (  90)   34 20.7      18
+AFJ13180 A/mallard/Alberta/501/1980 1980/08/20 PB1 (  90)   34 20.7      18
+AFJ13191 A/mallard/Alberta/529/1980 1980/08/21 PB1 (  90)   34 20.7      18
+ABB17712 A/mallard duck/Alberta/376/1985 1985/08/1 (  90)   34 20.7      18
+
+>>AFM82845 A/mallard/Sweden/57/2002 2002// PB1-F2         (90 aa)
+ s-w opt:  34  Z-score: 81.2  bits: 20.7 E(1721):   18
+Smith-Waterman score: 34; 30.9% identity (55.9% similar) in 68 aa overlap (12-78:18-79)
+
+                     10        20        30        40        50    
+gi|118       MVGSLNCIVAVSQNMGIGKNGDLPWPPLRNEFRYFQRMTTTSSVEGKQNLVIMG
+                        .:. : :.. . :  :  ...      ::...   ::   :  
+AFM828 MEQEQDTPWTQSTEHINTQKRGSGQQTQRPEHPNSTQLMDHYLRTTSQADMHKQ---IAC
+               10        20        30        40        50          
+
+           60        70         80        90       100       110   
+gi|118 KKTWFSIPEKNRPLKGRIN-LVLSRELKEPPQGAHFLSRSLDDALKLTEQPELANKVDMV
+        : :.:.  :: : .: .. :::.:                                   
+AFM828 WKQWLSL--KN-PTQGSLKTLVLKRWKSFSKQEWTN                        
+        60           70        80        90                        
+
+>>AFJ13180 A/mallard/Alberta/501/1980 1980/08/20 PB1-F2   (90 aa)
+ s-w opt:  34  Z-score: 81.2  bits: 20.7 E(1721):   18
+Smith-Waterman score: 34; 35.3% identity (82.4% similar) in 17 aa overlap (158-174:37-53)
+
+       130       140       150       160       170       180       
+gi|118 HPGHLKLFVTRIMQDFESDTFFPEIDLEKYKLLPEYPGVLSDVQEEKGIKYKFEVYEKND
+                                     .:. .:: ..:.:. .:             
+AFJ131 TPWIQSTEHINIQKRGNGQQTQKLEHPNLTQLMDHYPRIMSQVDMHKQTVSWKQWLSLKS
+         10        20        30        40        50        60      
+
+AFJ131 PTQESLKTRVLKRWKLFNKQEWTS
+         70        80        90
+
+>>AFJ13191 A/mallard/Alberta/529/1980 1980/08/21 PB1-F2   (90 aa)
+ s-w opt:  34  Z-score: 81.2  bits: 20.7 E(1721):   18
+Smith-Waterman score: 34; 35.3% identity (82.4% similar) in 17 aa overlap (158-174:37-53)
+
+       130       140       150       160       170       180       
+gi|118 HPGHLKLFVTRIMQDFESDTFFPEIDLEKYKLLPEYPGVLSDVQEEKGIKYKFEVYEKND
+                                     .:. .:: ..:.:. .:             
+AFJ131 TPWIQSTEHINIQKRGNGQQTQKLEHPNLTQLMDHYPRIMSQVDMHKQTVSWKQWLSLKS
+         10        20        30        40        50        60      
+
+AFJ131 PTQESLKTRVLKRWKLFNKQEWTS
+         70        80        90
+
+>>ABB17712 A/mallard duck/Alberta/376/1985 1985/08/18 PB  (90 aa)
+ s-w opt:  34  Z-score: 81.2  bits: 20.7 E(1721):   18
+Smith-Waterman score: 34; 35.3% identity (82.4% similar) in 17 aa overlap (158-174:37-53)
+
+       130       140       150       160       170       180       
+gi|118 HPGHLKLFVTRIMQDFESDTFFPEIDLEKYKLLPEYPGVLSDVQEEKGIKYKFEVYEKND
+                                     .:. .:: ..:.:. .:             
+ABB177 TPWTQSTEHINIQRRGNGQQTQKLEHPNSTQLMDHYPRIMSQVDMHKQTVSWKQWLSLKS
+         10        20        30        40        50        60      
+
+ABB177 PTQESLKTRVLKRWKLFNRQEWTS
+         70        80        90
+
+
+
+187 residues in 1 query   sequences
+702635 residues in 1721 library sequences
+ Scomplib [36.05]
+ start: Tue Jul  2 22:48:40 2013 done: Tue Jul  2 22:48:40 2013
+ Total Scan time:  0.100 Total Display time:  0.000
+
+Function used was SSEARCH [version 36.05 March, 2010]

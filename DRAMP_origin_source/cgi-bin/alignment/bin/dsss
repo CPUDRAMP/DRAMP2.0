@@ -1,0 +1,38 @@
+########################################
+# Program: matcher
+# Rundate: Sun  7 Jul 2013 10:38:15
+# Commandline: matcher
+#    -asequence seq_1
+#    -bsequence seq_2
+#    -outfile dsss
+# Align_format: markx0
+# Report_file: dsss
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: jjj
+# 2: jji
+# Matrix: EBLOSUM62
+# Gap_penalty: 14
+# Extend_penalty: 4
+#
+# Length: 4
+# Identity:       4/4 (100.0%)
+# Similarity:     4/4 (100.0%)
+# Gaps:           0/4 ( 0.0%)
+# Score: 20
+# 
+#
+#=======================================
+
+         24
+   jjj DSAF
+       ::::
+   jji DSAF
+          5
+
+
+#---------------------------------------
+#---------------------------------------

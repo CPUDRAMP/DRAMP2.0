@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>data respository of antimicrobial peptides</title>
+<meta name="keywords" content="antimicrobial peptide database" />
+<meta name="description" content="antimicrobial peptide database" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script src="ibanner.js" type="text/javascript"></script>
+<script src="roll_news.js" type="text/javascript"></script>
+<script src="nav.js" type="text/javascript"></script>
+<script>
+function Addfavorite()
+{
+	try
+    {
+        window.external.addFavorite('http://www.dramp.com','dramp');
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel('dramp','http://www.dramp.com',"");
+        }
+        catch (e)
+        {
+            alert("Fail to add Favorite,please use the key combination 'Ctrl+D'.");
+        }
+    }
+}
+</script>
+</head>
+<body>
+<div id="outline">
+<div id="page">
+<!--
+<div id="header">
+	<div id="menu">
+		<ul>
+			<li><a href="home/contact.html">Contact</a></li>
+			<li><a href="home/feedback.html">Feedback</a></li>
+            <li><a href="home/submit.html">Submission</a></li>
+		</ul>
+	</div>	
+	<!-- end #menu -->  
+    <!--<div id="small_icon">  
+    <a href="mailto:zhengh18@hotmail.com"><img src="images/email1.png" /></a>
+    <img src="images/rss2.png"/>
+    <a href="javascript:Addfavorite()" ><img src="images/favorite.png"/></a>
+    </div>
+</div>-->
+<!-- end #header -->
+<div class="clearfloat"></div>
+<div id="main_head">
+ <div id="logo"> 
+    <a href="index.html"><img src="images/dramp-1.png" /></a>
+	<p><em>data respository of antimicrobial peptides</em></p>
+</div>
+<!-- end #logo --> 
+	<div id="search">
+		<form method="get" action="quick_search.php">
+				<input type="text" name="srh_txt" id="srh_txt" value="Enter your keywords" onfocus="if(this.value=='Enter your keywords') this.value=''" onblur="if(this.value=='') this.value='Enter your keywords'"/>
+				<input type="submit" id="srh_smt" value="Quick Search"/>
+                <a href="home/help.html#001"><img id="question" src="images/help1.png" /></a>
+		</form>  
+	</div>
+	<!-- end #search -->
+
+</div>
+<div class="clearfloat"></div>
+<!--end #main_head-->
+    <div id="nav">
+    <ul>
+    <li><a href="">Home</a></li>
+    <li><a href="">Search</a>
+    <ul id="search_li">
+    <li><a href="search/simple_srh.html">Simple Search</a></li>
+	<li><a href="search/adv_srh.html">Advanced Search</a></li>
+    </ul>
+    </li>
+    <li><a href="">Browse</a>
+    <ul id="browse_ul">
+                  <li><a href="browse/GeneralData.php">General Data</a></li>
+                  <li><a href="browse/PhysicochemicalData.php">Physicochemical Data</a></li>
+                  <li><a href="browse/ClinicalTrialsData.php">Clinical trials</a></li>
+                  <li><a href="browse/PatentData.php">Patent Data</a></li>
+                  <li><a href="browse/all_item.html" class="more">more>></a></li>
+    </ul>
+    </li>
+    <li><a href="">Tools</a>
+    <ul id="tools_ul">
+					<li><a href="tools/prediction.html">Prediction</a></li>
+					<li><a href="tools/simi_search.html">Similarity Search</a></li>
+					<li><a href="tools/alignment.html">Sequence Alignment</a></li>
+    </ul>
+    </li>
+    <li><a href="">Statistics</a></li>
+    <li><a href="">Downloads</a></li>
+    <li><a href="">FAQs</a></li>
+	<li id="end_nav"><a href="others/links.html">Quick Links</a></li>
+    </ul>
+</div>
+<!--end Nav-->
+<div id="content">
+    <div class="box">   
+		<h2 id="h2_1">Welcome to DRAMP database!</h2>
+		<p>DRAMP database is a manually curated data repository of antimicrobial peptides (AMPs), currently holding <strong>*** putative AMPs</strong> collected from public resource, <strong>*** clinical AMPs</strong> and <strong>*** patented AMPs</strong>. The peptides are less than 100 amino acids in length.<a id="more" href="home/read_more.html">Read More..</a>
+</p>
+      </div>
+      <!--end of .box-->
+      <div class="box" id="box_banner">
+            <h2 id="h2_2">New Structures</h2>
+                <div class="banner">
+                <div id="ibanner_tb">
+                <div class="tb_line">Title:<span id="span1"></span></div>
+                <div class="tb_line">Author:<span id="span2"></span></div>
+                <div class="tb_line">Reference Time:<span id="span3"></span></div>
+                <div class="tb_line">Pubmed ID:<span id="span4"></span></div>
+                <div class="tb_line">PDB ID:<span id="span5"></span></div>
+                </div>
+                <div id="ibanner">
+                    <div id="ibanner_pic">
+                    <a href="index.html"><img src="images/banner1.jpg" alt="" /></a>
+                    <a href="www.uniprot.org"><img src="images/banner2.jpg"  alt="" /></a>
+                    <a href="#"><img src="images/banner3.jpg"  alt="" /></a>
+                    <a href="#"><img src="images/banner4.jpg"  alt="" /></a>
+                    <a href="#"><img src="images/banner5.jpg"  alt="" /></a>
+                    <a href="#"><img src="images/banner6.jpg"  alt="" /></a>
+                    </div>
+                </div>
+                <!--end #ibanner-->
+                </div>
+      </div>
+      <!--end of .box-->
+            <div class="box">
+            <h2 id="h2_3">News</h2>
+		    <ul>
+            <li>this is news!</li>
+            <li>this is news!</li>
+            <li>this is news!</li>
+            <li>this is news!</li>           
+            </ul>
+      </div> 
+      <!--end of .box-->
+            <div class="box">
+                <h2 id="h2_4">About Us</h2>
+				<p>
+This is the home page of the database, please use the navigation bar in the left-side to browse the database and consult the About pages to discover more. If you encounter any problems in using this database, you can consult the FAQs/help pages for help or feedback to us, we will help you solve as soon as possible.
+contact us: zhengheng (zhengh18@hotmail.com) and ** (*********) in China Pharmaceutical University
+Tong Jia Xiang, Nanjing, Jiangsu Province
+</p>
+      </div>
+      <!--end of .box-->
+</div>
+<!-- end #content -->
+<div id="sidebar">
+<div class="sidebartop"></div>
+   <div class="sidebox">
+          <h3>page views</h3>
+          <hr />   
+           <div id="demo" onmouseover="clear_marquee()" onmouseout="continue_marquee()">
+            <div id="demo1">
+            <p>DRAMP database is a manually curated information portal to bioactive peptides, which currently contains ** AMPs.</p>
+            <p>Last updated on 24 May 2013.</p>
+            <p>** visitors since May 2013.</p>
+            </div>
+            <div id="demo2"></div>
+    </div>
+   </div>
+      <div class="sidebarbottom"></div>
+      
+      
+   <div class="sidebartop"></div>
+    <div class="sidebox">
+             <h3>Clinical Trials Details</h3>
+             <hr />
+            <h4>Online Databases</h4>
+            <p>Find information on clinical trials by searching the ClinicalTrials.gov database from the u.s. National Institute of Health.</p>
+    </div>
+   <div class="sidebarbottom"></div>
+   
+   
+     
+   <div class="sidebartop"></div>
+    <div class="sidebox">
+             <h3>relative links</h3>
+             <hr />
+            <p>Last updated on 24 May 2013.</p>
+            <p>** visitors since May 2013.</p>
+    </div>
+   <div class="sidebarbottom"></div>        
+</div>
+<!--end #sidebar-->
+<div class="clearfloat"></div>
+<div id="footer">
+   <hr />
+	<p><span>Copyright2013</span>|<span>China Pharmaceutical University</span>|<span>All rights reserved</span>|<span><a href="home/help.html">Help</a></span>|<span>Sitemap</span>|<span><a href="mailto:zhengh18@hotmail.com">Contact</a></span></p>
+</div>
+<!-- end #footer -->
+</div>
+<!--end #page-->
+</div>
+</body>
+</html>

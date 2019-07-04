@@ -1,0 +1,269 @@
+#!/usr/bin/perl -w
+use strict;
+
+use CGI;
+
+#print "content-type: text/html","\n\n";
+
+###session
+use CGI::Session;
+
+my $cgi= new CGI;
+
+my $session = new CGI::Session("driver:File", $cgi , {Directory=>'/tmp'});
+
+my $cookie = $cgi->cookie(CGISESSID =>$session->id );
+
+print $cgi->header(-cookie=>$cookie);
+
+#$session->param('user_name', 'pSchrzoc');
+
+###session
+
+my $pass_key; 
+my $query;
+my $matrix;
+my $evalue_up;
+my $evalue_lw;
+my $search_name;
+my $align;
+my $alignment;
+my $name;
+my $area;
+my $file_path_name;
+my $database;
+my $job_information;
+my $job_numbers;
+my $proprity="0777";
+
+
+my $maxLenth=5;
+my @pa=('A'..'Z',0..9,'a'..'z');
+my $pa;
+my @subname;
+ $subname[0]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[1]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[2]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+my $job_name=join "-",@subname;
+my $file_name=join "",@subname;
+
+$file_path_name="$file_name"."\.in";
+
+my $q = CGI->new;
+#print $search_name;
+
+$pass_key = $q->param('pass_key');
+
+my $query = "php ../jobs/password.php $pass_key 'DECODE'";
+
+$pass_key = readpipe($query);
+
+if (!$pass_key){
+
+print "<script language='javascript'>;";
+
+print " location.href='http://dramp.cpu-bioinfor.org';";
+
+print "</script>;";
+
+}else{
+
+	$session->param('user_id', $pass_key);
+
+}
+#print $session->param('user_id');
+
+$search_name=$q->param('search_name');
+
+if ($search_name eq "blast"){
+	$area	=$q->param('simi_area');
+	my $cpp = $area;
+	$cpp =~ s/>.*\s//;
+	my $cpp_length = length($cpp);	
+
+	$matrix =$q->param('matrix');
+	$database =$q->param('database');
+	
+	$job_information ="<h3><b>Job Information :</b></h3><br><ul><li>Query job id : $job_name</li><li>Query sequence : $cpp($cpp_length AA)</li><li>Program : BLASTP 2.2.28+ </li><li>Database Name : $database</li><li>Matrix : $matrix</li></ul>The Blast program will compare your input with all sequences Stored in corresponding database, and identity greater than 30% amino acid sequence(s) will be listed below.<br><br><br>";
+	
+	
+	my $mkdir_query = "mkdir -p -m 755 /var/www/tmp/simi_search_tmp/$file_name";
+
+        system ($mkdir_query);	
+	
+        open EOF,">/var/www/tmp/simi_search_tmp/$file_name/$file_path_name";
+                print EOF $area;
+        close EOF;
+
+	if ($database eq "DRAMP"){
+		$database="\./database/DRAMP";
+	}
+
+	$query="blastp -query ../../tmp/simi_search_tmp/$file_name/$file_path_name -db $database  -out ../../tmp/simi_search_tmp/$file_name/$file_name.out ";	
+}else{
+	
+
+
+
+	$matrix=$q->param('matrix');
+	
+	$evalue_up=$q->param('E-up');
+
+	$evalue_lw=$q->param('E-low');
+	
+	if ($evalue_lw ne ""){
+		$evalue_lw = "-F"." ".$evalue_lw;
+	}	
+
+	$alignment=$q->param('ali');
+	
+	$area=$q->param('simi_area');
+	
+        my $cpp = $area;
+        $cpp =~ s/>.*\s//;
+        my $cpp_length = length($cpp);
+
+	#mkdir("/var/www/tmp/$file_name",0777);
+	my $mkdir_query = "mkdir -p -m 755 /var/www/tmp/simi_search_tmp/$file_name";
+	system ($mkdir_query);
+	
+	open EOF,">/var/www/tmp/simi_search_tmp/$file_name/$file_path_name";
+		print EOF $area;
+	close EOF;
+	
+	#print "I am successed";
+     $job_information ="<h3><b>Job Information :</b></h3><br><ul><li>Query job id : $job_name</li><li>Query sequence : $cpp($cpp_length AA)</li><li>Program : $search_name </li><li>Database Name : DRAMP</li><li>Matrix : $matrix</li></ul><br><br>";
+	
+
+	$query="../../cgi-bin/seq-search/bin/$search_name  -Q $matrix  -b $alignment -d $alignment -E $evalue_up  $evalue_lw -T 8  ../../tmp/simi_search_tmp/$file_name/$file_path_name  ./database/DRAMP.fa  >../../tmp/simi_search_tmp/$file_name/$file_name.out";
+	#../cgi-bin/seq-search/bin/ssearch35 -Q -s BP62  -b 10 -d 10 -E 20 -T 8 ./dyr_human.aa ./FASTA.fa 
+}
+
+
+
+my $content_line;
+
+open LOL,"</var/www/template/tools_result_static.html";
+	while (my $line = <LOL>){
+		$content_line .= $line;
+
+	}
+close LOL;
+
+
+my $result_html_static="<h3>Command:</h3><br/><textarea class='form-control' rows='5' disabled='disabled'>$query</textarea><br />";
+
+$result_html_static .= "<ul class='list-inline'><li><h3>Job Name:</h3></li><li>$job_name&nbsp;&nbsp;<a href='http://dramp.cpu-bioinfor.org/tmp/simi_search_tmp/$file_name/'>VIEW</a></li></ul>";
+
+
+
+system( `echo -n  $job_name 'http://dramp.cpu-bioinfor.org/tmp/simi_search_tmp/$file_name/$file_name.out '  >> ../../tmp/jobs_tmp/$pass_key`);
+
+my $ll_path = "/var/www/tmp/jobs_tmp/$pass_key";
+
+ $job_numbers = readpipe ("wc -l  $ll_path | cut -d ' ' -f1");
+ $job_numbers ++;
+
+my $time = `date  +"%Y-%m-%d %H:%M:%S" >> ../../tmp/jobs_tmp/$pass_key`;
+#print $job_query;
+#system ($job_query);
+
+
+my $content_command = $content_line;
+
+
+$content_command =~ s/USERNAME/$pass_key/;
+
+my $pass_query = "php ../jobs/password.php $pass_key 'ENCODE'";
+
+my $new_pass_key = readpipe($pass_query);
+
+$content_command =~ s/JOBSPASSKEY/$new_pass_key/;
+$content_command =~ s/JOBSNUMBER/$job_numbers/;
+$content_command =~ s/LazySheep/$result_html_static/;
+
+print qq($content_command);
+
+#   job information ######
+
+
+
+system($query);
+
+open MOF,">/var/www/tmp/simi_search_tmp/$file_name/$file_name.htm";
+my $line;
+my $edit;
+my $flag;
+my $result_information;
+
+
+if(-e "../../tmp/simi_search_tmp/$file_name/$file_name.out"){
+	open EOF,"</var/www/tmp/simi_search_tmp/$file_name/$file_name.out";
+	my @my_line=<EOF>;
+	#$line=join "",@my_line;
+	
+	if ($search_name eq "blast"){
+		my $result_num = 1;
+
+		foreach $edit(@my_line){
+			last if $edit =~ /Lambda/;
+			$flag = "pp" if $edit=~/Query=/;
+			if ($edit =~ />/){
+				$edit =~ s/>/Database ID :/;
+				$edit = "Result $result_num :<br>".$edit;
+				$result_num ++ ;
+			}
+			$edit =~  s/DRAMP(\d+)/<a href\=\"http:\/\/dramp\.cpu-bioinfor.org\/browse\/All_Information.php\?id=DRAMP$1\&dataset=\"\>DRAMP$1\<\/a\>/ if $edit =~ /DRAMP(\d+)/;
+			$line = $line.$edit if ($flag);
+			#last unless $edit =~ //;
+		}
+	}else{
+		my $result_num = 1;
+		foreach $edit(@my_line){
+			if ($edit =~ />>/){
+				$edit =~ s/>>/Result $result_num : <br> Database ID :/;
+				$result_num ++;
+			}
+			if ($edit !~ /DRAMP[0-9]\s/){
+			$edit =~  s/DRAMP(\d+)/<a href\=\"http:\/\/dramp\.cpu-bioinfor.org\/browse\/All_Information.php\?id=DRAMP$1\&dataset=\"\>DRAMP$1\<\/a\>/ if $edit =~ /DRAMP(\d+)/;
+			}else{
+
+			$edit =~ s/DRAMP[0-9]/Subject/ if $edit =~ /DRAMP[0-9]\s/;
+			}
+			$line = $line.$edit;
+			
+		}
+		#$line=join "",@my_line;
+	}
+	close EOF;
+}else{
+	$line = "No Results";
+}
+	$result_information ="<h3>Search Result(s) :</h3><br>" ;
+
+	#$line = $job_information.$line;
+$line="<div style='world-break:break-all'>$job_information $result_information<pre><code>".$line."</code></pre></div>";
+	print MOF $line;
+close MOF;
+
+my $content_result=$content_line;
+
+
+open EOF,">/var/www/tmp/simi_search_tmp/$file_name/index.shtml";
+	
+	my $cc="<!--#include file=\"$file_name.htm\"-->";
+		
+	$content_result =~ s/USERNAME/$pass_key/;
+	my $pass_query = "php ../jobs/password.php $pass_key 'ENCODE'";
+
+	my $new_pass_key = readpipe($pass_query);
+
+	$content_result =~ s/JOBSPASSKEY/$new_pass_key/;
+
+	$content_result =~ s/JOBSNUMBER/$job_numbers/;
+	$content_result =~ s/LazySheep/$cc/;
+	
+	print EOF $content_result;
+	
+close EOF;
+

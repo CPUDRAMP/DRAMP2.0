@@ -1,0 +1,11 @@
+#!/usr/bin/perl -w
+print "content-type: text/html","\n\n";
+
+use strict;
+use Bio::Seq;
+use Bio::SearchIO;
+use CGI qw(:all);
+use LWP::UserAgent;
+
+
+system("./ssearch36 -q ../dyr_human.aa  ../../db_standone/db_ssearch/FASTA.fa >sf.out");

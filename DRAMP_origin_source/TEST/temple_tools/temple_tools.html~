@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title></title>
+	</head>	
+	<body>
+		<div>
+		<!----head----->
+			<div>
+				
+			</div>
+			<div>
+				<a href="">I AM boy</a>
+				<?php
+					echo "I am one";
+					include('css.html');
+				?>
+			</div>
+			<div>
+				
+			</div>
+			<div>
+				
+			</div>
+	</body>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<html>

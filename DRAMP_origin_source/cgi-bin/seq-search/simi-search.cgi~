@@ -1,0 +1,118 @@
+#!/usr/bin/perl -w
+use strict;
+
+use CGI;
+
+print "content-type: text/html","\n\n";
+ 
+my $query;
+my $matrix;
+my $evalue_up;
+my $evalue_lw;
+my $search_name;
+my $align;
+my $alignment;
+my $name;
+my $area;
+my $file_path_name;
+
+my $proprity="0777";
+
+
+my $maxLenth=5;
+my @pa=('A'..'Z',0..9,'a'..'z');
+my $pa;
+my @subname;
+ $subname[0]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[1]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+ $subname[2]=join "",map{$pa[int rand @pa]}0..$maxLenth;
+my $job_name=join "-",@subname;
+my $file_name=join "",@subname;
+
+$file_path_name="$file_name"."\.in";
+
+
+my $q = CGI->new;
+#print $search_name;
+
+$search_name=$q->param('tool_name');
+
+if ($search_name eq "fm_ssearch"){
+
+	$matrix=$q->param('matrix');
+	
+	$evalue_up=$q->param('e_value_up');
+
+	$evalue_lw=$q->param('e_value_lw');
+
+	$alignment=$q->param('align');
+	
+	$area=$q->param('simi_area');
+	
+	#open EOF,">/var/www/tmp/$file_path_name";
+		#print EOF $area;
+	#close EOF;
+	
+	mkdir("/var/www/tmp/$file_name",0777);
+	open EOF,">/var/www/tmp/$file_name/$file_path_name";
+		print EOF $area;
+	close EOF;
+	
+	#print "I am successed";
+	$query="../../cgi-bin/seq-search/bin/ssearch35 -Q $matrix  -b $alignment -d $alignment $evalue_up $evalue_lw -T 8 ../../tmp/$file_name/$file_path_name ../../tmp/FASTA.fa  >../../tmp/$file_name/$file_name.out";
+	#../cgi-bin/seq-search/bin/ssearch35 -Q -s BP62  -b 10 -d 10 -E 20 -T 8 ./dyr_human.aa ./FASTA.fa 
+}
+
+
+
+print qq(<html><head></head><body style="width:400px;height:200px;">);
+
+print qq(<div style="width:300px;height:50px;margin-top:500px auto;">);
+print qq(<textarea rows="3" cols="150"  disabled="disabled">$query</textarea><br />);
+
+print qq(<div style="width:220px;"><label>Job Name:</label><a href="../../tmp/$file_name/">$job_name VIEW</a></div>);
+
+print qq(</div></body></html>);
+
+system($query);
+
+if(-e "../../tmp/$file_name/$file_name.out"){
+	open EOF,"</var/www/tmp/$file_name/$file_name.out";
+	open MOF,">/var/www/tmp/$file_name/$file_name.htm";
+	my @my_line=<EOF>;
+	my $line=join "",@my_line;
+	$line="<pre>".$line."</pre>";
+	print MOF $line;	
+	
+	close EOF;
+	close MOF;
+
+}
+
+
+
+open EOF,">/var/www/tmp/$file_name/index.shtml";
+	print EOF "<html>\n<head>\n</head>\n<body>\n";
+	
+	my $next_query_1="<!--#echo var=\"REMOTE_ADDR\"-->\n";	
+	my $next_query_2="<!--#include file=\"$file_name.htm\"-->";
+	
+	print EOF $next_query_1;
+	print EOF $next_query_2;
+	
+	print EOF "</body></html>";
+close EOF;
+
+system ("chmod 777 /var/www/tmp/$file_name/$file_name.sh");
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+

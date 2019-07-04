@@ -1,0 +1,73 @@
+/* head Styles
+----------------------------------------------------------------------*/
+
+#site-copyright-footer {
+    overflow: hidden;
+    
+    height: 30px;
+    border-top: 1px solid rgb(170, 170, 170);
+    padding: 20px 0px;
+    text-align: left;
+}
+
+
+#site-sec-header .wrapper, #site-copyright-footer .wrapper {
+    width: 1024px;
+    margin: 0px auto;
+    padding: 0px 10px;
+}
+
+#site-copyright-footer #copyright {
+    float: left;
+    width: 360px;
+}
+
+#site-copyright-footer #links {
+float: left;
+width: 664px;
+text-align: right;
+padding-top: 5px;
+margin-right: 0px;
+}
+
+#site-copyright-footer #links a{
+	color:gray;
+}
+
+
+#site-sec-header, #site-copyright-footer {
+    background:url("../images/footer_bg.png");
+    position: relative;
+}
+
+
+#site-header, #site-footer, #site-sec-header, #site-copyright-footer {
+    width: 100%;
+    min-width: 1044px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6), 0px 1px 0px rgba(255, 255, 255, 0.6);
+    margin: 0px;
+}
+
+
+#site-header, #site-footer, #site-sec-header, #site-copyright-footer {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.6), 0px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+
+#site-header a:hover, #site-sec-header a:hover, #site-footer a:hover, #site-copyright-footer a:hover {
+    color: rgb(0, 153, 204);
+}
+
+#site-header a:first-child, #site-sec-header a:first-child, #site-footer a:first-child, #site-copyright-footer a:first-child {
+    margin-left: 0px;
+}
+
+
+#site-header a:hover, #site-sec-header a:hover, #site-footer a:hover, #site-copyright-footer a:hover {
+    text-decoration: none;
+}
+
+
+

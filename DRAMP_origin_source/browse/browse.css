@@ -1,0 +1,15 @@
+/* CSS Document */
+/*clinical trials*/
+.re_post {
+	border:1px solid #999;
+}
+.item {
+	width:540px;
+	text-align:center;
+	margin-top:20px;
+	height:40px;
+}
+.item a {
+		font:18px Georgia, "Times New Roman", Times, serif;
+		text-decoration:none;	color:#30C;
+}

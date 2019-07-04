@@ -1,0 +1,8 @@
+<?php
+echo<<<EOF
+	<div id="footer">
+		<hr />
+		<p><span>Copyright2013</span>|<span>China Pharmaceutical University</span>|<span>All rights reserved</span>|<span><a href="../home/help.html">Help</a></span>|<span>Sitemap</span>|<span><a href="../mailto:zhengh18@hotmail.com">Contact</a></span></p>
+        </div>
+EOF;
+?>

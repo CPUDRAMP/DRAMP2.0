@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Browse Data</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/private.css">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css" href="http://dramp.cpu-bioinfor.org/lazysheep/css/public.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script language="JavaScript" src="http://dramp.cpu-bioinfor.org/lazysheep/js/bootstrap.js"></script>
+
+<style>
+p { line-height:1; font-size:14px;}
+h3 {font-size:16px;}
+a { text-decoration:none; color:#000;}
+a:hover { text-decoration:underline; color:#488cb9;}
+#page {width:960px; margin:0 auto; font-family:Arial, Helvetica, sans-serif;}
+#title { text-align:center; font-size:20px; height:30px;}
+#subtitle { text-align:center; font-size:16px; color:#666; height:30px;}
+#lineframe_1 { background-image:url(http://dramp.cpu-bioinfor.org/images/icons/bg1.png); overflow:auto; padding-left:50px; padding-top:50px; border-bottom:1px solid #e5e5e5;}
+#lineframe_2 { background-image:url(http://dramp.cpu-bioinfor.org/images/icons/bg1.png); overflow:auto; padding-left:50px; padding-top:50px;}
+
+.tb1 { width:100px; float:left; padding-left:20px;}
+.tb2 { width:300px; float:left; padding-left:20px;}
+
+</style>
+</head>
+
+<body>
+<div id="page">
+<div id="title">Browse all peptides
+</div>
+<div id="subtitle">Browse by physicochemical data</div>
+<div id="lineframe_1">
+<div class="tb1"><img src="http://dramp.cpu-bioinfor.org/images/icons/origin.png"/></div>
+<div class="tb2">
+<h3>By origin</h3>
+<a href=""><p>Natural AMPs </p></a>
+<a href=""><p>Synthetic peptides</p></a>
+</div>
+<div class="tb1"><img src="http://dramp.cpu-bioinfor.org/images/icons/data.png" /></div>
+<div class="tb2">
+<h3>By data source</h3>
+<p>General AMPs </p>
+<p>Patents</p>
+<p>Clinical AMPs</p>
+</div>
+</div>
+<div id="lineframe_2">
+<div class="tb1"><img src="http://dramp.cpu-bioinfor.org/images/icons/class.png" /></div>
+<div class="tb2">
+<h3>By class</h3>
+<p>Plant AMPs</p>
+<p>Bactericion</p>
+</div>
+<div class="tb1"><img src="http://dramp.cpu-bioinfor.org/images/icons/activity.png" /></div>
+<div class="tb2">
+<h3>By activity</h3>
+<p>Antibacterial</p>
+<p>Antifungal</p>
+<p>Antiviral</p>
+<p>Anticancer/tumor</p>
+<p>Antiprotozoal</p>
+<p>Insecticidal</p>
+
+</div>
+</div>
+
+</div>
+
+</body>
+</html>

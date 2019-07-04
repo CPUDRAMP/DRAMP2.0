@@ -1,0 +1,143 @@
+RPSBLAST 2.2.28+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+
+Database: oasis_pfam
+           13,672 sequences; 2,366,394 total letters
+
+
+
+Query= dfsa
+
+Length=24
+
+RID: XJ6TXC03014
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+gnl|CDD|221024  pfam11199, DUF2891, Protein of unknown function (...  24.1    1.0  
+gnl|CDD|221746  pfam12739, TRAPPC-Trs85, ER-Golgi trafficking TRA...  22.3    3.7  
+gnl|CDD|219646  pfam07924, NuiA, Nuclease A inhibitor-like protei...  22.1    4.0  
+gnl|CDD|221135  pfam11566, PI31_Prot_N, PI31 proteasome regulator...  21.2    7.1  
+gnl|CDD|218602  pfam05478, Prominin, Prominin.  The prominins are...  21.1    8.9  
+
+
+>gnl|CDD|221024 pfam11199, DUF2891, Protein of unknown function (DUF2891).  This 
+is a bacterial family of uncharacterized proteins.
+Length=324
+
+ Score = 24.1 bits (53),  Expect = 1.0
+ Identities = 10/17 (59%), Positives = 13/17 (76%), Gaps = 0/17 (0%)
+
+Query  8    IVERIKRFLRELVRPLR  24
+            IVER+K FL +L  P+R
+Sbjct  136  IVERLKDFLPKLTYPIR  152
+
+
+>gnl|CDD|221746 pfam12739, TRAPPC-Trs85, ER-Golgi trafficking TRAPP I complex 
+85 kDa subunit.  This family is one of the subunits of the 
+TRAPP Golgi trafficking complex. TRAPP subunits are found in 
+two different sized complexes, TRAPP I and TRAPP II, and this 
+Trs85 is in the smaller complex. TRAPP I, but Not TRAPP II, 
+functions in ER-Golgi transport. Trs85p was reported to function 
+in the cytosol-to-vacuole targeting pathway, suggesting 
+a role for this subunit in autophagy as well as in secretion. 
+The overall architecture of TRAPP I shows the other components 
+to be Bet3p (TRAPPC3), Bet5p (TRAPPC1), Trs20p (TRAPPC2), 
+Trs23p (TRAPPC4), Trs31p (TRAPPC5), Trs33p (TRAPPC6a 
+and b) and Trs85p.
+Length=390
+
+ Score = 22.3 bits (48),  Expect = 3.7
+ Identities = 7/16 (44%), Positives = 9/16 (56%), Gaps = 0/16 (0%)
+
+Query  5    FKRIVERIKRFLRELV  20
+                VE I+ F+RE V
+Sbjct  111  SVSDVEAIRAFVREFV  126
+
+
+>gnl|CDD|219646 pfam07924, NuiA, Nuclease A inhibitor-like protein.  This family 
+consists of protein sequences that are similar to the nuclease 
+A inhibitor expressed by bacteria of the genus Anabaena 
+(NuiA). This sequence is organised to form an alpha-beta-alpha 
+sandwich fold, which is similar to the PR-1-like fold. 
+NuiA interacts with nuclease A by means of residues located 
+at one end of the molecule, including residues making up the 
+loop between helices III and IV and the loop between strands 
+C and D. The mechanism of inhibition of nuclease A by NuiA 
+is as yet incompletely understood.
+Length=133
+
+ Score = 22.1 bits (47),  Expect = 4.0
+ Identities = 6/18 (33%), Positives = 11/18 (61%), Gaps = 0/18 (0%)
+
+Query  3    KEFKRIVERIKRFLRELV  20
+             +F+ +VE +K  LR+  
+Sbjct  84   VQFQGLVETLKANLRDPQ  101
+
+
+>gnl|CDD|221135 pfam11566, PI31_Prot_N, PI31 proteasome regulator N-terminal. 
+ PI31 is a regulatory subunit of the immuno-proteasome which 
+is an inhibitor of the 20 S proteasome in vitro.PI31 is also 
+an F-box protein Fbxo7.Skp1 binding partner which requires 
+an N terminal FP domain in both proteins for the interaction 
+to occur via the FP beta sheets. The structure of PI31 FP 
+domain contains a novel alpha/beta-fold and two intermolecular 
+contact surfaces. This is the N-terminal domain of the members.
+Length=147
+
+ Score = 21.2 bits (45),  Expect = 7.1
+ Identities = 6/19 (32%), Positives = 10/19 (53%), Gaps = 0/19 (0%)
+
+Query  5    FKRIVERIKRFLRELVRPL  23
+            FK + +    F  E++ PL
+Sbjct  120  FKNLDKLSSLFKSEIISPL  138
+
+
+>gnl|CDD|218602 pfam05478, Prominin, Prominin.  The prominins are an emerging 
+family of proteins that among the multispan membrane proteins 
+display a novel topology. Mouse prominin and human prominin 
+(mouse)-like 1 (PROML1) are predicted to contain five membrane 
+spanning domains, with an N-terminal domain exposed to 
+the extracellular space followed by four, alternating small 
+cytoplasmic and large extracellular, loops and a cytoplasmic 
+C-terminal domain. The exact function of prominin is unknown 
+although in humans defects in PROM1, the gene coding for 
+prominin, cause retinal degeneration.
+Length=807
+
+ Score = 21.1 bits (45),  Expect = 8.9
+ Identities = 3/24 (13%), Positives = 8/24 (33%), Gaps = 0/24 (0%)
+
+Query  1    IGKEFKRIVERIKRFLRELVRPLR  24
+            +    K     ++   +  V P+ 
+Sbjct  644  LKVALKNEALDLRSIQQNFVPPME  667
+
+
+
+Lambda      K        H
+   0.337    0.157    0.434 
+
+Gapped
+Lambda      K        H
+   0.267   0.0410    0.140 
+
+Effective search space used: 120000000
+
+
+  Database: oasis_pfam
+    Posted date:  Mar 22, 2013 12:00 AM
+  Number of letters in database: 2,366,394
+  Number of sequences in database:  13,672
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 0, Extension: 0
+Window for multiple hits: 40

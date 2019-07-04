@@ -1,0 +1,39 @@
+########################################
+# Program: stretcher
+# Rundate: Sat 14 Dec 2013 20:40:36
+# Commandline: stretcher
+#    -asequence ../../tmp/align_tmp/stretcherp_5ok9T9gnCDfBhOMVcm/5ok9T9gnCDfBhOMVcm_1.in
+#    -bsequence ../../tmp/align_tmp/stretcherp_5ok9T9gnCDfBhOMVcm/5ok9T9gnCDfBhOMVcm_2.in
+#    -datafile EBLOSUM62
+#    -outfile ../../tmp/align_tmp/stretcherp_5ok9T9gnCDfBhOMVcm/5ok9T9gnCDfBhOMVcm.stretcherp
+# Align_format: markx0
+# Report_file: ../../tmp/align_tmp/stretcherp_5ok9T9gnCDfBhOMVcm/5ok9T9gnCDfBhOMVcm.stretcherp
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: 
+# 2: 
+# Matrix: EBLOSUM62
+# Gap_penalty: 12
+# Extend_penalty: 2
+#
+# Length: 18
+# Identity:      14/18 (77.8%)
+# Similarity:    14/18 (77.8%)
+# Gaps:           4/18 (22.2%)
+# Score: 42
+# 
+#
+#=======================================
+
+               10        
+       SDAFASFSADFSADF---
+       :: ::::::::::::   
+       SD-FASFSADFSADFSDF
+                10       
+
+
+#---------------------------------------
+#---------------------------------------

@@ -1,0 +1,638 @@
+# ../../cgi-bin/seq-search/bin/ssearch35 -Q -b -d -T 8 ../../tmp/6P8p5T5zD3KBvgws8p/6P8p5T5zD3KBvgws8p.in ../../tmp/FASTA.fa
+SSEARCH searches a sequence data bank
+ version 36.05 March, 2010
+Please cite:
+ T. F. Smith and M. S. Waterman, (1981) J. Mol. Biol. 147:195-197; 
+ W.R. Pearson (1991) Genomics 11:635-650
+
+Query: ../../tmp/6P8p5T5zD3KBvgws8p/6P8p5T5zD3KBvgws8p.in
+  1>>>sdfasf - 25 aa
+Library: ../../tmp/FASTA.fa
+   702635 residues in  1721 sequences
+
+       opt      E()
+< 20     1     0:=
+  22     0     0:           one = represents 5 library sequences
+  24    21     0:=====
+  26     2     0:=
+  28    32     0:=======
+  30    68     2:*=============
+  32    15     9:=*=
+  34    10    25:==  *
+  36     2    51:=         *
+  38     4    84:=               *
+  40    23   118:=====                  *
+  42   281   144:============================*============================
+  44    13   159:===                            *
+  46   144   162:=============================   *
+  48   170   155:==============================*===
+  50   174   141:============================*======
+  52    68   124:==============          *
+  54   268   106:=====================*================================
+  56    92    89:=================*=
+  58     9    73:==            *
+  60    16    59:====       *
+  62    19    47:====     *
+  64   136    38:=======*====================
+  66   149    30:=====*========================
+  68     0    23:    *
+  70     0    18:   *
+  72     0    14:  *
+  74     1    11:= *
+  76     0     9: *
+  78     2     7:=*
+  80     1     5:*
+  82     0     4:*
+  84     0     3:*
+  86     0     2:*
+  88     0     2:*          inset = represents 1 library sequences
+  90     0     1:*
+  92     0     1:*         :*
+  94     0     1:*         :*
+  96     0     1:*         :*
+  98     0     1:*         :*
+ 100     0     0:          *
+ 102     0     0:          *
+ 104     0     0:          *
+ 106     0     0:          *
+ 108     0     0:          *
+ 110     0     0:          *
+ 112     0     0:          *
+ 114     0     0:          *
+ 116     0     0:          *
+ 118     0     0:          *
+>120     0     0:          *
+   702635 residues in  1721 sequences
+Statistics:  Expectation_n fit: rho(ln(x))= 3.0957+/-0.000974; mu= 6.0574+/- 0.057
+ mean_var=10.0914+/- 4.785, 0's: 0 Z-trim: 1  B-trim: 0 in 0/20
+ Lambda= 0.403737
+ statistics sampled from 1721 (1721) to 1721 sequences
+ Kolmogorov-Smirnov  statistic: 0.0857 (N=21) at  52
+Algorithm: Smith-Waterman (SSE2, Michael Farrar 2006) (7.1 Aug 2009)
+Parameters: BL50 matrix (15:-5), open/ext: -10/-2
+ Scan time:  0.050
+
+The best scores are:                                      s-w bits E(1721)
+ACK43412 A/mallard/MN/506/2000 2000// M1           ( 252)   33 19.2      18
+AAS57544 A/duck/Hokkaido/86/01 2001// PA           ( 167)   31 18.2      24
+AAS57542 A/duck/Hokkaido/107/01 2001// PA          ( 167)   31 18.2      24
+ABY40439 A/swine/Missouri/4296424/2006 2006// M2   (  97)   28 16.6      41
+ACV93280 A/swine/MO/SG253/2005 2005/06/ NS2        ( 114)   26 15.4 1.1e+02
+ACM66736 A/mallard/Maryland/232/2001 2001// NS2    ( 121)   26 15.4 1.2e+02
+AEM75697 A/mallard/Wisconsin/2560/2009 2009/10/05  ( 121)   26 15.4 1.2e+02
+AEK65609 A/environment/New York/46614-2/2005 2005/ ( 121)   26 15.4 1.2e+02
+ABB18064 A/mallard/Alberta/226/98 1998/08/11 NS2   ( 121)   26 15.4 1.2e+02
+AFM38817 A/blue-winged teal/Alberta/604/1978 1978/ ( 121)   26 15.4 1.2e+02
+AFJ12976 A/Peking duck/Wagun/1688-4/1985 1985// NS ( 121)   26 15.4 1.2e+02
+ACM66725 A/mallard/Maryland/233/2001 2001// NS2    ( 121)   26 15.4 1.2e+02
+ABI84593 A/duck/Germany/1215/1973 1973// NS2       ( 121)   26 15.4 1.2e+02
+AFJ13232 A/mallard/Alberta/720/1984 1984/08/09 NS2 ( 121)   26 15.4 1.2e+02
+AGC73220 A/mallard/Ohio/11OS2149/2011 2011/08/15 N ( 121)   26 15.4 1.2e+02
+ACZ47592 A/mallard/Maryland/324/2003 2003// NS2    ( 121)   26 15.4 1.2e+02
+ADU16670 A/mallard/Interior Alaska/6MP0038BR2/2006 ( 121)   26 15.4 1.2e+02
+AEM75518 A/American green-winged teal/Illinois/247 ( 121)   26 15.4 1.2e+02
+AFJ12965 A/Peking duck/Wagun/1689-4/1985 1985// NS ( 121)   26 15.4 1.2e+02
+ABB17762 A/mallard/Alberta/353/1988 1988/09/03 NS2 ( 121)   26 15.4 1.2e+02
+AFM83096 A/mallard/Sweden/93/2005 2005// NS2       ( 121)   26 15.4 1.2e+02
+ACV41488 A/mallard/Quebec/10969/2006 2006/08/18 NS ( 121)   26 15.4 1.2e+02
+ACM66714 A/mallard/Maryland/234/2001 2001// NS2    ( 121)   26 15.4 1.2e+02
+AAV41219 A/Anas acuta/Primorje/695/1976 1976// NS2 ( 121)   26 15.4 1.2e+02
+AFJ13441 A/laughing gull/Delaware Bay/34/1994 1994 ( 121)   26 15.4 1.2e+02
+AFJ13108 A/mallard/New York/66861/1978 1978// NS2  ( 121)   26 15.4 1.2e+02
+ADX99449 A/chicken/OH/494832/2007 2007/04/ NS2     ( 121)   26 15.4 1.2e+02
+AET76630 A/mallard/Alberta/205/1998 1998/08/08 NS2 ( 121)   26 15.4 1.2e+02
+AFJ12910 A/duck/Rugen/79-6/1981 1981// NS2         ( 121)   26 15.4 1.2e+02
+ACS68270 A/mallard/Maryland/333/2003 2003// NS2    ( 121)   26 15.4 1.2e+02
+AGK41417 A/mallard/Minnesota/182714/1998 1998/09/0 ( 121)   26 15.4 1.2e+02
+ACM66692 A/mallard/Maryland/314/2003 2003// NS2    ( 121)   26 15.4 1.2e+02
+AFJ13009 A/Peking duck/Heinersdorf/648-4/1986 1986 ( 121)   26 15.4 1.2e+02
+ACS68292 A/mallard/Maryland/235/2001 2001// NS2    ( 121)   26 15.4 1.2e+02
+AFJ13064 A/silkie chicken/Pennsylvania/9600897/199 ( 121)   26 15.4 1.2e+02
+AFM09250 A/lesser snow goose/Alaska/44065-144/2006 ( 121)   26 15.4 1.2e+02
+ACV41499 A/mallard/Quebec/11063/2006 2006/08/19 NS ( 121)   26 15.4 1.2e+02
+AFM82963 A/mallard/Sweden/12/2003 2003// NS2       ( 121)   26 15.4 1.2e+02
+AFM83195 A/common teal/Netherlands/2/2008 2008// N ( 121)   26 15.4 1.2e+02
+AFJ12921 A/duck/Rugen/88-4/1981 1981// NS2         ( 121)   26 15.4 1.2e+02
+ACM66824 A/mallard/Maryland/319/2003 2003// NS2    ( 121)   26 15.4 1.2e+02
+ACM66835 A/mallard/Maryland/301/2003 2003// NS2    ( 121)   26 15.4 1.2e+02
+AGK41740 A/mallard/Minnesota/AI06-1029/2006 2006// ( 121)   26 15.4 1.2e+02
+AFJ12998 A/Peking duck/Heinersdorf/648-6/1985 1985 ( 121)   26 15.4 1.2e+02
+ACM66703 A/mallard/Maryland/296/2003 2003// NS2    ( 121)   26 15.4 1.2e+02
+AET78228 A/mallard/Alberta/417/2009 2009/08/22 NS2 ( 121)   26 15.4 1.2e+02
+AFM09239 A/lesser snow goose/Alaska/44301-116/2007 ( 121)   26 15.4 1.2e+02
+AFM83040 A/mallard/Sweden/51/2005 2005// NS2       ( 121)   26 15.4 1.2e+02
+AFM82598 A/mallard/Netherlands/14/2001 2001// NS2  ( 121)   26 15.4 1.2e+02
+ADX99438 A/duck/OH/492493/2007 2007/04/ NS2        ( 121)   26 15.4 1.2e+02
+
+>>ACK43412 A/mallard/MN/506/2000 2000// M1                (252 aa)
+ s-w opt:  33  Z-score: 80.9  bits: 19.2 E(1721):   18
+Smith-Waterman score: 33; 30.0% identity (75.0% similar) in 20 aa overlap (9-25:22-41)
+
+                            10        20                           
+sdfasf              SAAFDSFASDFADSFSDAFA---SDFDS                   
+                            ...:. . :.::   .::..                   
+ACK434 MSLLTEVETYVLSIVPSGPLKAEIAQRLEDVFAGKNTDFEALMEWLKTRPILSPLTKGIL
+               10        20        30        40        50        60
+
+ACK434 GFVFTLTVPSERGLQRRRFVQNALNGNGDPNNMDRAVKLYRKLKREITFHGAKEVALSYS
+               70        80        90       100       110       120
+
+>>AAS57544 A/duck/Hokkaido/86/01 2001// PA                (167 aa)
+ s-w opt:  31  Z-score: 78.6  bits: 18.2 E(1721):   24
+Smith-Waterman score: 31; 47.1% identity (47.1% similar) in 17 aa overlap (10-24:139-155)
+
+                                    10          20                
+sdfasf                      SAAFDSFASDFADS--FSDAFASDFDS           
+                                     :: ::   ::    : :            
+AAS575 NEEKIPKTKNMKKTSQLKWALGENMAPEKVDFEDSKDVSDLRQYDSDEPESRSLASWIQ
+      110       120       130       140       150       160       
+
+>>AAS57542 A/duck/Hokkaido/107/01 2001// PA               (167 aa)
+ s-w opt:  31  Z-score: 78.6  bits: 18.2 E(1721):   24
+Smith-Waterman score: 31; 47.1% identity (47.1% similar) in 17 aa overlap (10-24:139-155)
+
+                                    10          20                
+sdfasf                      SAAFDSFASDFADS--FSDAFASDFDS           
+                                     :: ::   ::    : :            
+AAS575 NEEKIPKTKNMKKTSQLKWALGENMAPEKVDFEDSKDVSDLRQYDSDEPESRSLASWIQ
+      110       120       130       140       150       160       
+
+>>ABY40439 A/swine/Missouri/4296424/2006 2006// M2        (97 aa)
+ s-w opt:  28  Z-score: 74.5  bits: 16.6 E(1721):   41
+Smith-Waterman score: 28; 40.0% identity (70.0% similar) in 10 aa overlap (9-18:20-29)
+
+                          10        20                             
+sdfasf            SAAFDSFASDFADSFSDAFASDFDS                        
+                          .:  : ..::                               
+ABY404 MSLLTEVETPIRNGWECKCNDSNDPLTDAASIIGILHLILWILDRLFFKCIYRRFKYGLQ
+               10        20        30        40        50        60
+
+>>ACV93280 A/swine/MO/SG253/2005 2005/06/ NS2             (114 aa)
+ s-w opt:  26  Z-score: 66.6  bits: 15.4 E(1721): 1.1e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACV932       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMVTRFEALKIYRDSLGETVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66736 A/mallard/Maryland/232/2001 2001// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM667       MDSNTVSSFQDILMRMSKMQLGSSSEGLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AEM75697 A/mallard/Wisconsin/2560/2009 2009/10/05 NS2   (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AEM756       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AEK65609 A/environment/New York/46614-2/2005 2005/04/1  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AEK656       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ABB18064 A/mallard/Alberta/226/98 1998/08/11 NS2        (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ABB180       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM38817 A/blue-winged teal/Alberta/604/1978 1978/08/1  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM388       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ12976 A/Peking duck/Wagun/1688-4/1985 1985// NS2     (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ129       MNSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66725 A/mallard/Maryland/233/2001 2001// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM667       MDSNTVSSFQDILMRMSKMQLGSSSEGLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ABI84593 A/duck/Germany/1215/1973 1973// NS2            (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ABI845       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ13232 A/mallard/Alberta/720/1984 1984/08/09 NS2      (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ132       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AGC73220 A/mallard/Ohio/11OS2149/2011 2011/08/15 NS2    (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AGC732       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMIIQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACZ47592 A/mallard/Maryland/324/2003 2003// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACZ475       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ADU16670 A/mallard/Interior Alaska/6MP0038BR2/2006 200  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ADU166       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AEM75518 A/American green-winged teal/Illinois/2479/20  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AEM755       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRASLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ12965 A/Peking duck/Wagun/1689-4/1985 1985// NS2     (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ129       MNSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ABB17762 A/mallard/Alberta/353/1988 1988/09/03 NS2      (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ABB177       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM83096 A/mallard/Sweden/93/2005 2005// NS2            (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM830       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACV41488 A/mallard/Quebec/10969/2006 2006/08/18 NS2     (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACV414       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66714 A/mallard/Maryland/234/2001 2001// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM667       MDSNTVSSFQDILMRMSKMQLGSSSEGLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AAV41219 A/Anas acuta/Primorje/695/1976 1976// NS2      (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AAV412       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ13441 A/laughing gull/Delaware Bay/34/1994 1994/05/  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ134       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ13108 A/mallard/New York/66861/1978 1978// NS2       (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ131       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ADX99449 A/chicken/OH/494832/2007 2007/04/ NS2          (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ADX994       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AET76630 A/mallard/Alberta/205/1998 1998/08/08 NS2      (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AET766       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ12910 A/duck/Rugen/79-6/1981 1981// NS2              (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ129       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACS68270 A/mallard/Maryland/333/2003 2003// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACS682       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AGK41417 A/mallard/Minnesota/182714/1998 1998/09/01 NS  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AGK414       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66692 A/mallard/Maryland/314/2003 2003// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM666       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ13009 A/Peking duck/Heinersdorf/648-4/1986 1986// N  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ130       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACS68292 A/mallard/Maryland/235/2001 2001// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACS682       MDSNTVSSFQDILMRMSKMQLGSSSEGLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ13064 A/silkie chicken/Pennsylvania/9600897/1996 19  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ130       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM09250 A/lesser snow goose/Alaska/44065-144/2006 200  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM092       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACV41499 A/mallard/Quebec/11063/2006 2006/08/19 NS2     (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACV414       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM82963 A/mallard/Sweden/12/2003 2003// NS2            (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM829       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM83195 A/common teal/Netherlands/2/2008 2008// NS2    (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM831       MDSNTVSSFQDILMRMSKMQLGSSSEGLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ12921 A/duck/Rugen/88-4/1981 1981// NS2              (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ129       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66824 A/mallard/Maryland/319/2003 2003// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM668       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66835 A/mallard/Maryland/301/2003 2003// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM668       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AGK41740 A/mallard/Minnesota/AI06-1029/2006 2006// NS2  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AGK417       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFJ12998 A/Peking duck/Heinersdorf/648-6/1985 1985// N  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFJ129       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ACM66703 A/mallard/Maryland/296/2003 2003// NS2         (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ACM667       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AET78228 A/mallard/Alberta/417/2009 2009/08/22 NS2      (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AET782       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM09239 A/lesser snow goose/Alaska/44301-116/2007 200  (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM092       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM83040 A/mallard/Sweden/51/2005 2005// NS2            (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM830       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>AFM82598 A/mallard/Netherlands/14/2001 2001// NS2       (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+AFM825       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+>>ADX99438 A/duck/OH/492493/2007 2007/04/ NS2             (121 aa)
+ s-w opt:  26  Z-score: 66.0  bits: 15.4 E(1721): 1.2e+02
+Smith-Waterman score: 26; 44.4% identity (88.9% similar) in 9 aa overlap (9-17:3-11)
+
+               10        20                                        
+sdfasf SAAFDSFASDFADSFSDAFASDFDS                                   
+               :. ..::.:                                           
+ADX994       MDSNTVSSFQDILMRMSKMQLGSSSEDLNGMITQFESLKLYRDSLGEAVMRMGD
+                     10        20        30        40        50    
+
+
+
+25 residues in 1 query   sequences
+702635 residues in 1721 library sequences
+ Scomplib [36.05]
+ start: Sun Jul  7 09:40:44 2013 done: Sun Jul  7 09:40:44 2013
+ Total Scan time:  0.050 Total Display time:  0.010
+
+Function used was SSEARCH [version 36.05 March, 2010]
